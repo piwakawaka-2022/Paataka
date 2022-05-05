@@ -1,10 +1,10 @@
 import { ADD_LISTING } from '../actions/listings'
-import { getAllListings } from '../apis/food'
+import { addListing } from '../apis/food'
 
 function listings(state = [], action) {
   switch (action.type) {
     case ADD_LISTING:
-      getAllListings(action)
+      addListing(action)
       const allIds = state.map((events) => events.id)
       const maxId = Math.max(...allIds)
       return [
