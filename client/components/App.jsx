@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
-
 import { checkAuth } from '../actions/auth'
 
 function App () {
