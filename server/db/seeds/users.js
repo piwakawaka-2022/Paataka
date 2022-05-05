@@ -10,16 +10,16 @@ const replacePasswordWithHash = async (user) => {
 const fakeUserData = [
   {
     id: 1,
-    username: 'admin',
-    password: 'Krang',
-    first_name: 'Admin',
-    last_name: 'Istrator',
-    hourly_wage: 300
-  },
+    username: 'adminUser',
+    password: 'password',
+    name: 'adminUser',
+    email: 'luke_conker@hotmail.com',
+    phone: '+642040214728'
+  }
 ]
 
-exports.seed = function (knex) {
-  return knex('users').del()
+exports.seed = async (knex) => {
+  await knex('users').del()
     .then(() => fakeUserData.map(replacePasswordWithHash))
     .then(fakeUserPromises => Promise.all(fakeUserPromises))
     .then(users => knex('users').insert(users))
