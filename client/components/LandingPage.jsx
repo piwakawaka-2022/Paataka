@@ -14,7 +14,6 @@ function LandingPage () {
         <div className='fact1'>Fact 1</div>
         <div className='fact2'>Fact 2</div>
         <div className='fact3'>Fact 3</div>
-
     </div>
     
     <Link to="/AddListings"><button>
@@ -26,16 +25,12 @@ function LandingPage () {
               Need food?
             </button>
             </Link>
-  
-    
-    
         </div>
       )
-
-
 }
 
 
 
 
 export default LandingPage
+

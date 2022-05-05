@@ -1,3 +1,4 @@
+
 import React from "react";
 
 function SingleFoodItem (props) {
@@ -19,3 +20,4 @@ function SingleFoodItem (props) {
 }
 
 export default SingleFoodItem
+
