@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
 import LandingPage from './LandingPage'
 import { checkAuth } from '../actions/auth'
+import Listings from './Listings'
 
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
@@ -35,7 +37,7 @@ function App () {
 
           {!auth.isAuthenticated && <Route path="/login" element={<Login />}/>}
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
-
+          <Route path="/listings" element={<Listings />} />
         </Routes>
       </div>
 
