@@ -38,9 +38,9 @@ function App () {
         <Routes>
 
           <Route path="/" element={<LandingPage />} />
-          {!auth.isAuthenticated && <Route path="/login" element={<Login />}/>}
+          <Route path="/login" element={<Login />}/>
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
-          {!auth.isAuthenticated && <Route path="/AddListing" element={<AddListing />} />}
+          <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
         </Routes>
       </div>
