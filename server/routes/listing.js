@@ -25,7 +25,7 @@ router.post('/listing', (req, res) => {
 router.get('/listing/:id', (req, res) => {
   const id = req.params
   console.log(id)
-  db.getOneFood(id)
+  db.getOneListing(id)
     .then((food) => res.json(food))
     .catch((err) => {
       res.status(500).json({ error: err.message })
