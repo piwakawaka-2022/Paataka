@@ -2,7 +2,7 @@ const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 // AUTH user queries
-function createUser (user, db = connection) {
+function createUser(user, db = connection) {
   const newUser = { ...user }
   return generateHash(newUser.password).then((passwordHash) => {
     newUser.hash = passwordHash
@@ -11,13 +11,13 @@ function createUser (user, db = connection) {
   })
 }
 
-function userExists (username, db = connection) {
+function userExists(username, db = connection) {
   return db('users')
     .where('username', username)
     .then((users) => users.length > 0)
 }
 
-function getUserByUsername (username, db = connection) {
+function getUserByUsername(username, db = connection) {
   return db('users').where('username', username).first()
 }
 
@@ -45,6 +45,7 @@ const getAllListings = async (db = connection) => {
 
 const addListing = async (newListing, db = connection) => {
   const addListing = await db('listings').insert(newListing, 'id')
+  // return addListing
 }
 
 const getOneListing = async (id, db = connection) => {
@@ -57,9 +58,7 @@ const getOneListing = async (id, db = connection) => {
 }
 
 const deleteListing = async (id, db = connection) => {
-  const deleteListing = await db('listings')
-    .where('id', id)
-    .del()
+  const deleteListing = await db('listings').where('id', id).del()
 }
 
 const editListing = async (editedListing, db = connection) => {
@@ -84,5 +83,5 @@ module.exports = {
   getUserListings,
   addListing,
   getOneListing,
-  deleteListing
+  deleteListing,
 }
