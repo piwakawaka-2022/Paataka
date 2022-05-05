@@ -1,0 +1,21 @@
+.nav-container {
+  display: flex;
+  background-color: #9D9C62;
+  width: 100vw;
+}
+
+.pataka {
+  width: 80vw;
+  height: 7vh;
+  font-size: xx-large;
+  font-family: Georgia;
+  padding-top: 1vh;
+  padding-left: 1vh;
+}
+
+.clickies {
+  width: 10vw;
+  text-align: center;
+  padding-top: 2vh;
+  font-size: x-large;
+}
