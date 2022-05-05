@@ -25,7 +25,21 @@ function getUserByUsername(username, db = connection) {
 const getAllListings = async (db = connection) => {
   const allListings = await db('listings')
     .join('users', 'users.id', 'listings.users_id')
-    .select('title', 'image', 'description', 'location', 'category', 'expiry_date AS expiryDate', 'username', 'name', 'hash', 'email', 'phone', 'users.id AS userId', 'listings.id AS listingId')
+    .select(
+      'title',
+      'image',
+      'description',
+      'location',
+      'category',
+      'expiry_date AS expiryDate',
+      'username',
+      'name',
+      'hash',
+      'email',
+      'phone',
+      'users.id AS userId',
+      'listings.id AS listingId'
+    )
   return allListings
 }
 
@@ -36,8 +50,8 @@ const addListing = async (newListing, db = connection) => {
 const getOneListing = async (id, db = connection) => {
   const oneListing = await db('listings')
     .join('users', 'users.id', 'listings.users_id')
-    .where('listing.id', id.id)
-    .select()
+    .where('listingId', id)
+    .select('*', 'listings.id as listingId')
     .first()
   return oneListing
 }
