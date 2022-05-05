@@ -1,9 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import SingleFoodItem from './SingleFoodItem'
-import React from "react";
-import { useSelector } from "react-redux";
-import SingleFoodItem from "./SingleFoodItem";
 
 function FoodItems () {
   // useState?

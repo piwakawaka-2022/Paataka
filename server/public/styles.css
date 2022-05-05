@@ -1,1 +1,71 @@
+.nav-container {
+  display: flex;
+  background-color: #9D9C62;
+  width: 100vw;
+}
 
+.pataka {
+  width: 80vw;
+  height: 7vh;
+  font-size: xx-large;
+  font-family: Georgia;
+  padding-top: 1vh;
+  padding-left: 2vw;
+}
+
+.clickies {
+  width: 10vw;
+  text-align: center;
+  padding-top: 2vh;
+  font-size: x-large;
+}
+
+.homemaindiv {
+  text-align: center;
+}
+
+.gotfood {
+  background-color: #9ab973;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.gotfood:hover {
+  background-color: #b3b3b3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.needfood {
+  background-color: #E4572E;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.needfood:hover {
+  background-color: #b3b3b3;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/*# sourceMappingURL=styles.css.map*/
