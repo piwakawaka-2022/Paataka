@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
-import Meeting from './Meeting'
-import History from './History'
 
 import { checkAuth } from '../actions/auth'
 
@@ -38,8 +36,6 @@ function App () {
           {!auth.isAuthenticated && <Route path="/login" element={<Login />}/>}
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
 
-          {auth.isAuthenticated && <Route path="/meeting" element={<Meeting />} />}
-          {auth.isAuthenticated && <Route path="/history" element={<History />} />}
         </Routes>
       </div>
 
