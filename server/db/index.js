@@ -25,12 +25,25 @@ function getUserByUsername (username, db = connection) {
 }
 
 // LISTINGS queries
-
 const getAllListings = async (db = connection) => {
   const allListings = await db('listings')
     .join('users', 'users.id', 'listings.users_id')
     .select()
   return allListings
+}
+
+const addListing = async (newListing, db = connection) => {
+  const addListing = await db('listings')
+    .insert(newListing, 'id')
+}
+
+const getOneListing = async (id, db = connection) => {
+  const oneListing = await db('listings')
+    .join('users', 'users.id', 'listings.users_id')
+    .where('id', id)
+    .select()
+    .first()
+  return oneListing
 }
 
 const getUserListings = async (userId, db = connection) => {
@@ -46,5 +59,7 @@ module.exports = {
   userExists,
   getUserByUsername,
   getAllListings,
-  getUserListings
+  getUserListings,
+  addListing,
+  getOneListing
 }
