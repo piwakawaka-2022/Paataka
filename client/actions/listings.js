@@ -1,40 +1,59 @@
-import { getAllListings } from '../apis/food'
+import { getAllListings, getOnelisting } from '../apis/food'
 
-export const FETCH_LISTINGS_PENDING = 'FETCH_LISTINGS_PENDING'
-export const FETCH_LISTINGS_SUCCESS = 'FETCH_LISTINGS_SUCCESS'
-export const ADD_LISTING = 'ADD_LISTING'
+// export const FETCH_LISTINGS_PENDING = 'FETCH_LISTINGS_PENDING'
+// export const FETCH_LISTINGS_SUCCESS = 'FETCH_LISTINGS_SUCCESS'
+export const FETCH_ONE_LISTING = 'FETCH_ONE_LISTING'
+export const FETCH_USER_LISTINGS = 'FETCH_USER_LISTINGS'
+export const FETCH_LISTINGS = 'FETCH_LISTINGS'
 
-export function addListing(newListing) {
+// set up api for this action
+// export function fetchUserListings(listings) {
+//   return {
+//     type: FETCH_USER_LISTINGS,
+//     listings
+
+//   }
+// }
+
+export function fetchOneLising(listing) {
   return {
-    type: ADD_LISTING,
-    title: newListing.title,
-    image: newListing.image,
-    description: newListing.image,
-    location: newListing.location,
-    category: newListing.category,
-    users_id: newListing.users_id,
+    type: FETCH_ONE_LISTING,
+    listing,
   }
 }
-
-export function fetchListingPending() {
+export function fetchListings(listings) {
   return {
-    type: FETCH_LISTINGS_PENDING,
+    type: FETCH_LISTINGS,
+    listings,
   }
 }
+// export function fetchListingsPending() {
+//   return {
+//     type: FETCH_LISTINGS_PENDING,
+//   }
+// }
 
-export function fetchListingSuccess() {
-  return {
-    type: FETCH_LISTINGS_SUCCESS,
-  }
-}
+// export function fetchListingsSuccess() {
+//   return {
+//     type: FETCH_LISTINGS_SUCCESS,
+//   }
+// }
 
 // THUNKS
 
-export function fetchListing() {
+export function oneListingThunk() {
   return (dispatch) => {
-    dispatch(fetchListingPending())
+    return getOnelisting().then((listing) => {
+      dispatch(fetchOneLising(listing))
+      return null
+    })
+  }
+}
+
+export function fetchListingsThunk() {
+  return (dispatch) => {
     return getAllListings().then((listings) => {
-      dispatch(fetchListingSuccess(listings))
+      dispatch(fetchListings(listings))
       return null
     })
   }
