@@ -4,9 +4,7 @@ const router = express.Router()
 
 router.get('/listings', (req, res) => {
   db.getAllListings()
-    .then((foods) => {
-      return res.json(foods)
-    })
+    .then((foods) => res.json(foods))
     .catch((err) => {
       res.status(500).json({ error: err.message })
     })
@@ -14,7 +12,6 @@ router.get('/listings', (req, res) => {
 
 router.post('/listing', (req, res) => {
   const newListing = req.body
-  console.log(newListing)
   db.addListing(newListing)
     .then((idArr) => res.sendStatus(201))
     .catch((err) => {
