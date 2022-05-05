@@ -2,7 +2,7 @@ const express = require('express')
 const db = require('../db/connection')
 const router = express.Router()
 
-router.get('/foods', (req, res) => {
+router.get('/listings', (req, res) => {
   db.getListings()
     .then((foods) => {
       return res.json(foods)
@@ -12,7 +12,7 @@ router.get('/foods', (req, res) => {
     })
 })
 
-router.post('/food', (req, res) => {
+router.post('/listing', (req, res) => {
   const newListing = req.body
   db.addListing(newListing)
     .then((idArr) => res.sendStatus(201))
@@ -22,7 +22,7 @@ router.post('/food', (req, res) => {
 })
 
 // not sure if req.params() is the right function to use here
-router.get('/food/:id', (req, res) => {
+router.get('/listing/:id', (req, res) => {
   const id = req.params()
   console.log(id)
   db.getOneFood(id)
