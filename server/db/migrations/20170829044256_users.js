@@ -1,15 +1,14 @@
-exports.up = function (knex) {
-  return knex.schema.createTable('users', table => {
-    table.increments('id')
+exports.up = async (knex) => {
+  await knex.schema.createTable('users', table => {
+    table.increments('id').primary()
     table.string('username')
     table.string('hash')
-    table.string('first_name')
-    table.string('last_name')
-    table.decimal('hourly_wage')
-    table.timestamps(true, true)
+    table.string('name')
+    table.string('email')
+    table.string('phone')
   })
 }
 
-exports.down = function (knex) {
-  return knex.schema.dropTable('users')
+exports.down = async (knex) => {
+  await knex.schema.dropTable('users')
 }
