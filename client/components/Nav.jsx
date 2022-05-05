@@ -27,7 +27,7 @@ function Nav () {
             <div className="pataka">Pātaka</div>
             <Link to='/' onClick={() => logout()}>Logout</Link>
             <Link className="clickies" to='listings'>Listings</Link>
-            <Link className="clickies" to='addListing'>Add Food</Link>
+            <Link className="clickies" to='AddListing'>Add Food</Link>
           </div>
         )
           : (

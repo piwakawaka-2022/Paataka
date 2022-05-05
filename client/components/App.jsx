@@ -1,10 +1,13 @@
 import React, { useEffect } from 'react'
 import { Routes, Route, Link, Navigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
 import LandingPage from './LandingPage'
+import AddListing from './AddListing'
+
 import { checkAuth } from '../actions/auth'
 
 function App () {
@@ -25,16 +28,18 @@ function App () {
             <h1 className="title is-1">Pātaka</h1>
           </Link>
           <Nav />
-          <LandingPage/>
+          {/* <LandingPage/> */}
+          {/* <AddListing /> */}
         </div>
       </div>
 
       <div className=''>
         <Routes>
-          {/* <Route path="/" element={auth.isAuthenticated ? <></> : <Navigate to='/login' />} /> */}
 
+          <Route path="/" element={<LandingPage />} />
           {!auth.isAuthenticated && <Route path="/login" element={<Login />}/>}
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
+          {!auth.isAuthenticated && <Route path="/AddListing" element={<AddListing />} />}
 
         </Routes>
       </div>
