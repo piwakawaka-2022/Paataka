@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, Link, Navigate } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import Login from './Login'
@@ -9,6 +9,7 @@ import LandingPage from './LandingPage'
 import AddListing from './AddListing'
 
 import { checkAuth } from '../actions/auth'
+import Listings from './Listings'
 
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
@@ -40,7 +41,7 @@ function App () {
           {!auth.isAuthenticated && <Route path="/login" element={<Login />}/>}
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
           {!auth.isAuthenticated && <Route path="/AddListing" element={<AddListing />} />}
-
+          <Route path="/listings" element={<Listings />} />
         </Routes>
       </div>
 
