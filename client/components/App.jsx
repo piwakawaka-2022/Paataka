@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Login from './Login'
 import Register from './Register'
 import Nav from './Nav'
+import LandingPage from './LandingPage'
 
 
 
@@ -25,15 +26,16 @@ function App () {
       <div className="hero is-small is-primary">
         <div className="hero-body has-text-centered">
           <Link to='/' className="">
-            <h1 className="title is-1">$how Me The Money</h1>
+            <h1 className="title is-1">Pātaka</h1>
           </Link>
           <Nav />
+          <LandingPage/>
         </div>
       </div>
 
       <div className=''>
         <Routes>
-          <Route path="/" element={auth.isAuthenticated ? <></> : <Navigate to='/login' />} />
+          {/* <Route path="/" element={auth.isAuthenticated ? <></> : <Navigate to='/login' />} /> */}
 
           {!auth.isAuthenticated && <Route path="/login" element={<Login />}/>}
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
