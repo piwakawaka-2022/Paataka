@@ -14,6 +14,7 @@ router.get('/listings', (req, res) => {
 
 router.post('/listing', (req, res) => {
   const newListing = req.body
+  console.log(newListing)
   db.addListing(newListing)
     .then((idArr) => res.sendStatus(201))
     .catch((err) => {

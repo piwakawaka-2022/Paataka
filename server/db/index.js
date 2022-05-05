@@ -25,7 +25,7 @@ function getUserByUsername(username, db = connection) {
 const getAllListings = async (db = connection) => {
   const allListings = await db('listings')
     .join('users', 'users.id', 'listings.users_id')
-    .select()
+    .select('title', 'image', 'description', 'location', 'category', 'expiry_date AS expiryDate', 'username', 'name', 'hash', 'email', 'phone', 'users.id AS userId', 'listings.id AS listingId')
   return allListings
 }
 
