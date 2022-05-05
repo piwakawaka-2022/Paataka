@@ -31,7 +31,13 @@
     ],
     "plugins": [
       "@babel/plugin-proposal-class-properties",
-      "@babel/plugin-proposal-object-rest-spread"
+      "@babel/plugin-proposal-object-rest-spread",
+      [
+        "@babel/plugin-transform-runtime",
+        {
+          "regenerator": true
+        }
+      ]
     ]
   },
   "eslintConfig": {
@@ -72,6 +78,7 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
+    "@babel/plugin-transform-runtime": "^7.17.10",
     "@vscode/sqlite3": "^5.0.8",
     "authenticare": "^0.4.9",
     "express": "^4.17.1",
