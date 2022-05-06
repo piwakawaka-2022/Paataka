@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { addListing } from '../apis/food'
-import { addNewListing } from '../actions/listings'
+// import { addNewListing } from '../actions/listings'
 import { useNavigate } from 'react-router'
-const { useDispatch, useSelector } = require('react-redux')
+const { useSelector } = require('react-redux')
 // import action here
 
 // Where users go to post food items the have
@@ -21,7 +21,7 @@ function CreateListing () {
     users_id: user.id
   })
 
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
   // need to add changeHandler functionality
   function changeHandler (evt) {
@@ -38,7 +38,7 @@ function CreateListing () {
 
     // console.log(newItem)
     addListing(newItem) // api to write to db
-    dispatch(addNewListing(newItem)) // we add the action here? --> redux - thunk so that it displays fast.
+    // dispatch(addNewListing(newItem)) // we add the action here? --> redux - thunk so that it displays fast.
     setNewItem({
       title: '',
       category: '',
