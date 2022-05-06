@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function LandingPage () {
 
     return (
-        <div className="homemaindiv">
+<div className="homemaindiv">
 
  
 <div class="section">
@@ -48,33 +48,29 @@ function LandingPage () {
     <div className='homecontainer'></div>
     <div className='homevalues'>
         <p>Main home value greeting</p>
-    </div>
-    <div className='homefacts'>
+      </div>
+      <div className='homefacts'>
         <div className='fact1'>There is enough food produced in the world to feed every living human.</div>
         <div className='fact2'>New Zealand households throw away 157,389 tonnes of food a year. </div>
         <div className='fact3'>We throw away 29 million loaves of bread a year! Nearly one-third of the food we waste is vegetables.</div>
     </div> */}
 
 
+      <div className='buttonscontainer'>
 
-    <div className='buttonscontainer'>
-
-    <Link to="/AddListing"><button className='gotfood'>
+        <Link to="/AddListing"><button className='gotfood'>
               Got food?
-      </button>
-      </Link>
+        </button>
+        </Link>
 
-            <Link to="/Listings"><button className='needfood'>
+        <Link to="/Listings"><button className='needfood'>
               Need food?
-            </button>
-            </Link>
+        </button>
+        </Link>
 
-</div>
+      </div>
 
-            <div className='home-values'>
-      
-
-    </div>
+         
 
 
 
