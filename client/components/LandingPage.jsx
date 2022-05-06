@@ -13,6 +13,21 @@ function LandingPage () {
       <h1 class="hometitle">Nau mai haere mai, ki a Pātaka kai! </h1>
       <h2 class="hero">Welcome to the local food pantry</h2>
      
+
+      <div className='buttonscontainer'>
+
+        <Link to="/AddListing"><button className='gotfood'>
+              Got food?
+        </button>
+        </Link>
+
+        <Link to="/Listings"><button className='needfood'>
+              Need food?
+        </button>
+        </Link>
+
+      </div>
+
     </div>
   </div>
 </div>
@@ -21,24 +36,34 @@ function LandingPage () {
  
 <div class="section bg">
   <div class="container">
-    <h1>Access to healthy food is a basic human right</h1>
-    <h2>Pātaka helps redistribute access to healthy food</h2>
+    
     <div class="col three bg nopad pointer">
-      <div class="imgholder"></div>
-      <h1 class="feature">Whakawhanaungatanga</h1>
-      <p>Bringing communities together through the redistribution of kai</p>
-    </div>
-    <div class="col three bg nopad pointer">
-      <div class="imgholder"></div>
-      <h1 class="feature">Manaakitanga</h1>
-      <p>Sharing is caring</p>
-    </div>
-    <div class="col three bg nopad pointer">
-      <div class="imgholder"></div>
-      <h1 class="feature">Kaitiakitanga</h1>
-      <p>Reducing food waste and the impact this has on our climate</p>
+      <div class="imgholder">
+      <img class="imgholder" src="community.jpg"/>
+      </div>
+      <h1 class="feature">Bringing communities together through the redistribution of kai</h1>
+      <p></p>
     </div>
 
+
+    <div class="col three bg nopad pointer">
+    <div class="imgholder">
+      <img class="imgholder" src="tomatoes.jpg"/>
+      </div>
+      <h1 class="feature">There is enough food in the world to feed every single person</h1>
+      <p></p>
+    </div>
+
+
+    <div class="col three bg nopad pointer">
+    <div class="imgholder">
+      <img class="imgholder" src="food-waste.jpg"/>
+     
+        
+      </div>
+      <h1 class="feature">Reducing food waste and the impact this has on our climate</h1>
+      <p></p>
+    </div>
     </div>
     </div>
 
@@ -54,21 +79,9 @@ function LandingPage () {
         <div className='fact2'>New Zealand households throw away 157,389 tonnes of food a year. </div>
         <div className='fact3'>We throw away 29 million loaves of bread a year! Nearly one-third of the food we waste is vegetables.</div>
     </div> */}
+<h1>Naku te rourou nau te rourou ka ora ai te iwi</h1>
+    <h2>With your basket and my basket the people will live</h2>
 
-
-      <div className='buttonscontainer'>
-
-        <Link to="/AddListing"><button className='gotfood'>
-              Got food?
-        </button>
-        </Link>
-
-        <Link to="/Listings"><button className='needfood'>
-              Need food?
-        </button>
-        </Link>
-
-      </div>
 
          
 
