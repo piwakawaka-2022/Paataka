@@ -7,6 +7,7 @@ import Register from './Register'
 import Nav from './Nav'
 import LandingPage from './LandingPage'
 import AddListing from './AddListing'
+import Details from './Details'
 
 import { checkAuth } from '../actions/auth'
 import Listings from './Listings'
@@ -42,6 +43,7 @@ function App () {
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
           <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
+          <Route path="/listings/:listing" element={<Details />} />
         </Routes>
       </div>
 

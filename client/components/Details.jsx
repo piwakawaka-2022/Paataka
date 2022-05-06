@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
+
+import Comments from './Comments'
 
 function Details () {
-
-
   return (
 
     <>
@@ -15,13 +15,12 @@ function Details () {
         <div>
           <img>user info</img>
           <p> food details </p>
-          <Comments />
-        </div>  
+          {/* <Comments /> */}
+        </div>
       </div>
     </>
 
   )
-
 }
 
 export default Details

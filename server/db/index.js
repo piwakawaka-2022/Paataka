@@ -2,7 +2,7 @@ const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 // AUTH user queries
-function createUser(user, db = connection) {
+function createUser (user, db = connection) {
   const newUser = { ...user }
   return generateHash(newUser.password).then((passwordHash) => {
     newUser.hash = passwordHash
@@ -12,18 +12,18 @@ function createUser(user, db = connection) {
       name: newUser.name,
       email: newUser.email,
       phone: newUser.phone,
-      hash: newUser.hash,
+      hash: newUser.hash
     })
   })
 }
 
-function userExists(username, db = connection) {
+function userExists (username, db = connection) {
   return db('users')
     .where('username', username)
     .then((users) => users.length > 0)
 }
 
-function getUserByUsername(username, db = connection) {
+function getUserByUsername (username, db = connection) {
   return db('users').where('username', username).first()
 }
 
@@ -81,6 +81,24 @@ const getUserListings = async (userId, db = connection) => {
   return userListings
 }
 
+// COMMENTS queries
+const getAllComments = async (db = connection) => {
+  const allComments = await db('comments')
+    .join('listings', 'listings.id', 'comments.listing_id')
+    .join('users', 'users.id', 'comments.users_id')
+    .select(
+      'comments.title AS commentTitle',
+      'comment',
+      'listings.title AS listingTitle',
+      'date_created AS dateCreated',
+      'listings.id AS listingId',
+      'users.id AS userId',
+      'username',
+      'name'
+    )
+  return allComments
+}
+
 module.exports = {
   createUser,
   userExists,
@@ -90,4 +108,6 @@ module.exports = {
   addListing,
   getOneListing,
   deleteListing,
+  editListing,
+  getAllComments
 }
