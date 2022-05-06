@@ -7,6 +7,9 @@ function listings(state = [], action) {
 
     case FETCH_LISTINGS:
       return action.listings
+
+    default:
+      return state
   }
 }
 export default listings
