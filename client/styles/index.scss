@@ -4,6 +4,7 @@
   width: 100vw;
 }
 
+
 .pataka {
   width: 80vw;
   height: 7vh;
@@ -20,19 +21,218 @@
   font-size: x-large;
 }
 // landing page start
-.homemaindiv {
+
+
+.section {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+ text-align: center;
+  margin: 0 auto;
+  color: #444;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Roboto, 'Open Sans', Arial, sans-serif;
+  overflow: hidden;
+}
+
+.section .container {
+  padding: 30px 0 50px 0;
+}
+
+.section.bg {
+  background: #f7f7f7;
+  
+    flex-wrap: wrap
+  }
+  
+
+
+
+// .homemaindiv {
+//   text-align: center;
+//   width: 100%;
+//   position: relative;
+//   width: 1170px;
+//   margin: 0 auto;
+//   color: #444;
+//   font-size: 14px;
+//   font-weight: 300;
+//   font-family: Roboto, 'Open Sans', Arial, sans-serif;
+//   overflow: hidden;
+// }
+
+
+
+/* 
+  Columns 
+*/
+
+.col {
+  float: left;
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+}
+
+.col.four {
+  width: 23%;
+  margin: 0 1%;
+}
+
+.col.three {
+  width: 31.3%;
+  margin: 0 1%;
+}
+
+.col.two {
+  width: 40%;
+  margin: 0 2.5%;
+  padding: 0 2.5%;
+}
+
+.col.extrapad {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.col .service,
+.col .feature {
+  font-size: 21px;
+  font-weight: 300;
+  font-family: 'Roboto Slab', sans-serif;
+}
+
+.col .service:after {
+  content: "";
+  width: 50px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+}
+
+.col .feature {
+  font-size: 19px;
+}
+
+.col h1.side,
+.col p.side,
+.col span.side:first-of-type {
+  margin-left: 50px;
+  text-align: left;
+}
+
+.col .icon {
+  border-radius: 50%;
+  height: 85px;
+  width: 85px;
+  line-height: 85px;
+  text-align: center;
+  margin: 0 auto;
+  transition: background 0.25s linear, color 0.25s linear;
+}
+
+.col .icon.side {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  top: -15px;
+  height: 50px;
+  width: 50px;
+}
+
+.col:hover > .icon {
+  background: #F44336;
+  color: white;
+}
+
+.col:hover > .icon.side {
+  background: initial;
+  color: initial;
+}
+
+.responsivegroup {
+  display: none;
+}
+/*
+  Column specifics
+*/
+
+.col p,
+.col h1 {
+  padding: 0 1%;
   text-align: center;
 }
 
-.homefacts {
-
-  
+.group.margin {
+  margin-bottom: 20px;
 }
+
+.col .imgholder {
+  height: 300px;
+  width: 100%;
+  background: #333;
+  transition: background 0.3s linear;
+}
+
+.col.bg {
+  background: #FFF;
+}
+
+.col.pointer {
+  cursor: pointer;
+}
+
+.col.bg:hover .imgholder {
+  background: #555;
+}
+
+.col span.feature {
+  font-size: 20px;
+}
+/*
+  Text
+*/
+
+.container > h1:not(.hero) {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container > h1:after {
+  content: "";
+  width: 30px;
+  position: relative;
+  border-bottom: 1px solid #aaa;
+  display: block;
+  text-align: center;
+  margin: auto;
+  margin-top: 15px;
+}
+
+h2 {
+  font-family: 'Roboto Slab', sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+//columns end
+
+//buttons start
+
 .gotfood {
   background-color: #9ab973; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 25px 42px;
+  margin: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -43,7 +243,7 @@
   background-color: #b3b3b3; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 25px 42px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -56,7 +256,8 @@
   background-color: #E4572E; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 25px 42px;
+  margin: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -68,11 +269,14 @@
   background-color: #b3b3b3; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 25px 42px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
+
+//buttons end
+
 
 //landing page end
