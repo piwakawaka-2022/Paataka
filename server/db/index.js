@@ -67,10 +67,9 @@ const deleteListing = async (id, db = connection) => {
   const deleteListing = await db('listings').where('id', id).del()
 }
 
-const editListing = async (editedListing, db = connection) => {
-  const editListing = await db('listings')
-    .where('id', editedListing.id)
-    .update(editedListing)
+const editListing = async (editedListing, id, db = connection) => {
+  const listings = await db('listings').where('id', id).update(editedListing)
+  return listings
 }
 
 const getUserListings = async (userId, db = connection) => {
@@ -82,6 +81,7 @@ const getUserListings = async (userId, db = connection) => {
 }
 
 module.exports = {
+  editListing,
   createUser,
   userExists,
   getUserByUsername,
