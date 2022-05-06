@@ -12,7 +12,8 @@ function LandingPage () {
     <div class="container slidercontent">
       <h1 class="hometitle">Nau mai haere mai, ki a Pātaka kai! </h1>
       <h2 class="hero">Welcome to the local food pantry</h2>
-     
+
+   
 
       <div className='buttonscontainer'>
 
@@ -41,7 +42,7 @@ function LandingPage () {
       <div class="imgholder">
       <img class="imgholder" src="community.jpg"/>
       </div>
-      <h1 class="feature">Bringing communities together through the redistribution of kai</h1>
+      <h1 class="feature">Pātaka is bringing communities together through the redistribution of kai</h1>
       <p></p>
     </div>
 
@@ -50,7 +51,7 @@ function LandingPage () {
     <div class="imgholder">
       <img class="imgholder" src="tomatoes.jpg"/>
       </div>
-      <h1 class="feature">There is enough food in the world to feed every single person</h1>
+      <h1 class="feature">There is enough food in the world to feed every single fucking person</h1>
       <p></p>
     </div>
 
