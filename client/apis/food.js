@@ -1,16 +1,16 @@
 import request from 'superagent'
 
-export function getAllListings () {
+export function getAllListings() {
   return request.get('/api/v1/listings').then((resp) => resp.body)
 }
 
-export function addListing (newEvent) {
+export function addListing(newEvent) {
   return request
     .post('/api/v1/listing')
     .send(newEvent)
     .then((resp) => resp.body)
 }
 
-export function getOnelisting () {
-  return request.get('/api/v1/listing').then((resp) => resp.body)
+export function getOnelisting(id) {
+  return request.get(`/api/v1/listing/${id}`).then((resp) => resp.body)
 }

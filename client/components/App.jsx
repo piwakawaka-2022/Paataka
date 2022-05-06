@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Routes, Route, Link, useParams } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import Login from './Login'
@@ -15,8 +15,6 @@ import Details from './Details'
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
   const dispatch = useDispatch()
-
-  const { id } = useParams()
 
   useEffect(() => {
     const confirmSuccess = () => { }
@@ -45,7 +43,7 @@ function App () {
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
           <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
-          <Route path={`/listings/:${id}`} element={<Details />} />
+          <Route path="/listings/:id" element={<Details />} />
         </Routes>
       </div>
 
