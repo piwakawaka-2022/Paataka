@@ -7,7 +7,13 @@ function createUser(user, db = connection) {
   return generateHash(newUser.password).then((passwordHash) => {
     newUser.hash = passwordHash
     delete newUser.password
-    return db('users').insert(newUser)
+    return db('users').insert({
+      username: newUser.username,
+      name: newUser.name,
+      email: newUser.email,
+      phone: newUser.phone,
+      hash: newUser.hash,
+    })
   })
 }
 
