@@ -51,6 +51,7 @@ const getAllListings = async (db = connection) => {
 
 const addListing = async (newListing, db = connection) => {
   const addListing = await db('listings').insert(newListing, 'id')
+  // return addListing
 }
 
 const getOneListing = async (id, db = connection) => {

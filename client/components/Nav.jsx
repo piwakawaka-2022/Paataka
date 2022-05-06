@@ -19,11 +19,19 @@ function Nav () {
     dispatch(logoutUser(confirmSuccess))
   }
 
-  return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="navbar-end">
-          {auth.isAuthenticated ? (
+
+  return <nav className="navbar">
+    <div className="container">
+      <div className="navbar-end">
+        {auth.isAuthenticated ? (
+          <div className="nav-container">
+            <div className="pataka">Pātaka</div>
+            <Link to='/' onClick={() => logout()}>Logout</Link>
+            <Link className="clickies" to='listings'>Listings</Link>
+            <Link className="clickies" to='AddListing'>Add Food</Link>
+          </div>
+        )
+          : (
             <div className="nav-container">
               <div className="pataka">Pātaka</div>
               <Link to="/" onClick={() => logout()}>
