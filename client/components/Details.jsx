@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react'
+// import { getOnelisting, getAllListings } from '../apis/food'
+// import { useParams } from 'react-router-dom'
 
 function Details () {
-
-
   return (
 
     <>
@@ -13,15 +13,14 @@ function Details () {
       <div>
         <img></img>
         <div>
-          <img>user info</img>
+          {/* <img>user info</img> */}
           <p> food details </p>
-          <Comments />
-        </div>  
+          {/* <Comments /> */}
+        </div>
       </div>
     </>
 
   )
-
 }
 
 export default Details

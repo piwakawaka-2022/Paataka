@@ -67,7 +67,8 @@ function CreateListing () {
         </label>
         <br /> <br />
         <label>
-          <input type='text' id='image' name='image' value={newItem.quantity} onChange={changeHandler} placeholder='Please upload a link for an image of your food'></input>
+          {/* Update so that it only accepts jpg, jpeg, or png. Or more if we so feel */}
+          <input type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Please upload an image of your food'></input>
         </label>
         <br /> <br />
         <label>
