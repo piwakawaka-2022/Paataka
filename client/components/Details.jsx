@@ -2,7 +2,10 @@ import React, { useState } from 'react'
 import { getOnelisting } from '../apis/food'
 import { useParams } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
+
 import { loginError } from '../actions/auth'
+import Comments from './Comments'
+
 
 function Details () {
   const { id } = useParams()
@@ -16,6 +19,7 @@ function Details () {
 
   // console.log(food)
 
+function Details () {
   return (
     <>
       <div>

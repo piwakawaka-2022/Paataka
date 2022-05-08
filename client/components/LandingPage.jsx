@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { getAllComments } from '../apis/comments'
 
 function LandingPage () {
   return (
@@ -11,18 +12,7 @@ function LandingPage () {
             <h2 className="hero">Welcome to the local food pantry</h2>
           </div>
         </div>
-      </div>
-
- 
-<div className="homemaindiv">
-
- 
-<div class="section">
-  <div class="slider">
-    <div class="container slidercontent">
-      <h1 class="hometitle">Nau mai haere mai, ki a Pātaka kai! </h1>
-      <h2 class="hero">Welcome to the local food pantry</h2>
-     
+      </div>     
 
       <div className='buttonscontainer'>
 
@@ -103,8 +93,7 @@ function LandingPage () {
         </div>
       </div>
 
-
-      {/* <h1>Nau mai, haere mai ki a Pātaka!</h1>
+    {/* <h1>Nau mai, haere mai ki a Pātaka!</h1>
     <div className='homecontainer'></div>
     <div className='homevalues'>
         <p>Main home value greeting</p>
@@ -117,24 +106,15 @@ function LandingPage () {
 <h1>Naku te rourou nau te rourou ka ora ai te iwi</h1>
     <h2>With your basket and my basket the people will live</h2>
 
-
-
-         
-
-
-
-
-
-
-
-    <div class="footer">
-<div class="container white">
-  <div class="col four left">
-    <h1>What?</h1>
-    <p>Food always tastes better when you share it with someone - Josh
+      <div className="footer">
+        <div className="container white">
+          <div className="col four left">
+            <h1>What?</h1>
+            <p>Food always tastes better when you share it with someone - Josh
 
 Connecting communities (whanaungitanga) through tackling food inequality
 Reducing waste/environmental impact of wasted food (Kaitiakitanga) - Luke </p>
+
   </div>
   <div class="col four left">
     <h1>How?</h1>
@@ -142,13 +122,11 @@ Reducing waste/environmental impact of wasted food (Kaitiakitanga) - Luke </p>
   </div>
   <div class="col four left">
    
-    
    
   </div>
   <div class="col four left">
     <h1>Who?</h1>
 
-    
  
   </div>
 
