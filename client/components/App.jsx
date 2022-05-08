@@ -11,7 +11,6 @@ import Details from './Details'
 
 import { checkAuth } from '../actions/auth'
 import Listings from './Listings'
-import Details from './Details'
 
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
