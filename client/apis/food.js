@@ -14,3 +14,7 @@ export function addListing (newEvent) {
 export function getOnelisting () {
   return request.get('/api/v1/listing').then((resp) => resp.body)
 }
+
+export function getUserslistings () {
+  return request.get('/api/v1/listing').then((resp) => resp.body)
+}
