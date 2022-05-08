@@ -18,28 +18,28 @@ function Details () {
 
   // console.log(food)
 
-  function Details () {
-    return (
-      <>
+  // function Details () {
+  return (
+    <>
+      <div>
+        {/* redirect back to listings */}
+        <button>GO BACK</button>
+      </div>
+      <div>
+        <img src={food?.image}/>
         <div>
-          {/* redirect back to listings */}
-          <button>GO BACK</button>
+          {/* <img>user info</img> */}
+          <h1> {food?.title} </h1>
+          <p> {food?.description} </p>
+          <p> {food?.expiry_date} </p>
+          <p> {food?.phone} </p>
+          {/* <Comments /> */}
         </div>
-        <div>
-          <img src={food?.image}/>
-          <div>
-            {/* <img>user info</img> */}
-            <h1> {food?.title} </h1>
-            <p> {food?.description} </p>
-            <p> {food?.expiry_date} </p>
-            <p> {food?.phone} </p>
-            {/* <Comments /> */}
-          </div>
-        </div>
-      </>
+      </div>
+    </>
 
-    )
-  }
+  )
 }
+// }
 
 export default Details
