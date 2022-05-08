@@ -7,6 +7,7 @@ import Register from './Register'
 import Nav from './Nav'
 import LandingPage from './LandingPage'
 import AddListing from './AddListing'
+import Details from './Details'
 
 import { checkAuth } from '../actions/auth'
 import Listings from './Listings'
@@ -37,7 +38,6 @@ function App () {
 
       <div className=''>
         <Routes>
-
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />}/>
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
