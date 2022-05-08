@@ -37,13 +37,12 @@ function App () {
 
       <div className=''>
         <Routes>
-
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />}/>
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
           <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
-          <Route path="/listings/:listing" element={<Details />} />
+          <Route path="/listings/:id" element={<Details />} />
         </Routes>
       </div>
 
