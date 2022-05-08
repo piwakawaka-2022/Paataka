@@ -11,6 +11,7 @@ import Details from './Details'
 
 import { checkAuth } from '../actions/auth'
 import Listings from './Listings'
+import Details from './Details'
 
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
@@ -37,13 +38,12 @@ function App () {
 
       <div className=''>
         <Routes>
-
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />}/>
           {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
           <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
-          <Route path="/listings/:listing" element={<Details />} />
+          <Route path="/listings/:id" element={<Details />} />
         </Routes>
       </div>
 
