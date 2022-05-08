@@ -14,7 +14,7 @@ export function addListing(newEvent) {
 
 export function getOnelisting(id) {
   return request.get(`/api/v1/listing/${id}`).then((resp) => resp.body)
-
+}
 export function deleteListing(id) {
   return request.delete(`/api/v1/listing${id}`.then((resp) => resp.body))
 }
