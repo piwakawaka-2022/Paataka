@@ -52,11 +52,11 @@ function CreateListing () {
   }
 
   return (
-    <div className='form-container'>
+    <div className='add-form-container'>
 
-      <form className='form' onSubmit={submitHandler}>
+      <form className='add-form' onSubmit={submitHandler}>
 
-        <h1>What would you like to donate?</h1>
+        <h1>What would you like to contribute?</h1>
 
         <div>
           <h2>Food</h2>
@@ -102,7 +102,7 @@ function CreateListing () {
         </label>
         </div>
         <br/>
-        <input className='add-form-btn' type="submit" value='Donate!' />
+        <input className='add-form-btn' type="submit" value='Share!' />
         <br/>
 
       </form>

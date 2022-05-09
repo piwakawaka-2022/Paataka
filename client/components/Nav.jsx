@@ -13,8 +13,8 @@ function Nav () {
     dispatch(logoutUser(confirmSuccess))
   }
 
-  return (<nav className="navbar">
-    <div className="container">
+  return (
+    <div className="big-nav-container">
       <div className="navbar-end">
         {auth.isAuthenticated
           ? (
@@ -42,7 +42,6 @@ function Nav () {
         }
       </div>
     </div>
-  </nav>
   )
 }
 

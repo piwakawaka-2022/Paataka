@@ -24,6 +24,11 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+.big-nav-container {
+  padding-top: 0px;
+}
+
 .pataka {
   width: 15vw;
   height: 7vh;
@@ -46,7 +51,7 @@ html {
 .clickies {
   width: 9vw;
   text-align: center;
-  padding-top: 1vh;
+  // padding-top: 1vh;
   font-size: 2vw;
   text-decoration: none;
   color: inherit;
@@ -58,7 +63,7 @@ html {
 .clickies:hover {
   width: 9vw;
   text-align: center;
-  padding-top: 1vh;
+  // padding-top: 1vh;
   font-size: 2vw;
   text-decoration: none;
   color: inherit;
@@ -531,6 +536,7 @@ h2 {
   width: 50vw;
   text-align: center;
   background-color:  $flame;
+  margin-top: 4vh;
   border-radius: 5%;
   box-shadow: 0 3px 10px $flame
 }

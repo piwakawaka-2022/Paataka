@@ -24,13 +24,7 @@ function App () {
 
   return (
     <div>
-
-      <div>
-        <div>
           <Nav />
-        </div>
-      </div>
-
       <div className=''>
         <Routes>
           <Route path="/" element={<LandingPage />} />
