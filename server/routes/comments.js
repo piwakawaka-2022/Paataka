@@ -34,7 +34,7 @@ router.post('/comments', async (req, res) => {
   }
 })
 
-router.patch('/:commentId', async (req, res) => {
+router.patch('/comments', async (req, res) => {
   try {
     const editedComment = req.body
     const editComment = await db.updateComment(editedComment)
@@ -44,7 +44,7 @@ router.patch('/:commentId', async (req, res) => {
   }
 })
 
-router.delete('/:commentId', async (req, res) => {
+router.delete('/comments', async (req, res) => {
   try {
     const id = req.params.commentId
     const deleteComment = await db.deleteComment(id)
