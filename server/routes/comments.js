@@ -34,4 +34,24 @@ router.post('/comments', async (req, res) => {
   }
 })
 
+router.patch('/comments', async (req, res) => {
+  try {
+    const editedComment = req.body
+    const editComment = await db.updateComment(editedComment)
+    res.json(editedComment)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
+
+router.delete('/comments', async (req, res) => {
+  try {
+    const id = req.params.commentId
+    const deleteComment = await db.deleteComment(id)
+    res.sendStatus(200)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
+
 module.exports = router
