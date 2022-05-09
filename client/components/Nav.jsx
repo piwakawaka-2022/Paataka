@@ -13,8 +13,8 @@ function Nav () {
     dispatch(logoutUser(confirmSuccess))
   }
 
-  return (<nav className="navbar">
-    <div className="container">
+  return (
+    <div className="big-nav-container">
       <div className="navbar-end">
         {auth.isAuthenticated
           ? (
@@ -22,7 +22,7 @@ function Nav () {
               <Link to='/' className="pataka">Pātaka</Link>
               <div className='space'></div>
               <Link className="clickies" to='listings'>Listings</Link>
-              <Link className="clickies" to='AddListing'>Add Food</Link>
+              {/* <Link className="clickies" to='AddListing'>Add Food</Link> */}
               <Link className="clickies" to='/' onClick={() => logout()}>Logout</Link>
             </div>
           )
@@ -42,7 +42,6 @@ function Nav () {
         }
       </div>
     </div>
-  </nav>
   )
 }
 

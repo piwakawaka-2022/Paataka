@@ -1,14 +1,19 @@
 $honeydew: #F0F8EA;
 $mossGreen: #9D9C62;
 $olivine: #9AB973;
-$flame: #E4572E;
+// $flame: #E4572E;
+$flame: #d77f64;
 $laserLemon: #FFFF66;
 
 @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
 
 
 html {
   background-color: $honeydew;
+  font-family: 'Noto Sans HK', sans-serif;
 }
 
 .nav-container {
@@ -19,6 +24,11 @@ html {
   justify-content: center;
   align-items: center;
 }
+
+.big-nav-container {
+  padding-top: 0px;
+}
+
 .pataka {
   width: 15vw;
   height: 7vh;
@@ -41,18 +51,19 @@ html {
 .clickies {
   width: 9vw;
   text-align: center;
-  padding-top: 1vh;
+  // padding-top: 1vh;
   font-size: 2vw;
   text-decoration: none;
   color: inherit;
-  font-family: 'Water Brush', cursive;
-
+  // font-family: 'Water Brush', cursive;
+  // font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-family: 'Noto Sans HK', sans-serif;
 }
 
 .clickies:hover {
   width: 9vw;
   text-align: center;
-  padding-top: 1vh;
+  // padding-top: 1vh;
   font-size: 2vw;
   text-decoration: none;
   color: inherit;
@@ -336,24 +347,29 @@ h2 {
 }
 
 .food-image {
-  width:20vw;
-  // height:30vh;
+  // width:25vw;
+  height: 28vh;
+  border-radius: 2%;
 }
 
 .one-food {
   margin-left: 3vw;
   margin-right: 3vw;
-  border: solid black 1px;
+  // border: solid black 1px;
   text-align: center;
-  position: relative;
+  // position: relative;
   height: 50vh;
   width: 40vw;
+  background-color: $honeydew;
+  box-shadow: 0 3px 10px $mossGreen
 }
 
 .all-food-container {
   display: flex;
   overflow: auto;
   white-space: nowrap;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 
 .details-button {
@@ -367,9 +383,11 @@ h2 {
   text-align: center;
   text-decoration: none;
   font-size: 16px;
-  position: absolute;
-  bottom: 2vh;
-  left: 8.5vw;
+  position: relative;
+  top: 35%;
+  // left: 25%;
+  // bottom: 2vh;
+  // left: 8.5vw;
 }
 
 
@@ -387,13 +405,47 @@ h2 {
   cursor: pointer;
 }
 
+.add-food {
+  display: block;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #E4572E; 
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  width: 15vw;
+}
+
+.details-btn-container {
+  justify-content: center;
+  width: 40vw;
+  height: 15vh;
+  // position: relative;
+  // left: auto;
+  // bottom: -10px;
+}
+
+.listing-title {
+  width: 40vw;
+  height: 5vh;
+}
+
+.listing-image {
+  width: 40vw;
+  height: 25vh;
+}
+
 // Listings end
 
 // details start
 
 .details-main {
   // border: solid black 1px;
-  width: 50vw;
+  width: 75vw;
   margin: auto;
 }
 
@@ -402,40 +454,108 @@ h2 {
   margin-top: 10px;
   // margin-left: 10px;
   // border: solid black 1px;
+  // text-decoration: none;
+  display: flex;
+  justify-content: center;
+
   }
 
+.go-back-button {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 15px 32px;
+  font-size: 1rem;
+  width: 12vw;
+  background-color: #E4572E; 
+  border: none;
+  color: white;
+  // margin: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.go-back-button:hover {
+  background-color: #b3b3b3; 
+  text-decoration: none;
+  cursor: pointer;
+}
 
 .details-container {
   display: flex;
-  border: solid black 1px
-
+  // border: solid black 1px;
+  background-color: $honeydew;
+  box-shadow: 0 3px 10px $mossGreen
 }
 
 .details-image {
-  height: 30vh;
+  height: 25vw;
   margin-right: 20px;
-  border: solid black 1px
+  padding-left: 5px;
+  padding-top: 5px;
+  // border: solid black 1px
 
 }
 
 .details-content {
-  border: solid black 1px;
+  // border: solid black 1px;
+  // height: 25vw;
  }
 
 .details-title {
-  border: solid black 1px
+  // border: solid black 1px;
 }
 
 .details-description {
-  border: solid black 1px
+  // border: solid black 1px;
+  padding-top: 10px;
 }
 
 .details-expiry {
-  border: solid black 1px
+  // border: solid black 1px;
+  padding-top: 10px;
+
 }
 
 .details-phone {
-  border: solid black 1px
+  // border: solid black 1px;
+  padding-top: 10px;
+
+}
+
+.testy {
+  display: flex;
 }
 
 // details end
+
+
+// Add food form start 
+
+.add-form {
+  width: 50vw;
+  text-align: center;
+  background-color:  $flame;
+  margin-top: 4vh;
+  border-radius: 5%;
+  box-shadow: 0 3px 10px $flame
+}
+
+.add-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.text-fields {
+  width: 25vw;
+  height: 5vh;
+  font-size: 1.2rem;
+}
+
+.add-form-btn {
+  width: 17vw;
+  height: 7vh;
+  font-size: 2rem;
+}
+
+// Add food form end
