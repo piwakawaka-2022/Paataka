@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react'
 import { getOnelisting } from '../apis/food'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { loginError } from '../actions/auth'
 import Comment from './Comment'
 import { getListingComments } from '../apis/comments'
 import AddComment from './AddComment'
+import { thunkingAllComments } from '../actions/comments'
 
 function Details () {
   const { id } = useParams()
   const dispatch = useDispatch()
+  const comments = useSelector(state => state.comments)
   const [food, setFood] = useState(undefined)
-  const [comments, setComments] = useState([])
+  // const [comments, setComments] = useState([])
   const navigateTo = useNavigate()
 
   getOnelisting(id)
@@ -21,13 +23,17 @@ function Details () {
       dispatch(loginError(err))
     })
 
-  const commentsOnLoad = async (id) => {
-    const comments = await getListingComments(id)
-    setComments(comments)
+  // const commentsOnLoad = async (id) => {
+  //   const comments = await getListingComments(id)
+  //   setComments(comments)
+  // }
+
+  const getComments = (id) => {
+    dispatch(thunkingAllComments(id))
   }
 
   useEffect(() => {
-    commentsOnLoad(id)
+    getComments(id)
   }, [])
 
   function handleClick () {
@@ -44,7 +50,7 @@ function Details () {
         <Link to="/listings">
           <button className='go-back-button'>Back to Listings</button>
         </Link>
-        
+
       </div>
       <div className='details-container'>
         <div>
@@ -57,7 +63,7 @@ function Details () {
           <p className='details-expiry'> <em>Expiry:</em> {food?.expiry_date} </p>
           <p className='details-phone'> <em>{food?.username} :</em> {food?.phone} </p>
           {/* <Comments /> */}
-             
+
           {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
           <button onClick={handleClick}>Add Comment</button>
         </div>

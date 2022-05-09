@@ -8,12 +8,11 @@ export const GET_COMMENTS = 'GET_COMMENTS'
 export const getComments = (listingComments) => {
   return {
     type: GET_COMMENTS,
-    listingComments
+    comments: listingComments
   }
 }
 
 // THUNKS
-
 export const thunkingAllComments = (id) => {
   return async (dispatch) => {
     try {
