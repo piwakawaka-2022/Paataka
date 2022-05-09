@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getOnelisting } from '../apis/food'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { getOnelisting } from '../apis/food'import { useDispatch } from 'react-redux'
 
 import { loginError } from '../actions/auth'
 import Comment from './Comment'
@@ -13,7 +11,7 @@ function Details () {
   const dispatch = useDispatch()
   const [food, setFood] = useState(undefined)
   const [comments, setComments] = useState([])
-  const navigateTo = useNavigate()
+
 
   getOnelisting(id)
     .then(food => setFood(food))
@@ -28,13 +26,9 @@ function Details () {
 
   useEffect(() => {
     commentsOnLoad(id)
-  }, [])
+  }, [comments])
 
-  // function handleClick () {
-  //   // runs a functino that naviagtes to listing/props.id
-  //   // console.log(props.listingId)
-  //   <AddComment/>
-  // }
+  // comments
 
   return (
 
