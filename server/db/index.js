@@ -50,8 +50,8 @@ const getAllListings = async (db = connection) => {
 }
 
 const addListing = async (newListing, db = connection) => {
-  const addListing = await db('listings').insert(newListing, 'id')
-  // return addListing
+  const addListing = await db('listings')
+    .insert(newListing, 'id')
 }
 
 const getOneListing = async (id, db = connection) => {
@@ -64,11 +64,15 @@ const getOneListing = async (id, db = connection) => {
 }
 
 const deleteListing = async (id, db = connection) => {
-  const deleteListing = await db('listings').where('id', id).del()
+  const deleteListing = await db('listings')
+    .where('id', id)
+    .del()
 }
 
 const editListing = async (editedListing, id, db = connection) => {
-  const listings = await db('listings').where('id', id).update(editedListing)
+  const listings = await db('listings')
+    .where('id', id)
+    .update(editedListing)
   return listings
 }
 
@@ -81,23 +85,43 @@ const getUserListings = async (userId, db = connection) => {
 }
 
 // COMMENTS queries
-const getAllComments = async (db = connection) => {
-  const allComments = await db('comments')
+const getListingComments = async (id, db = connection) => {
+  const listingComments = await db('comments')
+    .where('listing_id', id)
     .join('listings', 'listings.id', 'comments.listing_id')
     .join('users', 'users.id', 'comments.users_id')
     .select(
-      'comments.title AS commentTitle',
       'comment',
-      'listings.title AS listingTitle',
       'date_created AS dateCreated',
-      'listings.id AS listingId',
-      'users.id AS userId',
       'username',
       'name'
     )
-  return allComments
+  return listingComments
 }
 
+const addComment = async (latestComment, db = connection) => {
+  const newComment = await db('comments')
+    .insert({
+      comment: latestComment.comment,
+      listing_id: latestComment.listingId,
+      users_id: latestComment.userId
+    })
+  return newComment
+}
+
+const updateComment = (updatedComment, db = connection) => {
+  return db('comments')
+    .where('id', updatedComment.id)
+    .update({
+      comment: updatedComment.comment
+    })
+}
+
+const deleteComment = (id, db = connection) => {
+  return db('comments')
+    .where('id', id)
+    .del()
+}
 module.exports = {
   editListing,
   createUser,
@@ -108,6 +132,8 @@ module.exports = {
   addListing,
   getOneListing,
   deleteListing,
-  editListing,
-  getAllComments
+  getListingComments,
+  addComment,
+  updateComment,
+  deleteComment
 }

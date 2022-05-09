@@ -6,7 +6,7 @@ exports.up = async (knex) => {
     table.string('description')
     table.string('location')
     table.string('category')
-    table.timestamp('expiry_date')
+    table.string('expiry_date')
     table.integer('users_id').references('users.id')
   })
 }
