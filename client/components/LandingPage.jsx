@@ -40,7 +40,7 @@ function LandingPage () {
 
           <div className="col three bg nopad pointer">
             <div className="imgholder">
-              <img className="imgholder" src="community.jpg"/>
+              <img className="imgholder" src="images/community.jpg"/>
             </div>
             <h1 className="feature">Pātaka is bringing communities together through the redistribution of kai</h1>
             <p></p>
@@ -48,7 +48,7 @@ function LandingPage () {
 
           <div className="col three bg nopad pointer">
             <div className="imgholder">
-              <img className="imgholder" src="tomatoes.jpg"/>
+              <img className="imgholder" src="images/tomatoes.jpg"/>
             </div>
             <h1 className="feature">There is enough food in the world to feed every single fucking person</h1>
             <p></p>
@@ -56,7 +56,7 @@ function LandingPage () {
 
           <div className="col three bg nopad pointer">
             <div className="imgholder">
-              <img className="imgholder" src="food-waste.jpg"/>
+              <img className="imgholder" src="images/food-waste.jpg"/>
             </div>
             <h1 className="feature">Reducing food waste and the impact this has on our climate</h1>
             <p></p>
