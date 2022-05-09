@@ -22,16 +22,11 @@ function App () {
   }, [])
 
   return (
-    <div className="container has-text-centered">
+    <div>
 
-      <div className="hero is-small is-primary">
-        <div className="hero-body has-text-centered">
-          <Link to='/' className="">
-            <h1 className="title is-1">Pātaka</h1>
-          </Link>
+      <div>
+        <div>
           <Nav />
-          {/* <LandingPage/> */}
-          {/* <AddListing /> */}
         </div>
       </div>
 

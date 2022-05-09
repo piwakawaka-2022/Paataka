@@ -8,12 +8,6 @@ function Nav () {
   const dispatch = useDispatch()
   const auth = useSelector(redux => redux.auth)
 
-  // const [burgerVisible, setBurgerVisible] = useState(false)
-
-  // const toggleBurger = () => {
-  //   setBurgerVisible(currentBurgerState => !currentBurgerState)
-  // }
-
   const logout = () => {
     const confirmSuccess = () => navigateTo('/')
     dispatch(logoutUser(confirmSuccess))
@@ -25,22 +19,24 @@ function Nav () {
         {auth.isAuthenticated
           ? (
             <div className="nav-container">
-              <div className="pataka">Pātaka</div>
-              <Link to='/' onClick={() => logout()}>Logout</Link>
+              <Link to='/' className="pataka">Pātaka</Link>
+              <div className='space'></div>
               <Link className="clickies" to='listings'>Listings</Link>
               <Link className="clickies" to='AddListing'>Add Food</Link>
+              <Link className="clickies" to='/' onClick={() => logout()}>Logout</Link>
             </div>
           )
           : (
             <div className="nav-container">
-              <div className="pataka">Pātaka</div>
+              <Link to='/' className="pataka">Pātaka</Link>
+              <div className='space'></div>
               <Link className="clickies" to="login">
                 Login
               </Link>
               <Link className="clickies" to="listings">
                 Listings
               </Link>
-              <Link className="clickies" to='register'>Register</Link>
+              {/* <Link className="clickies" to='register'>Register</Link> */}
             </div>
           )
         }

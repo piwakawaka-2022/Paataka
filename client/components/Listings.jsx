@@ -22,9 +22,9 @@ function Listings () {
   return (
     <>
       <div>
-        <h1>Available food in your region</h1>
+        <h1 className='listings-title'>Available food in your region</h1>
       </div>
-      <div>
+      <div className="all-food-container">
         {/* The div here will be the section with the images and detail buttons, a map function */}
         {listings.map(listing => <FoodItems key={listing.id} {...listing} />)}
       </div>
