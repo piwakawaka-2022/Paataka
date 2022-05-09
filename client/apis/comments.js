@@ -1,9 +1,9 @@
 import request from 'superagent'
 
-export const getAllComments = async () => {
+export const getListingComments = async (id) => {
   try {
-    const res = await request.get('/api/v1/comments')
-    console.log(res.body)
+    const res = await request.get(`/api/v1/comments/${id}`)
+    return res.body
   } catch (err) {
     console.error(err)
   }
