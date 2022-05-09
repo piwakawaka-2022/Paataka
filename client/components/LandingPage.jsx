@@ -11,7 +11,7 @@ function LandingPage () {
         <div className="section">
           <div className="slider">
             <div className="container slidercontent">
-              <h1 className="hometitle">Nau mai haere mai, ki a Pātaka kai! </h1>
+              <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
               <h2 className="hero">Welcome to the local food pantry</h2>
             </div>
           </div>
