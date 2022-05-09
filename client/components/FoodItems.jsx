@@ -15,15 +15,17 @@ function FoodItems (props) {
   }
 
   return (
-    <>
+    <div className='one-food'>
       {/* The image has to be an image file type, not a link/random string */}
-      <img className='food-image' src={props.image ? props.image : 'placeholder.jpeg'} />
       <h1>{props.title}</h1>
+      <img className='food-image' src={props.image ? props.image : 'placeholder.jpeg'} />
+      <br></br>
+      <button className='details-button' onClick={handleClick}>DETAILS</button>
       {/* <p>{props.description}</p> */}
       {/* <p>{props.location}</p> */}
 
-      <button onClick={handleClick}>DETAILS</button>
-    </>
+      <br></br>
+    </div>
   )
 }
 

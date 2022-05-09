@@ -1,6 +1,6 @@
 import { GET_COMMENTS } from '../actions/comments'
 
-function listings (state = [], action) {
+function comments (state = [], action) {
   switch (action.type) {
     case GET_COMMENTS:
       return action.allComments
@@ -9,4 +9,4 @@ function listings (state = [], action) {
       return state
   }
 }
-export default listings
+export default comments
