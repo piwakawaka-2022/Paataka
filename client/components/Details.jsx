@@ -41,7 +41,10 @@ function Details () {
     <div className='details-main'>
       <div className='go-back'>
         {/* redirect back to listings */}
-        <Link to="/listings"><button>Back to Listings</button></Link>
+        <Link to="/listings">
+          <button className='go-back-button'>Back to Listings</button>
+        </Link>
+        
       </div>
       <div className='details-container'>
         <div>
@@ -51,10 +54,10 @@ function Details () {
           {/* <img>user info</img> */}
           <h1 className='details-title'> {food?.title} </h1>
           <p className='details-description'> {food?.description} </p>
-          <p className='details-expiry'> {food?.expiry_date} </p>
-          <p className='details-phone'> {food?.phone} </p>
-
-         
+          <p className='details-expiry'> <em>Expiry:</em> {food?.expiry_date} </p>
+          <p className='details-phone'> <em>{food?.username} :</em> {food?.phone} </p>
+          {/* <Comments /> */}
+             
           {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
           <button onClick={handleClick}>Add Comment</button>
         </div>
