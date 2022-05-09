@@ -81,21 +81,18 @@ const getUserListings = async (userId, db = connection) => {
 }
 
 // COMMENTS queries
-const getAllComments = async (db = connection) => {
-  const allComments = await db('comments')
+const getListingComments = async (id, db = connection) => {
+  const listingComments = await db('comments')
+    .where('listing_id', id)
     .join('listings', 'listings.id', 'comments.listing_id')
     .join('users', 'users.id', 'comments.users_id')
     .select(
-      'comments.title AS commentTitle',
       'comment',
-      'listings.title AS listingTitle',
       'date_created AS dateCreated',
-      'listings.id AS listingId',
-      'users.id AS userId',
       'username',
       'name'
     )
-  return allComments
+  return listingComments
 }
 
 module.exports = {
@@ -109,5 +106,5 @@ module.exports = {
   getOneListing,
   deleteListing,
   editListing,
-  getAllComments
+  getListingComments
 }
