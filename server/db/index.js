@@ -99,27 +99,6 @@ const getListingComments = async (id, db = connection) => {
   return listingComments
 }
 
-<<<<<<< HEAD
-const getListingComments = async (id, db = connection) => {
-  const listingComments = await db('comments')
-    .where('listing_id', id)
-    .join('listings', 'listings.id', 'comments.listing_id')
-    .join('users', 'users.id', 'comments.users_id')
-    .select(
-      'comments.title AS commentTitle',
-      'comment',
-      'listings.title AS listingTitle',
-      'date_created AS dateCreated',
-      'listings.id AS listingId',
-      'users.id AS userId',
-      'username',
-      'name'
-    )
-  return listingComments
-}
-
-||||||| 14512d3
-=======
 const addComment = async (latestComment, db = connection) => {
   const newComment = await db('comments')
     .insert({
@@ -143,7 +122,6 @@ const deleteComment = (id, db = connection) => {
     .where('id', id)
     .del()
 }
->>>>>>> a8a2ab4934bc288cbb7cd8facf6d41546ad3dc8b
 module.exports = {
   editListing,
   createUser,
@@ -154,17 +132,8 @@ module.exports = {
   addListing,
   getOneListing,
   deleteListing,
-<<<<<<< HEAD
-  editListing,
-  getAllComments,
-  getListingComments
-||||||| 14512d3
-  editListing,
-  getAllComments
-=======
   getListingComments,
   addComment,
   updateComment,
   deleteComment
->>>>>>> a8a2ab4934bc288cbb7cd8facf6d41546ad3dc8b
 }

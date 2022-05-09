@@ -12,36 +12,6 @@ router.get('/comments', async (req, res) => {
   }
 })
 
-<<<<<<< HEAD
-router.get('/comments/:id', async (req, res) => {
-  try {
-    const id = req.params.id
-    const listingComments = await db.getListingComments(id)
-    console.log(listingComments)
-  } catch (err) {
-    res.status(500).json({ error: err.message })
-  }
-})
-||||||| 14512d3
-// router.post('/listing', (req, res) => {
-//   const newListing = req.body
-//   db.addListing(newListing)
-//     .then((idArr) => res.sendStatus(201))
-//     .catch((err) => {
-//       res.status(500).json({ error: err.message })
-//     })
-// })
-
-// // not sure if req.params() is the right function to use here
-// router.get('/listing/:id', (req, res) => {
-//   const id = req.params.id
-//   db.getOneListing(id)
-//     .then((food) => res.json(food))
-//     .catch((err) => {
-//       res.status(500).json({ error: err.message })
-//     })
-// })
-=======
 router.get('/comments/:id', async (req, res) => {
   try {
     const id = req.params.id
@@ -63,6 +33,25 @@ router.post('/comments', async (req, res) => {
     res.status(500).json({ error: err.message })
   }
 })
->>>>>>> a8a2ab4934bc288cbb7cd8facf6d41546ad3dc8b
+
+router.patch('/:commentId', async (req, res) => {
+  try {
+    const editedComment = req.body
+    const editComment = await db.updateComment(editedComment)
+    res.json(editedComment)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
+
+router.delete('/:commentId', async (req, res) => {
+  try {
+    const id = req.params.commentId
+    const deleteComment = await db.deleteComment(id)
+    res.sendStatus(200)
+  } catch (error) {
+    res.status(500).json({ error: error.message })
+  }
+})
 
 module.exports = router
