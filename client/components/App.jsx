@@ -8,6 +8,7 @@ import Nav from './Nav'
 import LandingPage from './LandingPage'
 import AddListing from './AddListing'
 import Details from './Details'
+import AddComment from './AddComment'
 
 import { checkAuth } from '../actions/auth'
 import Listings from './Listings'
@@ -38,6 +39,7 @@ function App () {
           <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
           <Route path="/listings/:id" element={<Details />} />
+          <Route path="comment/:id" element={< AddComment/>}/>
         </Routes>
       </div>
 
