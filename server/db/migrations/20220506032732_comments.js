@@ -1,5 +1,5 @@
 exports.up = async (knex) => {
-  await knex.schema.createTable('comments', table => {
+  await knex.schema.createTable('comments', (table) => {
     table.increments('id')
     table.string('comment')
     table.timestamp('date_created').defaultTo(knex.fn.now())
