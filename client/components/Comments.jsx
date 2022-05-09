@@ -1,21 +1,13 @@
-// import React from 'react'
+import React from 'react'
 
-// function Comments () {
-//   // const [newComment, setNewComment] = useState()
+import Comment from './Comment'
 
-//   // function changeHandler (evt) {
-//   //   // preventdefault shit
-//   // }
+function Comments () {
+  return (
+    <div>
+      {comments.map(comment => <Comment key={comment.id} {...comment}/>)}
+    </div>
+  )
+}
 
-//   // function submitHandler (evt) {
-
-//   // }
-
-//   return (
-//     <div>
-//       {listings.map(listing => <FoodItems key={listing.id} {...listing} />)}
-//     </div>
-//   )
-// }
-
-// export default Comments
+export default Comments
