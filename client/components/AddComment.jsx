@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { addComment } from '../apis/comments'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -6,8 +6,12 @@ import { useParams } from 'react-router-dom'
 function AddComment () {
   const { id } = useParams()
   const user = useSelector(state => state.auth.user)
-  console.log(user)
   const [newComment, setNewComment] = useState({ comment: '', userId: user.id, listingId: id })
+  
+
+  useEffect(() => {
+    setNewComment({ comment: '', userId: user.id, listingId: id })
+  }, [user])
 
   console.log(newComment)
 
@@ -29,6 +33,7 @@ function AddComment () {
     <div>
       <form onSubmit={submitHandler}>
         <textarea id="comment" name="comment"onChange={changeHandler} value={newComment.comment} placeholder='Comments' ></textarea>
+        <br />
         <button>Add Comment!</button>
       </form>
     </div>
