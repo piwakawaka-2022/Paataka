@@ -30,11 +30,11 @@ function Details () {
     commentsOnLoad(id)
   }, [])
 
-  function handleClick () {
-    // runs a functino that naviagtes to listing/props.id
-    // console.log(props.listingId)
-    navigateTo(`/comment/${id}`)
-  }
+  // function handleClick () {
+  //   // runs a functino that naviagtes to listing/props.id
+  //   // console.log(props.listingId)
+  //   <AddComment/>
+  // }
 
   return (
 
@@ -54,9 +54,8 @@ function Details () {
           <p className='details-expiry'> {food?.expiry_date} </p>
           <p className='details-phone'> {food?.phone} </p>
 
-         
           {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
-          <button onClick={handleClick}>Add Comment</button>
+          <AddComment/>
         </div>
       </div>
     </div>
