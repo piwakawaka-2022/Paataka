@@ -21,7 +21,7 @@ function FoodItems (props) {
         <h1 className='listing-title'>{props.title}</h1>
       </div>
       <div className='listing-image'>
-        <img className='food-image' src={props.image ? props.image : 'placeholder.jpeg'} />
+        <img className='food-image' src={props.image ? props.image : 'images/placeholder.jpeg'} />
       </div>
       <div className='details-btn-container'>
         <button className='details-button' onClick={handleClick}>DETAILS</button>

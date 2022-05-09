@@ -428,7 +428,7 @@ h2 {
   display: flex;
 }
 
-.form {
+.add-form {
   width: 50vw;
   text-align: center;
   background-color: #d77f64;
@@ -436,7 +436,7 @@ h2 {
   box-shadow: 0 3px 10px #d77f64;
 }
 
-.form-container {
+.add-form-container {
   display: flex;
   justify-content: center;
 }
