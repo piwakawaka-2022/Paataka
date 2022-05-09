@@ -1,23 +1,66 @@
+$honeydew: #F0F8EA;
+$mossGreen: #9D9C62;
+$olivine: #9AB973;
+$flame: #E4572E;
+$laserLemon: #FFFF66;
+
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+
+
+html {
+  background-color: $honeydew;
+}
+
 .nav-container {
   display: flex;
-  background-color: #9D9C62;
+  background-color: $mossGreen;
   width: 100vw;
+  height: 8vh;
+  justify-content: center;
+  align-items: center;
 }
 .pataka {
-  width: 80vw;
+  width: 15vw;
   height: 7vh;
-  font-size: xx-large;
-  font-family: Georgia;
-  padding-top: 1vh;
-  padding-left: 2vw;
+  font-size: 3vw;
+  // font-family: Georgia;
+  text-decoration: none;
+  color: inherit;
+  // text-align: center;
+  font-family: 'Water Brush', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.space {
+  width: 65vw;
 }
 
 .clickies {
-  width: 10vw;
+  width: 9vw;
   text-align: center;
-  padding-top: 2vh;
-  font-size: x-large;
+  padding-top: 1vh;
+  font-size: 2vw;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Water Brush', cursive;
+
 }
+
+.clickies:hover {
+  width: 9vw;
+  text-align: center;
+  padding-top: 1vh;
+  font-size: 2vw;
+  text-decoration: none;
+  color: inherit;
+  background-color: $olivine;
+}
+
+
+
 // landing page start
 
 
@@ -233,7 +276,7 @@ h2 {
   border: none;
   color: white;
   padding: 25px 42px;
-  margin: 10px;
+  margin: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -277,7 +320,122 @@ h2 {
   font-size: 16px;
 }
 
+.buttonscontainer {
+  display: flex;
+  justify-content: center;
+}
 //buttons end
 
 
 //landing page end
+
+// Listings start
+
+.listings-title {
+  text-align: center;
+}
+
+.food-image {
+  width:20vw;
+  // height:30vh;
+}
+
+.one-food {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  border: solid black 1px;
+  text-align: center;
+  position: relative;
+  height: 50vh;
+  width: 40vw;
+}
+
+.all-food-container {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.details-button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #E4572E; 
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  position: absolute;
+  bottom: 2vh;
+  left: 8.5vw;
+}
+
+
+.details-button:hover {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #b3b3b3; 
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+// Listings end
+
+// details start
+
+.details-main {
+  // border: solid black 1px;
+  width: 50vw;
+  margin: auto;
+}
+
+.go-back {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  // margin-left: 10px;
+  // border: solid black 1px;
+  }
+
+
+.details-container {
+  display: flex;
+  border: solid black 1px
+
+}
+
+.details-image {
+  height: 30vh;
+  margin-right: 20px;
+  border: solid black 1px
+
+}
+
+.details-content {
+  border: solid black 1px;
+ }
+
+.details-title {
+  border: solid black 1px
+}
+
+.details-description {
+  border: solid black 1px
+}
+
+.details-expiry {
+  border: solid black 1px
+}
+
+.details-phone {
+  border: solid black 1px
+}
+
+// details end

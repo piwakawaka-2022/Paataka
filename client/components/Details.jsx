@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { getOnelisting } from '../apis/food'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 
 import { loginError } from '../actions/auth'
@@ -17,23 +17,26 @@ function Details () {
     })
 
   return (
-    <>
-      <div>
+
+    <div className='details-main'>
+      <div className='go-back'>
         {/* redirect back to listings */}
-        <button>GO BACK</button>
+        <Link to="/listings"><button>Back to Listings</button></Link>
       </div>
-      <div>
-        <img src={food?.image}/>
+      <div className='details-container'>
         <div>
+          <img className="details-image" src={food?.image}/>
+        </div>
+        <div className='details-content'>
           {/* <img>user info</img> */}
-          <h1> {food?.title} </h1>
-          <p> {food?.description} </p>
-          <p> {food?.expiry_date} </p>
-          <p> {food?.phone} </p>
+          <h1 className='details-title'> {food?.title} </h1>
+          <p className='details-description'> {food?.description} </p>
+          <p className='details-expiry'> {food?.expiry_date} </p>
+          <p className='details-phone'> {food?.phone} </p>
           {/* <Comments /> */}
         </div>
       </div>
-    </>
+    </div>
 
   )
 }
