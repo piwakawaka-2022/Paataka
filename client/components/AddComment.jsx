@@ -5,9 +5,11 @@ import { useParams } from 'react-router-dom'
 
 function AddComment () {
   const { id } = useParams()
-  const user = useSelector(state => state.listings)
+  const user = useSelector(state => state.auth.user)
   console.log(user)
-  const [newComment, setNewComment] = useState({ comment: '', userId: user.userId, listingId: id })
+  const [newComment, setNewComment] = useState({ comment: '', userId: user.id, listingId: id })
+
+  console.log(newComment)
 
   function changeHandler (e) {
     setNewComment({
@@ -19,6 +21,7 @@ function AddComment () {
   function submitHandler (e) {
     e.preventDefault()
     addComment(newComment)
+    console.log(newComment)
     setNewComment({ comment: '', userId: user.userId, listingId: id })
   }
 
