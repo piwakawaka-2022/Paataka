@@ -16,9 +16,6 @@ function Details () {
       dispatch(loginError(err))
     })
 
-  // console.log(food)
-
-<<<<<<< HEAD
   return (
     <>
       <div>
@@ -27,21 +24,6 @@ function Details () {
       </div>
       <div>
         <img src={food?.image}/>
-||||||| 70d8a0f
-  function Details () {
-    return (
-      <>
-=======
-  // function Details () {
-  return (
-    <>
-      <div>
-        {/* redirect back to listings */}
-        <button>GO BACK</button>
-      </div>
-      <div>
-        <img src={food?.image}/>
->>>>>>> 14512d35b4840dc43dbe65eae74b55d965973330
         <div>
           {/* <img>user info</img> */}
           <h1> {food?.title} </h1>
