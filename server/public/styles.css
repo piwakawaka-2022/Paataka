@@ -21,7 +21,7 @@ html {
 .pataka {
   width: 15vw;
   height: 7vh;
-  font-size: 3vw;
+  font-size: 3vh;
   text-decoration: none;
   color: inherit;
   font-family: "Water Brush", cursive;
@@ -37,7 +37,7 @@ html {
 .clickies {
   width: 9vw;
   text-align: center;
-  font-size: 2vw;
+  font-size: 2vh;
   text-decoration: none;
   color: inherit;
   font-family: "Noto Sans HK", sans-serif;
@@ -65,6 +65,18 @@ html {
   font-weight: 300;
   font-family: Roboto, "Open Sans", Arial, sans-serif;
   overflow: hidden;
+}
+
+.title-container {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  color: #444;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: Roboto, "Open Sans", Arial, sans-serif;
+  overflow: hidden;
+  padding: 30px 0 20px 0;
 }
 
 .section .container {
@@ -183,7 +195,7 @@ html {
 }
 
 .col .imgholder {
-  height: 300px;
+  height: 40%;
   width: 100%;
   background: #333;
   transition: background 0.3s linear;
@@ -229,6 +241,11 @@ h2 {
   text-align: center;
   font-weight: 400;
   font-size: 18px;
+}
+
+.bottom-txt {
+  font-family: "Roboto Slab", sans-serif;
+  text-align: center;
 }
 
 .gotfood {
@@ -454,6 +471,53 @@ h2 {
   width: 17vw;
   height: 7vh;
   font-size: 2rem;
+}
+
+.form {
+  background-color: #F0F8EA;
+  box-shadow: 0 3px 10px #9D9C62;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.login-title {
+  margin: 0px;
+}
+
+.login-input-container {
+  display: flex;
+}
+
+.login-single-container {
+  margin-right: 15px;
+}
+
+.input-field {
+  margin-top: 10px;
+  padding: 4px;
+}
+
+.submit-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.login-submit-button {
+  padding: 5px 32px;
+  background-color: #E4572E;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.login-submit-button:hover {
+  background-color: #b3b3b3;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map*/

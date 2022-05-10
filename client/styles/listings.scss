@@ -1,0 +1,90 @@
+.listings-title {
+  text-align: center;
+}
+
+.food-image {
+  // width:25vw;
+  height: 28vh;
+  border-radius: 2%;
+}
+
+.one-food {
+  margin-left: 3vw;
+  margin-right: 3vw;
+  // border: solid black 1px;
+  text-align: center;
+  // position: relative;
+  height: 50vh;
+  width: 40vw;
+  background-color: $honeydew;
+  box-shadow: 0 3px 10px $mossGreen
+}
+
+.all-food-container {
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.details-button {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #E4572E; 
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+  top: 35%;
+}
+
+
+.details-button:hover {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #b3b3b3; 
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.add-food {
+  display: block;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #E4572E; 
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  width: 15vw;
+}
+
+.details-btn-container {
+  justify-content: center;
+  width: 40vw;
+  height: 15vh;
+}
+
+.listing-title {
+  width: 40vw;
+  height: 5vh;
+}
+
+.listing-image {
+  width: 40vw;
+  height: 25vh;
+}
