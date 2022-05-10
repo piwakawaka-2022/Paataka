@@ -44,7 +44,7 @@ function Login () {
           <div className='username-container login-single-container'>
             <label className="login-input">
             Username
-            <br />
+              <br />
               <input
                 required
                 className="input-field"
@@ -61,7 +61,7 @@ function Login () {
           <div className='password-container login-single-container'>
             <label className="login-input">
             Password
-            <br />
+              <br />
               <input
                 required
                 className="input-field"
@@ -74,7 +74,7 @@ function Login () {
               />
             </label>
           </div>
-          
+
           <div className='submit-container login-single-container'>
             <input
               className="login-submit-button"
@@ -84,7 +84,7 @@ function Login () {
           </div>
 
         </div>
-      
+
       </form>
       {!auth.isAuthenticated && <Register />}
     </>
