@@ -6,7 +6,6 @@ import { thunkingAllComments } from '../actions/comments'
 
 function AddComment () {
   const dispatch = useDispatch()
-
   const { id } = useParams()
   const user = useSelector(state => state.auth.user)
   const [newComment, setNewComment] = useState('')
