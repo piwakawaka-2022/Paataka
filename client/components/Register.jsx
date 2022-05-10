@@ -22,11 +22,9 @@ function Register () {
   })
 
   const handleChange = (e) => {
-    setFormData((currentFormData) => {
-      return {
-        ...currentFormData,
-        [e.target.name]: e.target.value
-      }
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     })
   }
 
@@ -35,9 +33,7 @@ function Register () {
     e.target.reset()
     const { username, password, confirmPassword, name, email, phone } = formData
 
-    if (confirmPassword !== password) {
-      return dispatch(loginError("Passwords don't match"))
-    }
+    if (confirmPassword !== password) return dispatch(loginError("Passwords don't match"))
 
     const confirmSuccess = () => navigateTo('/')
     dispatch(registerUserRequest({ username, password, confirmPassword, name, email, phone }, confirmSuccess))
@@ -139,10 +135,10 @@ function Register () {
               className="input-field"
               placeholder=""
               type="password"
-              name="confirm_password"
+              name="confirmPassword"
               autoComplete="new-password"
               onChange={handleChange}
-              value={formData.confirm_password}
+              value={formData.confirmPassword}
             />
           </label>
         </div>
