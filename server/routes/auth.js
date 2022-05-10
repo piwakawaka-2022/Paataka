@@ -1,3 +1,4 @@
+/* eslint-disable comma-dangle */
 const express = require('express')
 const { applyAuthRoutes } = require('authenticare/server')
 
@@ -8,7 +9,7 @@ const router = express.Router()
 applyAuthRoutes(router, {
   userExists,
   getUserByName: getUserByUsername,
-  createUser
+  createUser,
 })
 
 module.exports = router

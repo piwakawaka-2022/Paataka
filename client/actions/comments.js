@@ -17,7 +17,6 @@ export const thunkingAllComments = (id) => {
   return async (dispatch) => {
     try {
       const listingComments = await getListingComments(id)
-      console.log(listingComments)
       dispatch(getComments(listingComments))
     } catch (err) {
       console.error('comments thunk broken!')

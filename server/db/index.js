@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable space-before-function-paren */
+/* eslint-disable comma-dangle */
 const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 // AUTH user queries
-function createUser (user, db = connection) {
+function createUser(user, db = connection) {
   const newUser = { ...user }
   return generateHash(newUser.password).then((passwordHash) => {
     newUser.hash = passwordHash
@@ -12,18 +15,18 @@ function createUser (user, db = connection) {
       name: newUser.name,
       email: newUser.email,
       phone: newUser.phone,
-      hash: newUser.hash
+      hash: newUser.hash,
     })
   })
 }
 
-function userExists (username, db = connection) {
+function userExists(username, db = connection) {
   return db('users')
     .where('username', username)
     .then((users) => users.length > 0)
 }
 
-function getUserByUsername (username, db = connection) {
+function getUserByUsername(username, db = connection) {
   return db('users').where('username', username).first()
 }
 
@@ -50,8 +53,7 @@ const getAllListings = async (db = connection) => {
 }
 
 const addListing = async (newListing, db = connection) => {
-  const addListing = await db('listings')
-    .insert(newListing, 'id')
+  const addListing = await db('listings').insert(newListing, 'id')
 }
 
 const getOneListing = async (id, db = connection) => {
@@ -64,15 +66,11 @@ const getOneListing = async (id, db = connection) => {
 }
 
 const deleteListing = async (id, db = connection) => {
-  const deleteListing = await db('listings')
-    .where('id', id)
-    .del()
+  const deleteListing = await db('listings').where('id', id).del()
 }
 
 const editListing = async (editedListing, id, db = connection) => {
-  const listings = await db('listings')
-    .where('id', id)
-    .update(editedListing)
+  const listings = await db('listings').where('id', id).update(editedListing)
   return listings
 }
 
@@ -90,37 +88,27 @@ const getListingComments = async (id, db = connection) => {
     .where('listing_id', id)
     .join('listings', 'listings.id', 'comments.listing_id')
     .join('users', 'users.id', 'comments.users_id')
-    .select(
-      'comment',
-      'date_created AS dateCreated',
-      'username',
-      'name'
-    )
+    .select('comment', 'date_created AS dateCreated', 'username', 'name')
   return listingComments
 }
 
 const addComment = async (latestComment, db = connection) => {
-  const newComment = await db('comments')
-    .insert({
-      comment: latestComment.comment,
-      listing_id: latestComment.listingId,
-      users_id: latestComment.userId
-    })
+  const newComment = await db('comments').insert({
+    comment: latestComment.comment,
+    listing_id: latestComment.listingId,
+    users_id: latestComment.userId,
+  })
   return newComment
 }
 
 const updateComment = (updatedComment, db = connection) => {
-  return db('comments')
-    .where('id', updatedComment.id)
-    .update({
-      comment: updatedComment.comment
-    })
+  return db('comments').where('id', updatedComment.id).update({
+    comment: updatedComment.comment,
+  })
 }
 
 const deleteComment = (id, db = connection) => {
-  return db('comments')
-    .where('id', id)
-    .del()
+  return db('comments').where('id', id).del()
 }
 module.exports = {
   editListing,
@@ -135,5 +123,5 @@ module.exports = {
   getListingComments,
   addComment,
   updateComment,
-  deleteComment
+  deleteComment,
 }

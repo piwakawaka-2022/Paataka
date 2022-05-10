@@ -11,7 +11,6 @@ body {
   display: flex;
   justify-content: center;
   margin: 0px;
-}
 
 .nav-container {
   display: flex;
@@ -415,38 +414,22 @@ h2 {
   font-size: 2rem;
 }
 
+.login-register-container {
+  justify-content: center;
+}
+
 .form {
   background-color: #F0F8EA;
   box-shadow: 0 3px 10px #9D9C62;
   padding: 10px;
-  margin: 10px;
+  margin: auto;
   margin-bottom: 30px;
   margin-top: 30px;
+  width: 60vw;
+  justify-content: center;
 }
 
-.login-title {
-  margin: 0px;
-}
-
-.login-input-container {
-  display: flex;
-}
-
-.login-single-container {
-  margin-right: 15px;
-}
-
-.input-field {
-  margin-top: 10px;
-  padding: 4px;
-}
-
-.submit-container {
-  display: flex;
-  align-items: flex-end;
-}
-
-.login-submit-button {
+.submit-button {
   padding: 5px 32px;
   background-color: #E4572E;
   border: none;
@@ -456,10 +439,89 @@ h2 {
   display: inline-block;
 }
 
-.login-submit-button:hover {
+.submit-button:hover {
   background-color: #b3b3b3;
   text-decoration: none;
   cursor: pointer;
+}
+
+.login-title {
+  margin: 0px;
+}
+
+.input-container {
+  display: flex;
+}
+
+.single-container {
+  margin-right: 15px;
+  width: 31%;
+}
+
+.input-field {
+  margin-top: 10px;
+  padding: 4px;
+  width: 85%;
+}
+
+.submit-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.addcom textarea {
+  font-family: inherit;
+  width: 14rem;
+}
+
+.addcom form {
+  display: flex;
+}
+
+.addcombtn {
+  background-color: #9ab973;
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  margin-left: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.addcombtn:hover {
+  background-color: #b3b3b3;
+  border: none;
+  color: white;
+  padding: 25px 42px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.bubble-title {
+  padding-top: 4px;
+}
+
+.bubble-content {
+  display: block;
+  position: relative;
+  width: 400px;
+  padding: 2px 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.bubble {
+  margin-top: 20px;
+}
+
+.bubble-container {
+  flex-direction: column;
+  padding-top: 10px;
 }
 
 /*# sourceMappingURL=styles.css.map*/

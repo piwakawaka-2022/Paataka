@@ -85,15 +85,9 @@
     "express": "^4.17.1",
     "knex": "^1.0.2",
     "pg": "^8.5.1",
-    "@vscode/sqlite3": "^5.0.8"
-   
+    "@vscode/sqlite3": "^5.0.8"   
   },
-
   "engines": {
     "node": "16.14.0"
   }
-
-
 }
-
-

@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { getAllComments } from '../apis/comments'
 import { useSelector } from 'react-redux'
 
 function LandingPage () {
@@ -8,7 +7,6 @@ function LandingPage () {
 
   return (
     <>
-
       <div className="section">
         <div className='welcome-banner'>
 
@@ -19,7 +17,7 @@ function LandingPage () {
           <div className='buttonscontainer'>
             {auth.isAuthenticated
               ? <Link to="/AddListing">
-                <button className='button got-food'><img src='images/got-food.png'/>Add KFoodai</button>
+                <button className='button got-food'><img src='images/got-food.png'/>Add Food</button>
               </Link>
               : <Link to="/login">
                 <button className='button got-food'><img src='images/got-food.png'/>Add Food</button>
@@ -41,6 +39,7 @@ function LandingPage () {
               </div>
               <h1 className="feature">Manākitanga</h1>
               <p>Access to food is a basic human right. Pātaka looks to redistribute access to food, addressing food inequality.</p>
+
             </div>
 
             <div className="col three bg nopad pointer">
@@ -49,6 +48,7 @@ function LandingPage () {
               </div>
               <h1 className="feature">Whanaungatanga</h1>
               <p>Pātaka brings communities closer together in ensuring access to food and reducing food waste.</p>
+
             </div>
 
             <div className="col three bg nopad pointer">
