@@ -11,8 +11,8 @@ server.use(express.json())
 server.use(express.static(path.join(__dirname, 'public')))
 
 server.use('/api/v1', authRoutes)
-server.use('/api/v1', listingRoutes)
-server.use('/api/v1', commentsRoutes)
+server.use('/api/v1/listings', listingRoutes)
+server.use('/api/v1/comments', commentsRoutes)
 
 server.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'))
