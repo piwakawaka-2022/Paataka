@@ -1,17 +1,25 @@
-.addcom {
-  background-color: #9ab973; 
+.addcom textarea {
+  font-family: inherit;
+  width: 14rem;
+}
+
+.addcom form {
+  display: flex;
+}
+.addcombtn {
+  background-color: #9ab973;
   border: none;
   color: white;
   padding: 25px 42px;
-  margin: 20px;
+  margin-left: 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
 }
 
-.addcom:hover {
-  background-color: #b3b3b3; 
+.addcombtn:hover {
+  background-color: #b3b3b3;
   border: none;
   color: white;
   padding: 25px 42px;
@@ -19,5 +27,26 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
 
+.bubble-title {
+  padding-top: 4px;
+}
+
+.bubble-content {
+  display: block;
+  position: relative;
+  width: 400px;
+  padding: 2px 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.bubble {
+  margin-top: 20px;
+}
+
+.bubble-container {
+  flex-direction: column;
+  padding-top: 10px;
 }

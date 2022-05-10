@@ -14,6 +14,7 @@ function Details () {
   const dispatch = useDispatch()
   // const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
+  const [food, setFood] = useState(undefined)
   const user = useSelector(state => state.auth.user)
   const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
@@ -33,6 +34,8 @@ function Details () {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
+  
+  const reversedComments = [...comments].reverse()
 
   // useEffect(() => {
 
@@ -47,10 +50,12 @@ function Details () {
   }
 
   return (
+    <>
 
-    <div className='details-main'>
+      <div className='details-main'>
 
-      {/* redirect back to listings */}
+        {/* redirect back to listings */}
+
 
       {
         food?.userId === user.id
@@ -64,28 +69,30 @@ function Details () {
             <Link to="/listings">
               <button className='go-back-button'>Back to Listings</button>
             </Link>
+
+        <div className='details-container'>
+          <div>
+            <img className="details-image" src={food?.image}/>
           </div>
-      }
+          <div className='details-content'>
+            {/* <img>user info</img> */}
+            <h1 className='details-title'> {food?.title} </h1>
+            <p className='details-description'> {food?.description} </p>
 
-      <div className='details-container'>
-        <div>
-          <img className="details-image" src={food?.image}/>
+            <p className='details-expiry'> {food?.expiry_date} </p>
+            <p className='details-phone'> {food?.phone} </p>
+          </div>
         </div>
-        <div className='details-content'>
-          {/* <img>user info</img> */}
-          <h1 className='details-title'> {food?.title} </h1>
-          <p className='details-description'> {food?.description} </p>
 
-          <p className='details-expiry'> {food?.expiry_date} </p>
-          <p className='details-phone'> {food?.phone} </p>
+        <div className='bubble-container'>
+          <AddComment/>
+          {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
+
         </div>
-      </div>
-      <div>
-        {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
-        <AddComment/>
-      </div>
-    </div>
 
+      </div>
+
+    </>
   )
 }
 

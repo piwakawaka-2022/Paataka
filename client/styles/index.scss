@@ -6,8 +6,14 @@ $flame: #d77f64;
 $laserLemon: #FFFF66;
 
 html {
-  background-color: $honeydew;
+  background-color: white;
   font-family: 'Noto Sans HK', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  margin: 0px;
 }
 
 @import "navbar";
@@ -20,4 +26,6 @@ html {
 
 @import "addfoodform";
 
-@import "login"
+@import "login";
+
+@import "addComment";

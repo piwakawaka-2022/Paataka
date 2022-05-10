@@ -14,34 +14,36 @@ function Nav () {
   }
 
   return (
-    <div className="big-nav-container">
-      <div className="navbar-end">
-        {auth.isAuthenticated
-          ? (
-            <div className="nav-container">
+    <>
+      {auth.isAuthenticated
+        ? (
+          <div className="nav-container">
+            <div className='nav-items'>
               <Link to='/' className="pataka">Pātaka</Link>
-              <div className='space'></div>
-              <Link className="clickies" to='listings'>Listings</Link>
-              {/* <Link className="clickies" to='AddListing'>Add Food</Link> */}
-              <Link className="clickies" to='/' onClick={() => logout()}>Logout</Link>
+              <div className='nav-menu-items'>
+                <Link className="clickies" to='listings'>Listings</Link>
+                <Link className="clickies" to='/' onClick={() => logout()}>Logout</Link>
+              </div>
             </div>
-          )
-          : (
-            <div className="nav-container">
+          </div>
+        )
+        : (
+          <div className="nav-container">
+            <div className='nav-items'>
               <Link to='/' className="pataka">Pātaka</Link>
-              <div className='space'></div>
-              <Link className="clickies" to="login">
+              <div className='nav-menu-items'>
+                <Link className="clickies" to="login">
                 Login
-              </Link>
-              <Link className="clickies" to="listings">
+                </Link>
+                <Link className="clickies" to="listings">
                 Listings
-              </Link>
-              {/* <Link className="clickies" to='register'>Register</Link> */}
+                </Link>
+              </div>
             </div>
-          )
-        }
-      </div>
-    </div>
+          </div>
+        )
+      }
+    </>
   )
 }
 
