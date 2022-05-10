@@ -27,7 +27,7 @@ function LandingPage () {
               <button className='gotfood'>Got food?</button>
             </Link>
         }
-        <Link to="/Listings">
+        <Link to="/listings">
           <button className='needfood'>Need food?</button>
         </Link>
       </div>

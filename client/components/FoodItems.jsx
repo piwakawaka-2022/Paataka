@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-// import Details from './Details'
 // import { useSelector } from 'react-redux'
 
 function FoodItems (props) {
@@ -11,7 +10,9 @@ function FoodItems (props) {
   function handleClick () {
     // runs a functino that naviagtes to listing/props.id
     // console.log(props.listingId)
-    navigateTo(`/listings/${props.listingId}`)
+    navigateTo(`/listings/${props.listingId}`, { state: { food: props } })
+
+    // Try use link instead to pass through data
   }
 
   return (
