@@ -32,43 +32,59 @@ function Login () {
 
   return (
     <>
-      <form className="form box" onSubmit={handleSubmit}>
-        <h1 className="title is-2">Login</h1>
+      <form className="form" onSubmit={handleSubmit}>
+        <h1 className="login-title">Login</h1>
         <hr />
+
         {auth.errorMessage && (
-          <span className="has-text-danger is-large">{auth.errorMessage}</span>
+          <span className="">{auth.errorMessage}</span>
         )}
-        <label className="label is-large has-text-centered">
-        Username
-          <input
-            required
-            className="input has-text-centered is-large is-fullwidth"
-            placeholder="User Name"
-            type="text"
-            name="username"
-            autoComplete="username"
-            value={formData.username}
-            onChange={handleChange}
-          />
-        </label>
-        <label className="label is-large has-text-centered">
-        Password
-          <input
-            required
-            className="input has-text-centered is-large is-fullwidth"
-            placeholder="Password"
-            type="password"
-            name="password"
-            autoComplete="current-password"
-            value={formData.password}
-            onChange={handleChange}
-          />
-        </label>
-        <input
-          className="button is-large is-fullwidth is-success"
-          value="Login"
-          type="submit"
-        />
+
+        <div className='login-input-container'>
+          <div className='username-container login-single-container'>
+            <label className="login-input">
+            Username
+            <br />
+              <input
+                required
+                className="input-field"
+                placeholder="John Smith..."
+                type="text"
+                name="username"
+                autoComplete="username"
+                value={formData.username}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+
+          <div className='password-container login-single-container'>
+            <label className="login-input">
+            Password
+            <br />
+              <input
+                required
+                className="input-field"
+                placeholder=""
+                type="password"
+                name="password"
+                autoComplete="current-password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </label>
+          </div>
+          
+          <div className='submit-container login-single-container'>
+            <input
+              className="login-submit-button"
+              value="Login"
+              type="submit"
+            />
+          </div>
+
+        </div>
+      
       </form>
       {!auth.isAuthenticated && <Register />}
     </>

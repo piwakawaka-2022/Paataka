@@ -16,6 +16,21 @@ function Listings () {
     }
   }
 
+  /* this is the functionality for scrolling sideways using the wheel. bit janky with a track pad and throws errors but works with wheel lol
+
+  let item = document.getElementById("all-food-container");
+
+  window.addEventListener("wheel", function (e) {
+    if (e.deltaY > 0) {
+      item.scrollLeft += 70; //why is this throwing uncaught typeerror
+    }
+    else {
+      item.scrollLeft -= 70; //why is this throwing uncaught typeerror
+    }
+  });
+
+  */
+
   useEffect(() => {
     getListingsAsync()
   }, [])
@@ -25,7 +40,7 @@ function Listings () {
       <div>
         <h1 className='listings-title'>Available food in your region</h1>
       </div>
-      <div className="all-food-container">
+      <div id='all-food-container' className="all-food-container">
         {/* The div here will be the section with the images and detail buttons, a map function */}
         {listings.map(listing => <FoodItems key={listing.id} {...listing} />)}
       </div>
