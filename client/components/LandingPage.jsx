@@ -17,13 +17,14 @@ function LandingPage () {
       {/* </div> */}
 
       <div className='buttonscontainer'>
-        {auth.isAuthenticated
-          ? <Link to="/AddListing">
-            <button className='gotfood'>Got food?</button>
-          </Link>
-          : <Link to="/login">
-            <button className='gotfood'>Got food?</button>
-          </Link>
+        {
+          auth.isAuthenticated
+            ? <Link to="/AddListing">
+              <button className='gotfood'>Got food?</button>
+            </Link>
+            : <Link to="/login">
+              <button className='gotfood'>Got food?</button>
+            </Link>
         }
         <Link to="/Listings">
           <button className='needfood'>Need food?</button>
