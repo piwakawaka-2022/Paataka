@@ -5,32 +5,29 @@ import { useSelector } from 'react-redux'
 
 function LandingPage () {
   const auth = useSelector(redux => redux.auth)
+
   return (
     <>
       {/* <div className="homemaindiv"> */}
         <div className="section">
-          <div className="slider">
-            <div className="container slidercontent">
-              <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
-              <h2 className="hero">Welcome to the local food pantry</h2>
-            </div>
+          <div className="title-container">
+            <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
+            <h2 className="hero">Welcome to the local food pantry</h2>
           </div>
         </div>
       {/* </div> */}
 
       <div className='buttonscontainer'>
-      {auth.isAuthenticated ?
-        <Link to="/AddListing"><button className='gotfood'>
-              Got food?
-        </button>
-        </Link> :  <Link to="/login"><button className='gotfood'>
-              Got food?
-        </button>
-        </Link>}
-
-        <Link to="/Listings"><button className='needfood'>
-              Need food?
-        </button>
+        {auth.isAuthenticated
+          ? <Link to="/AddListing">
+            <button className='gotfood'>Got food?</button>
+          </Link>
+          : <Link to="/login">
+            <button className='gotfood'>Got food?</button>
+          </Link>
+        }
+        <Link to="/Listings">
+          <button className='needfood'>Need food?</button>
         </Link>
       </div>
 

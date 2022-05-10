@@ -1,9 +1,9 @@
 import { GET_COMMENTS } from '../actions/comments'
 
-function comments (state = [], action) {
+function comments(state = [], action) {
   switch (action.type) {
     case GET_COMMENTS:
-      return action.allComments
+      return action.listingComments
 
     default:
       return state
