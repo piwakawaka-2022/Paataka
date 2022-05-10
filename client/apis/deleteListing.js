@@ -2,7 +2,6 @@
 import request from 'superagent'
 
 export function deleteListing(listing) {
-  // const id = listing.listingId
   return request
     .post('/api/v1/listings/delete')
     .send(listing)
