@@ -11,15 +11,13 @@ function AddComment () {
   const user = useSelector(state => state.auth.user)
   const [newComment, setNewComment] = useState('')
 
-  console.log(typeof user.id)
-
   function changeHandler (e) {
     setNewComment(e.target.value)
   }
 
   const submitHandler = async (e) => {
     e.preventDefault()
-    const comment = { comment: newComment, userId: user ? user.id : 2, listingId: id }
+    const comment = { comment: newComment, userId: user.id ? user.id : 2, listingId: id }
     await addComment(comment)
     dispatch(thunkingAllComments(id))
     setNewComment('')

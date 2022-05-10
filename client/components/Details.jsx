@@ -22,12 +22,10 @@ function Details () {
       })
   }, [])
 
- 
   // const commentsOnLoad = async (id) => {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
-
 
   useEffect(() => {
     dispatch(thunkingAllComments(id))
@@ -56,13 +54,11 @@ function Details () {
 
           <p className='details-expiry'> {food?.expiry_date} </p>
           <p className='details-phone'> {food?.phone} </p>
-
-          <p className='details-expiry'> {food?.expiry_date} </p>
-          <p className='details-phone'> {food?.phone} </p>
-
-          {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
-          <AddComment/>
         </div>
+      </div>
+      <div>
+        {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
+        <AddComment/>
       </div>
     </div>
 
