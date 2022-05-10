@@ -14,13 +14,22 @@ const fakeUserData = [
     password: 'password',
     name: 'adminUser',
     email: 'luke_conker@hotmail.com',
-    phone: '+642040214728'
-  }
+    phone: '+642040214728',
+  },
+  {
+    id: 2,
+    username: 'guestUser',
+    password: 'password',
+    name: 'Guest User',
+    email: 'unknown',
+    phone: 'unknown',
+  },
 ]
 
 exports.seed = async (knex) => {
-  await knex('users').del()
+  await knex('users')
+    .del()
     .then(() => fakeUserData.map(replacePasswordWithHash))
-    .then(fakeUserPromises => Promise.all(fakeUserPromises))
-    .then(users => knex('users').insert(users))
+    .then((fakeUserPromises) => Promise.all(fakeUserPromises))
+    .then((users) => knex('users').insert(users))
 }

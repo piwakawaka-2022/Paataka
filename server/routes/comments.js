@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
     const newComment = req.body
     console.log(newComment)
     const latestComment = await db.addComment(newComment)
-    // res.json(listingComments)
+    res.json(latestComment)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }

@@ -8,7 +8,7 @@ export const GET_COMMENTS = 'GET_COMMENTS'
 export const getComments = (listingComments) => {
   return {
     type: GET_COMMENTS,
-    listingComments
+    listingComments,
   }
 }
 
@@ -18,6 +18,7 @@ export const thunkingAllComments = (id) => {
   return async (dispatch) => {
     try {
       const listingComments = await getListingComments(id)
+      console.log(listingComments)
       dispatch(getComments(listingComments))
     } catch (err) {
       console.error('comments thunk broken!')
