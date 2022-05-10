@@ -12,8 +12,8 @@ import AddComment from './AddComment'
 function Details () {
   const { id } = useParams()
   const dispatch = useDispatch()
-  const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
+  const [food, setFood] = useState(undefined)
   const user = useSelector(state => state.auth.user)
   const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
@@ -30,9 +30,8 @@ function Details () {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
-
+  
   const reversedComments = [...comments].reverse()
-
 
   useEffect(() => {
     dispatch(thunkingAllComments(id))

@@ -7,63 +7,65 @@ function LandingPage () {
 
   return (
     <>
-      {/* <div className="homemaindiv"> */}
       <div className="section">
-        <div className="title-container">
-          <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
-          <h2 className="hero">Welcome to the local food pantry</h2>
-        </div>
-      </div>
-      {/* </div> */}
+        <div className='welcome-banner'>
 
-      <div className='buttonscontainer'>
-        {
-          auth.isAuthenticated
-            ? <Link to="/AddListing">
-              <button className='gotfood'>Got food?</button>
+          <div className="title-container">
+            <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
+            <h2 className="hero">Welcome to Pātaka, your local food pantry, connecting those who need with those who have.</h2>
+          </div>
+          <div className='buttonscontainer'>
+            {auth.isAuthenticated
+              ? <Link to="/AddListing">
+                <button className='button got-food'><img src='images/got-food.png'/>Add Food</button>
+              </Link>
+              : <Link to="/login">
+                <button className='button got-food'><img src='images/got-food.png'/>Add Food</button>
+              </Link>
+            }
+            <Link to="/Listings">
+              <button className='button need-food'><img src='images/need-food.png'/>Search Food</button>
             </Link>
-            : <Link to="/login">
-              <button className='gotfood'>Got food?</button>
-            </Link>
-        }
-        <Link to="/Listings">
-          <button className='needfood'>Need food?</button>
-        </Link>
-      </div>
-
-      <div className="section bg">
-        <div className="container">
-
-          <div className="col three bg nopad">
-            <div className="imgholder">
-              <img className="imgholder" src="images/community.jpg"/>
-            </div>
-            <h1 className="feature">Pātaka is bringing communities together through the redistribution of kai</h1>
-            <p></p>
           </div>
-
-          <div className="col three bg nopad">
-            <div className="imgholder">
-              <img className="imgholder" src="images/tomatoes.jpg"/>
-            </div>
-            <h1 className="feature">There is enough food in the world to feed every single fucking person</h1>
-            <p></p>
-          </div>
-
-          <div className="col three bg nopad">
-            <div className="imgholder">
-              <img className="imgholder" src="images/food-waste.jpg"/>
-            </div>
-            <h1 className="feature">Reducing food waste and the impact this has on our climate</h1>
-            <p></p>
-          </div>
-
         </div>
-      </div>
 
-      <div>
-        <h1 className="bottom-txt">Naku te rourou nau te rourou ka ora ai te iwi</h1>
-        <h2>With your basket and my basket the people will live</h2>
+        <div className="section bg">
+          <div className="values-container">
+            <h1>- Kaupapa -</h1>
+
+            <div className="col three bg nopad pointer">
+              <div className="imgholder">
+                <img src="images/Manaakitanga-social-image-on.2e16d0ba.fill-1200x628-c100.jpg"/>
+              </div>
+              <h1 className="feature">Manākitanga</h1>
+              <p>Access to food is a basic human right. Pātaka looks to redistribute access to food, addressing food inequality.</p>
+
+            </div>
+
+            <div className="col three bg nopad pointer">
+              <div className="imgholder">
+                <img src="images/tomatoes.jpg"/>
+              </div>
+              <h1 className="feature">Whanaungatanga</h1>
+              <p>Pātaka brings communities closer together in ensuring access to food and reducing food waste.</p>
+
+            </div>
+
+            <div className="col three bg nopad pointer">
+              <div className="imgholder">
+                <img src="images/markus-spiske-5sh24a7m0BU-unsplash.jpg"/>
+              </div>
+              <h1 className="feature">Kaitiakitanga</h1>
+              <p>Pātaka reduces the impact of food wastage through redirecting food bound for the dump.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div className='footer'>
+          <h1 className="bottom-txt">Naku te rourou nau te rourou ka ora ai te iwi</h1>
+          <h2>With your basket and my basket the people will live</h2>
+        </div>
       </div>
     </>
   )

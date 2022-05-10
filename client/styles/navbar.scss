@@ -4,48 +4,40 @@
 
 .nav-container {
   display: flex;
+  flex-direction: row;
   background-color: $mossGreen;
-  width: 100vw;
-  height: 8vh;
   justify-content: center;
-  align-items: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.big-nav-container {
-  padding-top: 0px;
+.nav-items {
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
 }
 
 .pataka {
-  width: 15vw;
-  height: 7vh;
-  font-size: 3vh;
+  display: flex;  
+  font-size: 3rem;
   text-decoration: none;
   color: inherit;
   font-family: 'Water Brush', cursive;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.space {
-  width: 65vw;
+  padding: 10px;
 }
 
 .clickies {
-  width: 9vw;
   text-align: center;
-  font-size: 2vh;
+  font-size: 1.4rem;
+  padding: 7px;
   text-decoration: none;
   color: inherit;
   font-family: 'Noto Sans HK', sans-serif;
 }
 
 .clickies:hover {
-  width: 9vw;
   text-align: center;
-  font-size: 2vw;
-  text-decoration: none;
-  color: inherit;
-  background-color: $olivine;
+  color: white;
 }
