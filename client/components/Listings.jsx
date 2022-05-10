@@ -27,9 +27,10 @@ function Listings () {
       <div id='all-food-container' className="all-food-container">
         {listings.map(listing => <FoodItems key={listing.listingId} {...listing}/>)}
       </div>
-      {auth.isAuthenticated
-        ? <Link className="add-food" to='/AddListing'>Add Kai</Link>
-        : <></>
+      {
+        auth.isAuthenticated
+          ? <Link className="add-food" to='/AddListing'>Add Kai</Link>
+          : <></>
       }
     </>
   )
