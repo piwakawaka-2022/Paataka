@@ -50,7 +50,6 @@ function Register () {
         <span className="">{auth.errorMessage}</span>
       )}
 
-      <div className='register-full-container'>
         <div className='input-container'>
           
           <div className='single-container'>
@@ -167,7 +166,6 @@ function Register () {
         <input className="submit-button" value="Register" type="submit" />
         </div>
         </div>
-      </div>
     </form>
   )
 }
