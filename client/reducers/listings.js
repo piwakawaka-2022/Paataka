@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import { FETCH_ONE_LISTING, FETCH_LISTINGS } from '../actions/listings'
 
 function listings(state = [], action) {
