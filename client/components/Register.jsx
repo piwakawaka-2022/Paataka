@@ -42,82 +42,130 @@ function Register () {
   }
 
   return (
-    <form className="Register form box" onSubmit={handleSubmit}>
-      <h1 className="title is-2">Register</h1>
+    <form className="form" onSubmit={handleSubmit}>
+      <h1 className="">Register</h1>
       <hr />
+      
       {auth.errorMessage && (
-        <span className="has-text-danger is-large">{auth.errorMessage}</span>
+        <span className="">{auth.errorMessage}</span>
       )}
-      <label>
-        Username
-        <input
-          required
-          placeholder="User Name"
-          type="text"
-          name="username"
-          autoComplete="username"
-          onChange={handleChange}
-          value={formData.username}
-        />
-      </label>
-      <label>
-        Name
-        <input
-          required
-          placeholder="Name"
-          type="text"
-          name="name"
-          onChange={handleChange}
-          value={formData.name}
-        />
-      </label>
-      <label>
-        Email
-        <input
-          required
-          placeholder="Email"
-          type="text"
-          name="email"
-          onChange={handleChange}
-          value={formData.email}
-        />
-      </label>
-      <label>
-        Phone
-        <input
-          required
-          placeholder="Phone"
-          type="text"
-          name="phone"
-          onChange={handleChange}
-          value={formData.phone}
-        />
-      </label>
-      <label>
-        Password
-        <input
-          required
-          placeholder="Password"
-          type="password"
-          name="password"
-          autoComplete="new-password"
-          onChange={handleChange}
-          value={formData.password}
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          required
-          placeholder="Confirm Password"
-          type="password"
-          name="confirmPassword"
-          autoComplete="new-password"
-          onChange={handleChange}
-          value={formData.confirmPassword}
-        />
-      </label>
-      <input value="Register" type="submit" />
+
+        <div className='input-container'>
+          
+          <div className='single-container'>
+            <label className="input">
+              Username
+              <br />
+              <input
+                required
+                className="input-field"
+                placeholder="Smithjohn..."
+                type="text"
+                name="username"
+                autoComplete="username"
+                onChange={handleChange}
+                value={formData.username}
+              />
+          </label>
+        </div>
+
+        <div className='single-container'>
+          <label className="input">
+            Name
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder="John Smith..."
+              type="text"
+              name="name"
+              onChange={handleChange}
+              value={formData.name}
+            />
+          </label>
+          </div>
+        </div>
+
+        <br />
+
+        <div className='input-container'>
+        <div className='single-container'>
+
+        <label className="input">
+          Email
+          <br />
+          <input
+            required
+            className="input-field"
+            placeholder="john_smith@email.com..."
+            type="text"
+            name="email"
+            onChange={handleChange}
+            value={formData.email}
+            />
+        </label>
+            </div>
+
+            <div className='single-container'>
+
+        <label className="input">
+          Phone
+          <br />
+          <input
+            required
+            className="input-field"
+            placeholder="027..."
+            type="text"
+            name="phone"
+            onChange={handleChange}
+            value={formData.phone}
+            />
+        </label>
+            </div>
+        </div>
+
+        <br />
+
+        <div className='input-container'>
+        <div className='single-container'>
+
+        <label className="input">
+          Password
+          <br />
+          <input
+            required
+            className="input-field"
+            placeholder=""
+            type="password"
+            name="password"
+            autoComplete="new-password"
+            onChange={handleChange}
+            value={formData.password}
+            />
+        </label>
+            </div>
+
+            <div className='single-container'>
+
+        <label className="input">
+          Confirm Password
+          <br />
+          <input
+            required
+            className="input-field"
+            placeholder=""
+            type="password"
+            name="confirm_password"
+            autoComplete="new-password"
+            onChange={handleChange}
+            value={formData.confirm_password}
+          />
+        </label>
+            </div>
+        <div className='submit-container single-container'>
+        <input className="submit-button" value="Register" type="submit" />
+        </div>
+        </div>
     </form>
   )
 }

@@ -31,7 +31,7 @@ function Login () {
   }
 
   return (
-    <>
+    <div className='login-register-container'>
       <form className="form" onSubmit={handleSubmit}>
         <h1 className="login-title">Login</h1>
         <hr />
@@ -40,9 +40,9 @@ function Login () {
           <span className="">{auth.errorMessage}</span>
         )}
 
-        <div className='login-input-container'>
-          <div className='username-container login-single-container'>
-            <label className="login-input">
+        <div className='input-container'>
+          <div className='username-container single-container'>
+            <label className="input">
             Username
               <br />
               <input
@@ -58,8 +58,8 @@ function Login () {
             </label>
           </div>
 
-          <div className='password-container login-single-container'>
-            <label className="login-input">
+          <div className='password-container single-container'>
+            <label className="input">
             Password
               <br />
               <input
@@ -74,10 +74,10 @@ function Login () {
               />
             </label>
           </div>
-
-          <div className='submit-container login-single-container'>
+          
+          <div className='submit-container single-container'>
             <input
-              className="login-submit-button"
+              className="submit-button"
               value="Login"
               type="submit"
             />
@@ -87,7 +87,7 @@ function Login () {
 
       </form>
       {!auth.isAuthenticated && <Register />}
-    </>
+    </div>
   )
 }
 
