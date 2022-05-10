@@ -33,7 +33,6 @@ function App () {
           <Route path="/AddListing" element={<AddListing />} />
           <Route path="/listings" element={<Listings />} />
           <Route path="/listings/:id" element={<Details />} />
-          <Route path="comment/:id" element={< AddComment/>}/>
         </Routes>
       </div>
 

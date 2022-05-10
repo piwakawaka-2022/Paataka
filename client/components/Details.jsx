@@ -1,32 +1,37 @@
 import React, { useState, useEffect } from 'react'
-import { getOnelisting } from '../apis/food'import { useDispatch } from 'react-redux'
-
+import { getOnelisting } from '../apis/food'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams, Link } from 'react-router-dom'
 import { loginError } from '../actions/auth'
+import { thunkingAllComments } from '../actions/comments'
 import Comment from './Comment'
-import { getListingComments } from '../apis/comments'
 import AddComment from './AddComment'
 
 function Details () {
   const { id } = useParams()
   const dispatch = useDispatch()
   const [food, setFood] = useState(undefined)
-  const [comments, setComments] = useState([])
-
-
-  getOnelisting(id)
-    .then(food => setFood(food))
-    .catch(err => {
-      dispatch(loginError(err))
-    })
-
-  const commentsOnLoad = async (id) => {
-    const comments = await getListingComments(id)
-    setComments(comments)
-  }
+  const comments = useSelector(state => state.comments)
+  // const [comments, setComments] = useState([])
 
   useEffect(() => {
-    commentsOnLoad(id)
-  }, [comments])
+    getOnelisting(id)
+      .then(food => setFood(food))
+      .catch(err => {
+        dispatch(loginError(err))
+      })
+  }, [])
+
+ 
+  // const commentsOnLoad = async (id) => {
+  //   const comments = await getListingComments(id)
+  //   setComments(comments)
+  // }
+
+
+  useEffect(() => {
+    dispatch(thunkingAllComments(id))
+  }, [])
 
   // comments
 
@@ -38,7 +43,7 @@ function Details () {
         <Link to="/listings">
           <button className='go-back-button'>Back to Listings</button>
         </Link>
-        
+
       </div>
       <div className='details-container'>
         <div>
@@ -52,9 +57,8 @@ function Details () {
           <p className='details-expiry'> {food?.expiry_date} </p>
           <p className='details-phone'> {food?.phone} </p>
 
-
           <p className='details-expiry'> {food?.expiry_date} </p>
-          <p className='details-phone'> {food?.phone} </p>       
+          <p className='details-phone'> {food?.phone} </p>
 
           {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
           <AddComment/>
@@ -64,6 +68,5 @@ function Details () {
 
   )
 }
-
 
 export default Details

@@ -1,34 +1,31 @@
 import React, { useState, useEffect } from 'react'
 import { addComment } from '../apis/comments'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { thunkingAllComments } from '../actions/comments'
 
 function AddComment () {
   const { id } = useParams()
+  const dispatch = useDispatch()
   const user = useSelector(state => state.auth.user)
-  const [newComment, setNewComment] = useState({ comment: '', userId: user.id, listingId: id })
-
-  useEffect(() => {
-    setNewComment({ comment: '', userId: user.id, listingId: id })
-  }, [user])
+  const [newComment, setNewComment] = useState('')
 
   function changeHandler (e) {
-    setNewComment({
-      ...newComment,
-      [e.target.id]: e.target.value
-    })
+    setNewComment(e.target.value)
   }
 
-  function submitHandler (e) {
+  const submitHandler = async (e) => {
     e.preventDefault()
-    addComment(newComment)
-    setNewComment({ comment: '', userId: user.userId, listingId: id })
+    const comment = { comment: newComment, userId: user.id, listingId: id }
+    await addComment(comment)
+    dispatch(thunkingAllComments(id))
+    setNewComment('')
   }
 
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <textarea id="comment" name="comment"onChange={changeHandler} value={newComment.comment} placeholder='Comment' ></textarea>
+        <textarea id="comment" name="comment"onChange={changeHandler} value={newComment} placeholder='Comment' ></textarea>
         <br />
         <button>Add Comment!</button>
       </form>
