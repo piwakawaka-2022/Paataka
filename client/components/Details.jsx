@@ -14,7 +14,7 @@ function Details () {
   const dispatch = useDispatch()
   // const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
-  const [food, setFood] = useState(undefined)
+  // const [food, setFood] = useState(undefined)
   const user = useSelector(state => state.auth.user)
   const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
@@ -34,7 +34,7 @@ function Details () {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
-  
+
   const reversedComments = [...comments].reverse()
 
   // useEffect(() => {
@@ -56,19 +56,20 @@ function Details () {
 
         {/* redirect back to listings */}
 
-
-      {
-        food?.userId === user.id
-          ? <div className='go-back'>
-            <Link to="/listings">
-              <button className='go-back-button'>Back to Listings</button>
-            </Link>
-            <button onClick={clickHandler}>Delete</button>
-          </div>
-          : <div className='go-back'>
-            <Link to="/listings">
-              <button className='go-back-button'>Back to Listings</button>
-            </Link>
+        {
+          food?.userId === user.id
+            ? <div className='go-back'>
+              <Link to="/listings">
+                <button className='go-back-button'>Back to Listings</button>
+              </Link>
+              <button onClick={clickHandler}>Delete</button>
+            </div>
+            : <div className='go-back'>
+              <Link to="/listings">
+                <button className='go-back-button'>Back to Listings</button>
+              </Link>
+            </div>
+        }
 
         <div className='details-container'>
           <div>
@@ -87,7 +88,6 @@ function Details () {
         <div className='bubble-container'>
           <AddComment/>
           {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
-
         </div>
 
       </div>
