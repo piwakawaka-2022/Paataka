@@ -47,7 +47,6 @@
     ]
   },
   "devDependencies": {
-    "authenticare": "^0.4.9",
     "@babel/core": "^7.12.16",
     "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
@@ -82,11 +81,11 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-  
-    
+    "authenticare": "^0.4.9",
     "express": "^4.17.1",
     "knex": "^1.0.2",
-    "pg": "^8.5.1"
+    "pg": "^8.5.1",
+    "@vscode/sqlite3": "^5.0.8"
    
   },
 

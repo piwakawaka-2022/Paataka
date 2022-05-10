@@ -3,7 +3,7 @@ const db = require('../db/index')
 const router = express.Router()
 
 // GET routes
-router.get('/comments', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const allComments = await db.getAllComments()
     res.json(allComments)
@@ -12,7 +12,7 @@ router.get('/comments', async (req, res) => {
   }
 })
 
-router.get('/comments/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const id = req.params.id
     const listingComments = await db.getListingComments(id)
@@ -23,7 +23,7 @@ router.get('/comments/:id', async (req, res) => {
 })
 
 // POST routes
-router.post('/comments', async (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const newComment = req.body
     console.log(newComment)
@@ -34,7 +34,7 @@ router.post('/comments', async (req, res) => {
   }
 })
 
-router.patch('/comments', async (req, res) => {
+router.patch('/', async (req, res) => {
   try {
     const editedComment = req.body
     const editComment = await db.updateComment(editedComment)
@@ -44,7 +44,7 @@ router.patch('/comments', async (req, res) => {
   }
 })
 
-router.delete('/comments', async (req, res) => {
+router.delete('/', async (req, res) => {
   try {
     const id = req.params.commentId
     const deleteComment = await db.deleteComment(id)

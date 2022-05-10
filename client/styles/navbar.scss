@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
+
+
+.nav-container {
+  display: flex;
+  background-color: $mossGreen;
+  width: 100vw;
+  height: 8vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-nav-container {
+  padding-top: 0px;
+}
+
+.pataka {
+  width: 15vw;
+  height: 7vh;
+  font-size: 3vh;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Water Brush', cursive;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.space {
+  width: 65vw;
+}
+
+.clickies {
+  width: 9vw;
+  text-align: center;
+  font-size: 2vh;
+  text-decoration: none;
+  color: inherit;
+  font-family: 'Noto Sans HK', sans-serif;
+}
+
+.clickies:hover {
+  width: 9vw;
+  text-align: center;
+  font-size: 2vw;
+  text-decoration: none;
+  color: inherit;
+  background-color: $olivine;
+}
