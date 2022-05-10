@@ -19,7 +19,7 @@ function Details () {
   const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
   const { state } = useLocation()
-  const food = state.food
+  const food = state?.food
 
   useEffect(() => {
     // getOnelisting(id)
