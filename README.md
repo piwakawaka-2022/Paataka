@@ -9,7 +9,7 @@ npm run knex seed:run
 npm run dev
 ```
 ## Paataka Deployed!
-Keen to check it out online? visit www.paataka.heroku.app
+Keen to check it out online? visit www.paataka.heroku.com
 
 
 -----------------------------------
