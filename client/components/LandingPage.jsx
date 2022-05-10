@@ -23,7 +23,7 @@ function LandingPage () {
                 <button className='button got-food'><img src='images/got-food.png'/>Add Food</button>
               </Link>
             }
-            <Link to="/Listings">
+            <Link to="/listings">
               <button className='button need-food'><img src='images/need-food.png'/>Search Food</button>
             </Link>
           </div>

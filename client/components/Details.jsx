@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { getOnelisting } from '../apis/food'
+import React, { useEffect } from 'react'
+// import { getOnelisting } from '../apis/food'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, Link, useNavigate } from 'react-router-dom'
-import { loginError } from '../actions/auth'
+import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
+// import { loginError } from '../actions/auth'
 import { thunkingAllComments } from '../actions/comments'
 import { deleteListing } from '../apis/deleteListing'
 
@@ -12,30 +12,34 @@ import AddComment from './AddComment'
 function Details () {
   const { id } = useParams()
   const dispatch = useDispatch()
+  // const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
-  const [food, setFood] = useState(undefined)
+  // const [food, setFood] = useState(undefined)
   const user = useSelector(state => state.auth.user)
   const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
+  const { state } = useLocation()
+  const food = state.food
 
   useEffect(() => {
-    getOnelisting(id)
-      .then(food => setFood(food))
-      .catch(err => {
-        dispatch(loginError(err))
-      })
+    // getOnelisting(id)
+    //   .then(food => setFood(food))
+    //   .catch(err => {
+    //     dispatch(loginError(err))
+    //   })
+    dispatch(thunkingAllComments(id))
   }, [])
 
   // const commentsOnLoad = async (id) => {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
-  
+
   const reversedComments = [...comments].reverse()
 
-  useEffect(() => {
-    dispatch(thunkingAllComments(id))
-  }, [])
+  // useEffect(() => {
+
+  // }, [])
 
   // comments
 
@@ -53,7 +57,7 @@ function Details () {
         {/* redirect back to listings */}
 
         {
-          food?.users_id === user.id
+          food?.userId === user.id
             ? <div className='go-back'>
               <Link to="/listings">
                 <button className='go-back-button'>Back to Listings</button>
@@ -84,7 +88,6 @@ function Details () {
         <div className='bubble-container'>
           <AddComment/>
           {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
-
         </div>
 
       </div>
