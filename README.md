@@ -1,13 +1,15 @@
 # Paataka
-This repo is the home of our final EDA project - Paataka - May 2022. Paataka is a tool used to redistribute food at a grass roots level. Users can list food and communicate around pre-existing listings to confirm an exchange of food that would have been previously destined for landfil.
+Paataka is a tool used to redistribute food at a grass roots level. Users can list food and communicate around pre-existing listings to confirm an exchange of food that would have been previously destined for landfil.
 
 ## Getting Started
 ```
 npm install
-git checkout -b <branchname>
+npm run knex migrate:latest
+npm run knex seed:run
 npm run dev
 ```
-
+## Paataka Deployed!
+Keen to check it out online? visit www.paataka.heroku.app
 
 
 -----------------------------------
