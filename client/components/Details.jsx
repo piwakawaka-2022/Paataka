@@ -31,6 +31,9 @@ function Details () {
   //   setComments(comments)
   // }
 
+  const reversedComments = [...comments].reverse()
+
+
   useEffect(() => {
     dispatch(thunkingAllComments(id))
   }, [])
@@ -44,45 +47,50 @@ function Details () {
   }
 
   return (
+    <>
 
-    <div className='details-main'>
+      <div className='details-main'>
 
-      {/* redirect back to listings */}
+        {/* redirect back to listings */}
 
-      {
-        food?.users_id === user.id
-          ? <div className='go-back'>
-            <Link to="/listings">
-              <button className='go-back-button'>Back to Listings</button>
-            </Link>
-            <button onClick={clickHandler}>Delete</button>
+        {
+          food?.users_id === user.id
+            ? <div className='go-back'>
+              <Link to="/listings">
+                <button className='go-back-button'>Back to Listings</button>
+              </Link>
+              <button onClick={clickHandler}>Delete</button>
+            </div>
+            : <div className='go-back'>
+              <Link to="/listings">
+                <button className='go-back-button'>Back to Listings</button>
+              </Link>
+            </div>
+        }
+
+        <div className='details-container'>
+          <div>
+            <img className="details-image" src={food?.image}/>
           </div>
-          : <div className='go-back'>
-            <Link to="/listings">
-              <button className='go-back-button'>Back to Listings</button>
-            </Link>
+          <div className='details-content'>
+            {/* <img>user info</img> */}
+            <h1 className='details-title'> {food?.title} </h1>
+            <p className='details-description'> {food?.description} </p>
+
+            <p className='details-expiry'> {food?.expiry_date} </p>
+            <p className='details-phone'> {food?.phone} </p>
           </div>
-      }
-
-      <div className='details-container'>
-        <div>
-          <img className="details-image" src={food?.image}/>
         </div>
-        <div className='details-content'>
-          {/* <img>user info</img> */}
-          <h1 className='details-title'> {food?.title} </h1>
-          <p className='details-description'> {food?.description} </p>
 
-          <p className='details-expiry'> {food?.expiry_date} </p>
-          <p className='details-phone'> {food?.phone} </p>
+        <div className='bubble-container'>
+          <AddComment/>
+          {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
+
         </div>
-      </div>
-      <div>
-        {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
-        <AddComment/>
-      </div>
-    </div>
 
+      </div>
+
+    </>
   )
 }
 

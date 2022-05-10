@@ -10,6 +10,10 @@ html {
   font-family: 'Noto Sans HK', sans-serif;
 }
 
+button {
+  cursor: pointer;
+}
+
 @import "navbar";
 
 @import "landingpage";
@@ -20,4 +24,6 @@ html {
 
 @import "addfoodform";
 
-@import "login"
+@import "login";
+
+@import "addComment";

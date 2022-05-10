@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-// import { getAllComments } from '../apis/comments'
 import { useSelector } from 'react-redux'
 
 function LandingPage () {
@@ -35,7 +34,7 @@ function LandingPage () {
       <div className="section bg">
         <div className="container">
 
-          <div className="col three bg nopad pointer">
+          <div className="col three bg nopad">
             <div className="imgholder">
               <img className="imgholder" src="images/community.jpg"/>
             </div>
@@ -43,7 +42,7 @@ function LandingPage () {
             <p></p>
           </div>
 
-          <div className="col three bg nopad pointer">
+          <div className="col three bg nopad">
             <div className="imgholder">
               <img className="imgholder" src="images/tomatoes.jpg"/>
             </div>
@@ -51,7 +50,7 @@ function LandingPage () {
             <p></p>
           </div>
 
-          <div className="col three bg nopad pointer">
+          <div className="col three bg nopad">
             <div className="imgholder">
               <img className="imgholder" src="images/food-waste.jpg"/>
             </div>
