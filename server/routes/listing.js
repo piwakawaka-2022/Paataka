@@ -29,4 +29,13 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.post('/delete', (req, res) => {
+  const id = req.body.listingId
+  db.deleteListing(id)
+    .then((idArr) => res.sendStatus(201))
+    .catch((err) => {
+      res.status(500).json({ error: err.message })
+    })
+})
+
 module.exports = router

@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { getOnelisting } from '../apis/food'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { loginError } from '../actions/auth'
 import { thunkingAllComments } from '../actions/comments'
+import { deleteListing } from '../apis/deleteListing'
+
 import Comment from './Comment'
 import AddComment from './AddComment'
 
@@ -12,6 +14,8 @@ function Details () {
   const dispatch = useDispatch()
   const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
+  const user = useSelector(state => state.auth.user)
+  const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
 
   useEffect(() => {
@@ -22,12 +26,10 @@ function Details () {
       })
   }, [])
 
- 
   // const commentsOnLoad = async (id) => {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
-
 
   useEffect(() => {
     dispatch(thunkingAllComments(id))
@@ -35,16 +37,33 @@ function Details () {
 
   // comments
 
+  const clickHandler = (e) => {
+    e.preventDefault()
+    navigateTo('/listings')
+    deleteListing(food)
+  }
+
   return (
 
     <div className='details-main'>
-      <div className='go-back'>
-        {/* redirect back to listings */}
-        <Link to="/listings">
-          <button className='go-back-button'>Back to Listings</button>
-        </Link>
 
-      </div>
+      {/* redirect back to listings */}
+
+      {
+        food?.users_id === user.id
+          ? <div className='go-back'>
+            <Link to="/listings">
+              <button className='go-back-button'>Back to Listings</button>
+            </Link>
+            <button onClick={clickHandler}>Delete</button>
+          </div>
+          : <div className='go-back'>
+            <Link to="/listings">
+              <button className='go-back-button'>Back to Listings</button>
+            </Link>
+          </div>
+      }
+
       <div className='details-container'>
         <div>
           <img className="details-image" src={food?.image}/>
