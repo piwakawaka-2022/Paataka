@@ -5,10 +5,13 @@ import { useParams } from 'react-router-dom'
 import { thunkingAllComments } from '../actions/comments'
 
 function AddComment () {
-  const { id } = useParams()
   const dispatch = useDispatch()
+
+  const { id } = useParams()
   const user = useSelector(state => state.auth.user)
   const [newComment, setNewComment] = useState('')
+
+  console.log(typeof user.id)
 
   function changeHandler (e) {
     setNewComment(e.target.value)
@@ -16,7 +19,7 @@ function AddComment () {
 
   const submitHandler = async (e) => {
     e.preventDefault()
-    const comment = { comment: newComment, userId: user.id, listingId: id }
+    const comment = { comment: newComment, userId: user ? user.id : 2, listingId: id }
     await addComment(comment)
     dispatch(thunkingAllComments(id))
     setNewComment('')
