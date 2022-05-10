@@ -51,41 +51,50 @@ function Register () {
       )}
 
       <div className='register-full-container'>
-        <div className='register-2-container'>
+        <div className='input-container'>
           
+          <div className='single-container'>
+            <label className="input">
+              Username
+              <br />
+              <input
+                required
+                className="input-field"
+                placeholder="Smithjohn..."
+                type="text"
+                name="username"
+                autoComplete="username"
+                onChange={handleChange}
+                value={formData.username}
+              />
+          </label>
+        </div>
 
-        <label className="register-input">
-          Username
-          <input
-            required
-            className="input-field"
-            placeholder="Smithjohn..."
-            type="text"
-            name="username"
-            autoComplete="username"
-            onChange={handleChange}
-            value={formData.username}
-          />
-        </label>
-        <label className="register-input">
-          Name
-          <input
-            required
-            className="input-field"
-            placeholder="John Smith..."
-            type="text"
-            name="name"
-            onChange={handleChange}
-            value={formData.name}
-          />
-        </label>
+        <div className='single-container'>
+          <label className="input">
+            Name
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder="John Smith..."
+              type="text"
+              name="name"
+              onChange={handleChange}
+              value={formData.name}
+            />
+          </label>
+          </div>
         </div>
 
         <br />
 
-        <div className='register-2-container'>
-        <label className="register-input">
+        <div className='input-container'>
+        <div className='single-container'>
+
+        <label className="input">
           Email
+          <br />
           <input
             required
             className="input-field"
@@ -94,10 +103,15 @@ function Register () {
             name="email"
             onChange={handleChange}
             value={formData.email}
-          />
+            />
         </label>
-        <label className="register-input">
+            </div>
+
+            <div className='single-container'>
+
+        <label className="input">
           Phone
+          <br />
           <input
             required
             className="input-field"
@@ -106,16 +120,19 @@ function Register () {
             name="phone"
             onChange={handleChange}
             value={formData.phone}
-          />
+            />
         </label>
-        <input className="register-submit-button" value="Register" type="submit" />
+            </div>
         </div>
 
         <br />
 
-        <div className='register-2-container'>
-        <label className="register-input">
+        <div className='input-container'>
+        <div className='single-container'>
+
+        <label className="input">
           Password
+          <br />
           <input
             required
             className="input-field"
@@ -125,10 +142,15 @@ function Register () {
             autoComplete="new-password"
             onChange={handleChange}
             value={formData.password}
-          />
+            />
         </label>
-        <label className="register-input">
+            </div>
+
+            <div className='single-container'>
+
+        <label className="input">
           Confirm Password
+          <br />
           <input
             required
             className="input-field"
@@ -140,8 +162,11 @@ function Register () {
             value={formData.confirm_password}
           />
         </label>
+            </div>
+        <div className='submit-container single-container'>
+        <input className="submit-button" value="Register" type="submit" />
         </div>
-
+        </div>
       </div>
     </form>
   )
