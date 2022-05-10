@@ -1,12 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { addComment } from '../apis/comments'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { thunkingAllComments } from '../actions/comments'
 
 function AddComment () {
-  const { id } = useParams()
   const dispatch = useDispatch()
+
+  const { id } = useParams()
   const user = useSelector(state => state.auth.user)
   const [newComment, setNewComment] = useState('')
 
@@ -16,7 +17,7 @@ function AddComment () {
 
   const submitHandler = async (e) => {
     e.preventDefault()
-    const comment = { comment: newComment, userId: user.id, listingId: id }
+    const comment = { comment: newComment, userId: user.id ? user.id : 2, listingId: id }
     await addComment(comment)
     dispatch(thunkingAllComments(id))
     setNewComment('')

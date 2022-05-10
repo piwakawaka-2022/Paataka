@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { getAllComments } from '../apis/comments'
+// import { getAllComments } from '../apis/comments'
 import { useSelector } from 'react-redux'
 
 function LandingPage () {
@@ -9,22 +9,23 @@ function LandingPage () {
   return (
     <>
       {/* <div className="homemaindiv"> */}
-        <div className="section">
-          <div className="title-container">
-            <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
-            <h2 className="hero">Welcome to the local food pantry</h2>
-          </div>
+      <div className="section">
+        <div className="title-container">
+          <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
+          <h2 className="hero">Welcome to the local food pantry</h2>
         </div>
+      </div>
       {/* </div> */}
 
       <div className='buttonscontainer'>
-        {auth.isAuthenticated
-          ? <Link to="/AddListing">
-            <button className='gotfood'>Got food?</button>
-          </Link>
-          : <Link to="/login">
-            <button className='gotfood'>Got food?</button>
-          </Link>
+        {
+          auth.isAuthenticated
+            ? <Link to="/AddListing">
+              <button className='gotfood'>Got food?</button>
+            </Link>
+            : <Link to="/login">
+              <button className='gotfood'>Got food?</button>
+            </Link>
         }
         <Link to="/Listings">
           <button className='needfood'>Need food?</button>

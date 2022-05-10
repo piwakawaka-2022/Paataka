@@ -15,7 +15,7 @@ function Register () {
     email: '',
     phone: '',
     password: '',
-    confirm_password: ''
+    confirmPassword: ''
   })
 
   useEffect(() => {
@@ -35,10 +35,10 @@ function Register () {
     console.log('form submitted!')
     e.preventDefault()
     e.target.reset()
-    const { username, password, confirm_password, name, email, phone } = formData
-    if (confirm_password != password) return dispatch(loginError("Passwords don't match"))
+    const { username, password, confirmPassword, name, email, phone } = formData
+    if (confirmPassword !== password) return dispatch(loginError("Passwords don't match"))
     const confirmSuccess = () => navigateTo('/')
-    dispatch(registerUserRequest({ username, password, confirm_password, name, email, phone }, confirmSuccess))
+    dispatch(registerUserRequest({ username, password, confirmPassword, name, email, phone }, confirmSuccess))
   }
 
   return (

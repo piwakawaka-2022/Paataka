@@ -36,7 +36,6 @@ function CreateListing () {
   function submitHandler (evt) {
     evt.preventDefault()
 
-    // console.log(newItem)
     addListing(newItem) // api to write to db
     // dispatch(addNewListing(newItem)) // we add the action here? --> redux - thunk so that it displays fast.
     setNewItem({
@@ -66,40 +65,39 @@ function CreateListing () {
         </div>
 
         <div>
-        <h2>Category</h2>
-        <label>
-          <input className='text-fields' type='text' id='category' name='category' value={newItem.category} onChange={changeHandler} placeholder='Fruit, Meat, Veges...'></input>
-        </label>
+          <h2>Category</h2>
+          <label>
+            <input className='text-fields' type='text' id='category' name='category' value={newItem.category} onChange={changeHandler} placeholder='Fruit, Meat, Veges...'></input>
+          </label>
         </div>
 
-          <div>
+        <div>
           <h2>Images</h2>
-        <label>
-          {/* Update so that it only accepts jpg, jpeg, or png. Or more if we so feel */}
-          <input className='text-fields' type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Add a link to a jpg, jpeg or png.'></input>
-        </label>
+          <label>
+            {/* Update so that it only accepts jpg, jpeg, or png. Or more if we so feel */}
+            <input className='text-fields' type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Add a link to a jpg, jpeg or png.'></input>
+          </label>
         </div>
 
         <div>
-        <h2>Expiry Date</h2>
-        <label>
-          <input className='text-fields' type='text' id='expiry_date' name='expiry_date' value={newItem.expiry_date} onChange={changeHandler} placeholder='dd/mm/yyyy'></input>
-        </label>
+          <h2>Expiry Date</h2>
+          <label>
+            <input className='text-fields' type='text' id='expiry_date' name='expiry_date' value={newItem.expiry_date} onChange={changeHandler} placeholder='dd/mm/yyyy'></input>
+          </label>
         </div>
 
         <div>
-        <h2>Location</h2>
-        <label>
-          <input className='text-fields' type='text' id='location' name='location' value={newItem.location} onChange={changeHandler} placeholder='Wellington, Auckland...'></input>
-        </label>
+          <h2>Location</h2>
+          <label>
+            <input className='text-fields' type='text' id='location' name='location' value={newItem.location} onChange={changeHandler} placeholder='Wellington, Auckland...'></input>
+          </label>
         </div>
 
-
         <div>
-        <h2>Description</h2>
-        <label>
-          <input className='text-fields' type='text' id='description' name='description' value={newItem.description} onChange={changeHandler} placeholder="Amount, type and/or availability times"></input>
-        </label>
+          <h2>Description</h2>
+          <label>
+            <input className='text-fields' type='text' id='description' name='description' value={newItem.description} onChange={changeHandler} placeholder="Amount, type and/or availability times"></input>
+          </label>
         </div>
         <br/>
         <input className='add-form-btn' type="submit" value='Share!' />
