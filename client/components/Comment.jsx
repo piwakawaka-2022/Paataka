@@ -2,9 +2,13 @@ import React from 'react'
 
 function Comment (props) {
   return (
-    <div>
-      <p>Name: {props.name}</p> <br /><p>{props.comment}</p>
+    <div className='bubble'>
+      <div className='bubble-content'>
+        <div className='bubble-title'>{props.name} • {props.dateCreated}</div>
+        <p>{props.comment}</p>
+      </div>
     </div>
+
   )
 }
 

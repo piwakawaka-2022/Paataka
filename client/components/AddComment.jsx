@@ -24,11 +24,10 @@ function AddComment () {
   }
 
   return (
-    <div>
+    <div className='addcom' >
       <form onSubmit={submitHandler}>
         <textarea id="comment" name="comment"onChange={changeHandler} value={newComment} placeholder='Comment' ></textarea>
-        <br />
-        <button>Add Comment!</button>
+        <button className='addcombtn'>Add Comment!</button>
       </form>
     </div>
   )
