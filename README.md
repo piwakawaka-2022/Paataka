@@ -1,3 +1,17 @@
+# Paataka
+This repo is the home of our final EDA project - Paataka - May 2022. Paataka is a tool used to redistribute food at a grass roots level. Users can list food and communicate around pre-existing listings to confirm an exchange of food that would have been previously destined for landfil.
+
+## Getting Started
+```
+npm install
+git checkout -b <branchname>
+npm run dev
+```
+
+
+
+-----------------------------------
+# BELOW TO BE DELETED WHEN COMPLETE
 ### Notes from Code review
 
 Hello! Here are some notes from the code review.
