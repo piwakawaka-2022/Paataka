@@ -1,10 +1,10 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable space-before-function-paren */
 /* eslint-disable comma-dangle */
 const connection = require('./connection')
 const { generateHash } = require('authenticare/server')
 
 // AUTH user queries
+
 function createUser(user, db = connection) {
   const newUser = { ...user }
   return generateHash(newUser.password).then((passwordHash) => {
@@ -31,6 +31,7 @@ function getUserByUsername(username, db = connection) {
 }
 
 // LISTINGS queries
+
 const getAllListings = async (db = connection) => {
   const allListings = await db('listings')
     .join('users', 'users.id', 'listings.users_id')
@@ -54,6 +55,7 @@ const getAllListings = async (db = connection) => {
 
 const addListing = async (newListing, db = connection) => {
   const addListing = await db('listings').insert(newListing, 'id')
+  return addListing
 }
 
 const getOneListing = async (id, db = connection) => {
@@ -67,6 +69,7 @@ const getOneListing = async (id, db = connection) => {
 
 const deleteListing = async (id, db = connection) => {
   const deleteListing = await db('listings').where('id', id).del()
+  return deleteListing
 }
 
 const editListing = async (editedListing, id, db = connection) => {
@@ -83,6 +86,7 @@ const getUserListings = async (userId, db = connection) => {
 }
 
 // COMMENTS queries
+
 const getListingComments = async (id, db = connection) => {
   const listingComments = await db('comments')
     .where('listing_id', id)
@@ -110,6 +114,7 @@ const updateComment = (updatedComment, db = connection) => {
 const deleteComment = (id, db = connection) => {
   return db('comments').where('id', id).del()
 }
+
 module.exports = {
   editListing,
   createUser,
