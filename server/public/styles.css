@@ -473,13 +473,20 @@ h2 {
   font-size: 2rem;
 }
 
+.login-register-container {
+  border: solid 2px;
+  justify-content: center;
+}
+
 .form {
   background-color: #F0F8EA;
   box-shadow: 0 3px 10px #9D9C62;
   padding: 10px;
-  margin: 10px;
+  margin: auto;
   margin-bottom: 30px;
   margin-top: 30px;
+  width: 70vw;
+  justify-content: center;
 }
 
 .login-title {
@@ -518,6 +525,34 @@ h2 {
   background-color: #b3b3b3;
   text-decoration: none;
   cursor: pointer;
+}
+
+.register-submit-button {
+  padding: 5px 32px;
+  background-color: #E4572E;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.register-submit-button:hover {
+  background-color: #b3b3b3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-full-container {
+  border: solid red 1px;
+}
+
+.register-2-container {
+  border: solid blue 1px;
+}
+
+.register-input {
+  border: solid green 1px;
 }
 
 /*# sourceMappingURL=styles.css.map*/

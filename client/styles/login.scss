@@ -1,11 +1,18 @@
-// Login and Register forms
+// Login
+.login-register-container {
+  border: solid 2px;
+  justify-content: center;
+}
+
 .form {
   background-color: $honeydew;
   box-shadow: 0 3px 10px $mossGreen;
   padding: 10px;
-  margin: 10px;
+  margin: auto;
   margin-bottom: 30px;
-  margin-top: 30px
+  margin-top: 30px;
+  width: 70vw;
+  justify-content: center;
 }
 
 .login-title {
@@ -61,4 +68,39 @@
 }
 
 .username-container {
+}
+
+// Register
+
+.register-submit-button {
+  // margin-right: auto;
+  // margin-left: auto;
+  padding: 5px 32px;
+  // font-size: 1rem;
+  // width: 12vw;
+  background-color: #E4572E; 
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.register-submit-button:hover {
+  background-color: #b3b3b3; 
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.register-full-container {
+  border: solid red 1px;
+}
+
+.register-2-container {
+  border: solid blue 1px
+}
+
+.register-input {
+  border: solid green 1px
 }

@@ -31,7 +31,7 @@ function Login () {
   }
 
   return (
-    <>
+    <div className='login-register-container'>
       <form className="form" onSubmit={handleSubmit}>
         <h1 className="login-title">Login</h1>
         <hr />
@@ -87,7 +87,7 @@ function Login () {
       
       </form>
       {!auth.isAuthenticated && <Register />}
-    </>
+    </div>
   )
 }
 
