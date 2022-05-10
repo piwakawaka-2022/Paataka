@@ -7,17 +7,14 @@ function LandingPage () {
   const auth = useSelector(redux => redux.auth)
   return (
     <>
-      <div className="homemaindiv">
+      {/* <div className="homemaindiv"> */}
         <div className="section">
-          <div className="slider">
-            <div className="container slidercontent">
-              <h1 className="hometitle">Nau mai haere mai, ki a Pātaka kai! </h1>
-              <h2 className="hero">Welcome to the local food pantry</h2>
-            </div>
+          <div className="title-container">
+            <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai! </h1>
+            <h2 className="hero">Welcome to the local food pantry</h2>
           </div>
-
         </div>
-      </div>
+      {/* </div> */}
 
       <div className='buttonscontainer'>
       {auth.isAuthenticated ?
@@ -66,9 +63,8 @@ function LandingPage () {
       </div>
 
       <div>
-        <h1>Naku te rourou nau te rourou ka ora ai te iwi</h1>
+        <h1 className="bottom-txt">Naku te rourou nau te rourou ka ora ai te iwi</h1>
         <h2>With your basket and my basket the people will live</h2>
-
       </div>
     </>
   )
