@@ -11,9 +11,7 @@
 .one-food {
   margin-left: 3vw;
   margin-right: 3vw;
-  // border: solid black 1px;
   text-align: center;
-  // position: relative;
   height: 50vh;
   width: 40vw;
   background-color: $honeydew;
@@ -22,10 +20,11 @@
 
 .all-food-container {
   display: flex;
-  overflow: auto;
-  white-space: nowrap;
+  overflow: scroll;
+  flex-wrap: nowrap;
   padding-top: 10px;
   padding-bottom: 20px;
+  max-width: 100vw;
 }
 
 .details-button {

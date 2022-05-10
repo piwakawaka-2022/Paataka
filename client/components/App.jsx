@@ -24,7 +24,7 @@ function App () {
 
   return (
     <div>
-          <Nav />
+      <Nav />
       <div className=''>
         <Routes>
           <Route path="/" element={<LandingPage />} />
