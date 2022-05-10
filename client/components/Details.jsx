@@ -14,6 +14,7 @@ function Details () {
   const dispatch = useDispatch()
   const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
+  const user = useSelector(state => state.auth.user)
   const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
 
@@ -45,13 +46,24 @@ function Details () {
   return (
 
     <div className='details-main'>
-      <div className='go-back'>
-        {/* redirect back to listings */}
-        <Link to="/listings">
-          <button className='go-back-button'>Back to Listings</button>
-        </Link>
-        <button onClick={clickHandler}>Delete</button>
-      </div>
+
+      {/* redirect back to listings */}
+
+      {
+        food?.users_id === user.id
+          ? <div className='go-back'>
+            <Link to="/listings">
+              <button className='go-back-button'>Back to Listings</button>
+            </Link>
+            <button onClick={clickHandler}>Delete</button>
+          </div>
+          : <div className='go-back'>
+            <Link to="/listings">
+              <button className='go-back-button'>Back to Listings</button>
+            </Link>
+          </div>
+      }
+
       <div className='details-container'>
         <div>
           <img className="details-image" src={food?.image}/>
