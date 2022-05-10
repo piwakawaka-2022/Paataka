@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { getOnelisting } from '../apis/food'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 import { loginError } from '../actions/auth'
 import { thunkingAllComments } from '../actions/comments'
+import { deleteListing } from '../apis/deleteListing'
+
 import Comment from './Comment'
 import AddComment from './AddComment'
 
@@ -12,6 +14,7 @@ function Details () {
   const dispatch = useDispatch()
   const [food, setFood] = useState(undefined)
   const comments = useSelector(state => state.comments)
+  const navigateTo = useNavigate()
   // const [comments, setComments] = useState([])
 
   useEffect(() => {
@@ -22,18 +25,22 @@ function Details () {
       })
   }, [])
 
- 
   // const commentsOnLoad = async (id) => {
   //   const comments = await getListingComments(id)
   //   setComments(comments)
   // }
-
 
   useEffect(() => {
     dispatch(thunkingAllComments(id))
   }, [])
 
   // comments
+
+  const clickHandler = (e) => {
+    e.preventDefault()
+    navigateTo('/listings')
+    deleteListing(food)
+  }
 
   return (
 
@@ -43,7 +50,7 @@ function Details () {
         <Link to="/listings">
           <button className='go-back-button'>Back to Listings</button>
         </Link>
-
+        <button onClick={clickHandler}>Delete</button>
       </div>
       <div className='details-container'>
         <div>
