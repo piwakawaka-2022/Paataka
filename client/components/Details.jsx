@@ -65,7 +65,7 @@ function Details () {
           {/* <Comments /> */}
 
           {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
-          <button onClick={handleClick}>Add Comment</button>
+          <AddComment />
         </div>
       </div>
     </div>

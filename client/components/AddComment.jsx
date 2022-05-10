@@ -1,19 +1,18 @@
 import React, { useState, useEffect } from 'react'
 import { addComment } from '../apis/comments'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
+import { thunkingAllComments } from '../actions/comments'
 
 function AddComment () {
   const { id } = useParams()
+  const dispatch = useDispatch()
   const user = useSelector(state => state.auth.user)
   const [newComment, setNewComment] = useState({ comment: '', userId: user.id, listingId: id })
-  
 
   useEffect(() => {
     setNewComment({ comment: '', userId: user.id, listingId: id })
   }, [user])
-
-  console.log(newComment)
 
   function changeHandler (e) {
     setNewComment({
@@ -26,6 +25,7 @@ function AddComment () {
     e.preventDefault()
     addComment(newComment)
     console.log(newComment)
+    dispatch(thunkingAllComments(id))
     setNewComment({ comment: '', userId: user.userId, listingId: id })
   }
 
