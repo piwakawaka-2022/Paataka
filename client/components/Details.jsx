@@ -75,13 +75,11 @@ function Details () {
 
           <p className='details-expiry'> {food?.expiry_date} </p>
           <p className='details-phone'> {food?.phone} </p>
-
-          <p className='details-expiry'> {food?.expiry_date} </p>
-          <p className='details-phone'> {food?.phone} </p>
-
-          {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
-          <AddComment/>
         </div>
+      </div>
+      <div>
+        {comments.map((comment, index) => <Comment {...comment} key={index}/>)}
+        <AddComment/>
       </div>
     </div>
 

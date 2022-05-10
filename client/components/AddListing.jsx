@@ -36,7 +36,6 @@ function CreateListing () {
   function submitHandler (evt) {
     evt.preventDefault()
 
-    // console.log(newItem)
     addListing(newItem) // api to write to db
     // dispatch(addNewListing(newItem)) // we add the action here? --> redux - thunk so that it displays fast.
     setNewItem({
