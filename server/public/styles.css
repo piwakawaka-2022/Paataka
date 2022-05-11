@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Water+Brush&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap);
-
+@import url(https://fonts.googleapis.com/css2?family=Water+Brush&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Water+Brush&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap);
 html {
   background-color: white;
   font-family: "Noto Sans HK", sans-serif;
@@ -300,74 +304,109 @@ h2 {
 }
 
 .details-button {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #9ab973;
-  border: none;
-  color: white;
-  padding: 0.5rem 0.5rem;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1.7vw;
-  letter-spacing: 0.1rem;
-  position: relative;
   top: 35%;
-  border-radius: 5px;
-  width: 15vw;
-}
-
-.details-button:hover {
-  display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #555;
-  border: none;
-  color: white;
-  padding: 0.5rem 0.5rem;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 0.1rem;
-  cursor: pointer;
+  width: 15vw;
+  font-size: 1.5rem;
+  padding: 5px 32px;
   border-radius: 5px;
-  font-size: 1.7vw;
+  color: #fff;
+  height: 5vh;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+}
+.details-button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9AB973;
+  border-radius: 5px;
+  z-index: -2;
+}
+.details-button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #74954b;
+  transition: all 0.3s;
+  border-radius: 5px;
+  z-index: -1;
+}
+.details-button:hover {
+  color: white;
+  cursor: pointer;
+}
+.details-button:hover:before {
+  width: 100%;
 }
 
 .add-food {
+  text-decoration: none;
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #444;
-  border: none;
-  color: white;
-  padding: 0.5rem 0.5rem;
-  text-align: center;
-  text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 0.1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1.7vw;
   width: 15vw;
+  font-size: 1.5rem;
+  padding: 5px 32px;
+  border-radius: 5px;
+  color: #fff;
+  height: 5vh;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border: none;
+  text-align: center;
+}
+.add-food:after {
+  text-decoration: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9AB973;
+  border-radius: 5px;
+  z-index: -2;
+}
+.add-food:before {
+  text-decoration: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #74954b;
+  transition: all 0.3s;
+  border-radius: 5px;
+  z-index: -1;
+}
+.add-food:hover {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+.add-food:hover:before {
+  text-decoration: none;
+  width: 100%;
 }
 
-.add-food:hover {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  background-color: #555;
-  border: none;
-  color: white;
-  padding: 0.5rem 0.5rem;
-  text-align: center;
+a {
   text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 0.1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1.7vw;
-  width: 15vw;
 }
 
 .details-btn-container {
@@ -542,6 +581,7 @@ h2 {
 }
 .submit-button:hover {
   color: white;
+  cursor: pointer;
 }
 .submit-button:hover:before {
   width: 100%;
