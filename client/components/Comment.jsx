@@ -4,10 +4,7 @@ import en from 'javascript-time-ago/locale/en.json'
 function Comment (props) {
   TimeAgo.addLocale(en)
   const timeAgo = new TimeAgo('en-US')
- console.log(props.dateCreated)
-  const date = new Date(props.dateCreated)
-  console.log(new Date())
-  console.log(date)
+  const date = new Date(props.dateCreated + " GMT+0000")
   const timeSince = timeAgo.format(date)
   return (
     <div className='bubble'>

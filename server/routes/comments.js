@@ -16,7 +16,6 @@ router.get('/:id', async (req, res) => {
   try {
     const id = req.params.id
     const listingComments = await db.getListingComments(id)
-    console.log(listingComments)
     res.json(listingComments)
   } catch (err) {
     res.status(500).json({ error: err.message })
