@@ -22,7 +22,7 @@ function Listings () {
   }
 
   return (
-    <>
+    <div className='listings-container'>
       <h1 className='listings-title'>Available food in your region</h1>
       <div id='all-food-container' className="all-food-container">
         {listings.map(listing => <FoodItems key={listing.listingId} {...listing}/>)}
@@ -32,7 +32,7 @@ function Listings () {
           ? <Link className="add-food" to='/AddListing'>Add Kai</Link>
           : <></>
       }
-    </>
+    </div>
   )
 }
 

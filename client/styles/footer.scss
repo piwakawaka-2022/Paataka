@@ -1,6 +1,7 @@
 .footer {
     display: flex;
     bottom: 0;
+    position: fixed;
     width: 100%;
     background-color: $mossGreen;
     border-top-left-radius: 5px;
@@ -13,10 +14,12 @@
 .footer h1 {
     font-size: 1.4rem;
     margin-bottom: 0px;
+    padding-top: 3vh;
 }
 
 .footer h2 {
     font-size: 1rem;
     margin-top: 0px;
+    padding-bottom: 3vh;
 }
 

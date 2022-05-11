@@ -10,6 +10,7 @@ import Register from './Register'
 import AddListing from './AddListing'
 import Listings from './Listings'
 import Details from './Details'
+import Footer from './Footer'
 
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
@@ -23,16 +24,15 @@ function App () {
   return (
     <div>
       <Nav />
-      <div>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<Login />}/>
-          {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
-          <Route path="/AddListing" element={<AddListing />} />
-          <Route path="/listings" element={<Listings />} />
-          <Route path="/listings/:id" element={<Details />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<Login />}/>
+        {!auth.isAuthenticated && <Route path="/register" element={<Register />} />}
+        <Route path="/AddListing" element={<AddListing />} />
+        <Route path="/listings" element={<Listings />} />
+        <Route path="/listings/:id" element={<Details />} />
+      </Routes>
+      <Footer />
     </div>
   )
 }

@@ -20,7 +20,7 @@ h1 {
   flex-direction: column;
   width: 100%;
   border-radius: 10px;
-  background-color: $honeydew;
+  padding: 10vh 0 15vh 0 ;
 }
 
 .basket-img {
@@ -31,6 +31,7 @@ h1 {
   position: relative;
   text-align: center;
   margin: 0 auto;
+  padding: 0px 40px;
   color: #444;
   font-size: 14px;
   font-weight: 300;
@@ -62,7 +63,7 @@ h1 {
   border-radius: 5px;
   color: #fff;
   width: 20vw;
-  max-width: 300px;
+  max-width: 350px;
   font-size: 1.7vw;
   letter-spacing: .1rem;
   transition: all .3s;
@@ -112,10 +113,16 @@ h1 {
 .values-section {
   text-align: center;
   padding-bottom: 10vh;
+  padding: 5vh 10vw 20vh 10vw;
+  background-color: $honeydew;
 }
 
 .values-container {
   display: flex;
+}
+
+.listings-container {
+  max-width: 1920px;
 }
 
 .container {
