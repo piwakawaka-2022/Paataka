@@ -1,19 +1,10 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable space-before-function-paren */
 import { getAllListings, getOnelisting } from '../apis/food'
 
-// export const FETCH_LISTINGS_PENDING = 'FETCH_LISTINGS_PENDING'
-// export const FETCH_LISTINGS_SUCCESS = 'FETCH_LISTINGS_SUCCESS'
 export const FETCH_ONE_LISTING = 'FETCH_ONE_LISTING'
 export const FETCH_USER_LISTINGS = 'FETCH_USER_LISTINGS'
 export const FETCH_LISTINGS = 'FETCH_LISTINGS'
-
-// set up api for this action
-// export function fetchUserListings(listings) {
-//   return {
-//     type: FETCH_USER_LISTINGS,
-//     listings
-
-//   }
-// }
 
 export function fetchOneLising(listing) {
   return {
@@ -27,17 +18,6 @@ export function fetchListings(listings) {
     listings,
   }
 }
-// export function fetchListingsPending() {
-//   return {
-//     type: FETCH_LISTINGS_PENDING,
-//   }
-// }
-
-// export function fetchListingsSuccess() {
-//   return {
-//     type: FETCH_LISTINGS_SUCCESS,
-//   }
-// }
 
 // THUNKS
 
