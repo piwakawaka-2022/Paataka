@@ -4,10 +4,13 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { thunkingAllComments } from '../actions/comments'
 import { deleteListing } from '../apis/deleteListing'
 
+
+
 import Comment from './Comment'
 import AddComment from './AddComment'
 
 function Details () {
+ 
   const { id } = useParams()
   const { state } = useLocation()
   const food = state.food
@@ -33,20 +36,6 @@ function Details () {
   return (
     <>
       <div className='details-main'>
-        {
-          food?.userId === user.id
-            ? <div className='go-back'>
-              <Link to="/listings">
-                <button className='go-back-button'>Back to Listings</button>
-              </Link>
-              <button onClick={clickHandler}>Delete</button>
-            </div>
-            : <div className='go-back'>
-              <Link to="/listings">
-                <button className='go-back-button'>Back to Listings</button>
-              </Link>
-            </div>
-        }
         <div className='details-container'>
           <div>
             <img className="details-image" src={food?.image}/>
@@ -58,11 +47,24 @@ function Details () {
             <p className='details-phone'>{food?.phone}</p>
           </div>
         </div>
+
+      
         <div className='bubble-container'>
           <AddComment/>
           {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
         </div>
       </div>
+
+      {
+          food?.userId === user.id
+            ? <div>
+              <button className="delete-button"onClick={clickHandler}>Delete Listing</button>
+            </div>
+            : <div className='go-back'>
+              
+            </div>
+        }
+
     </>
   )
 }
