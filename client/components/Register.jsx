@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router'
 
 import { loginError, registerUserRequest } from '../actions/auth'
@@ -7,7 +7,10 @@ import { loginError, registerUserRequest } from '../actions/auth'
 function Register () {
   const navigateTo = useNavigate()
   const dispatch = useDispatch()
-  const auth = useSelector(redux => redux.auth)
+
+  useEffect(() => {
+    dispatch(loginError(''))
+  }, [])
 
   const [formData, setFormData] = useState({
     username: '',
@@ -18,57 +21,44 @@ function Register () {
     confirmPassword: ''
   })
 
-  useEffect(() => {
-    dispatch(loginError(''))
-  }, [])
-
   const handleChange = (e) => {
-    setFormData((currentFormData) => {
-      return {
-        ...currentFormData,
-        [e.target.name]: e.target.value
-      }
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
     })
   }
 
-  const handleSubmit = (e) => {
-    console.log('form submitted!')
+  const handleRegister = (e) => {
     e.preventDefault()
     e.target.reset()
     const { username, password, confirmPassword, name, email, phone } = formData
+
     if (confirmPassword !== password) return dispatch(loginError("Passwords don't match"))
+
     const confirmSuccess = () => navigateTo('/')
     dispatch(registerUserRequest({ username, password, confirmPassword, name, email, phone }, confirmSuccess))
   }
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <h1 className="">Register</h1>
-      <hr />
-      
-      {auth.errorMessage && (
-        <span className="">{auth.errorMessage}</span>
-      )}
-
-        <div className='input-container'>
-          
-          <div className='single-container'>
-            <label className="input">
+    <form className="form" onSubmit={handleRegister}>
+      <h1>Register</h1>
+      <div className='input-container'>
+        <div className='single-container'>
+          <label className="input">
               Username
-              <br />
-              <input
-                required
-                className="input-field"
-                placeholder="Smithjohn..."
-                type="text"
-                name="username"
-                autoComplete="username"
-                onChange={handleChange}
-                value={formData.username}
-              />
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder="Smithjohn..."
+              type="text"
+              name="username"
+              autoComplete="username"
+              onChange={handleChange}
+              value={formData.username}
+            />
           </label>
         </div>
-
         <div className='single-container'>
           <label className="input">
             Name
@@ -83,89 +73,79 @@ function Register () {
               value={formData.name}
             />
           </label>
-          </div>
         </div>
-
-        <br />
-
-        <div className='input-container'>
+      </div>
+      <br />
+      <div className='input-container'>
         <div className='single-container'>
-
-        <label className="input">
+          <label className="input">
           Email
-          <br />
-          <input
-            required
-            className="input-field"
-            placeholder="john_smith@email.com..."
-            type="text"
-            name="email"
-            onChange={handleChange}
-            value={formData.email}
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder="john_smith@email.com..."
+              type="text"
+              name="email"
+              onChange={handleChange}
+              value={formData.email}
             />
-        </label>
-            </div>
-
-            <div className='single-container'>
-
-        <label className="input">
-          Phone
-          <br />
-          <input
-            required
-            className="input-field"
-            placeholder="027..."
-            type="text"
-            name="phone"
-            onChange={handleChange}
-            value={formData.phone}
-            />
-        </label>
-            </div>
+          </label>
         </div>
-
-        <br />
-
-        <div className='input-container'>
         <div className='single-container'>
-
-        <label className="input">
-          Password
-          <br />
-          <input
-            required
-            className="input-field"
-            placeholder=""
-            type="password"
-            name="password"
-            autoComplete="new-password"
-            onChange={handleChange}
-            value={formData.password}
+          <label className="input">
+          Phone
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder="027..."
+              type="text"
+              name="phone"
+              onChange={handleChange}
+              value={formData.phone}
             />
-        </label>
-            </div>
-
-            <div className='single-container'>
-
-        <label className="input">
+          </label>
+        </div>
+      </div>
+      <br />
+      <div className='input-container'>
+        <div className='single-container'>
+          <label className="input">
+          Password
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder=""
+              type="password"
+              name="password"
+              autoComplete="new-password"
+              onChange={handleChange}
+              value={formData.password}
+            />
+          </label>
+        </div>
+        <div className='single-container'>
+          <label className="input">
           Confirm Password
-          <br />
-          <input
-            required
-            className="input-field"
-            placeholder=""
-            type="password"
-            name="confirm_password"
-            autoComplete="new-password"
-            onChange={handleChange}
-            value={formData.confirm_password}
-          />
-        </label>
-            </div>
+            <br />
+            <input
+              required
+              className="input-field"
+              placeholder=""
+              type="password"
+              name="confirmPassword"
+              autoComplete="new-password"
+              onChange={handleChange}
+              value={formData.confirmPassword}
+            />
+          </label>
+        </div>
         <div className='submit-container single-container'>
-        <input className="submit-button" value="Register" type="submit" />
+          <input className="submit-button" value="Register" type="submit" />
         </div>
-        </div>
+      </div>
     </form>
   )
 }
