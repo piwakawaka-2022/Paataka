@@ -18,9 +18,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const id = req.params.id
-    console.log('we are in routes', id)
     const listingComments = await db.getListingComments(id)
-    console.log('we are in post db func', listingComments)
     res.json(listingComments)
   } catch (err) {
     res.status(500).json({ error: err.message })
