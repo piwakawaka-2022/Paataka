@@ -1,7 +1,6 @@
 $honeydew: #F0F8EA;
 $mossGreen: #9D9C62;
 $olivine: #9AB973;
-// $flame: #E4572E;
 $flame: #d77f64;
 $laserLemon: #FFFF66;
 
@@ -18,13 +17,13 @@ body {
 
 @import "navbar";
 
+@import "footer";
+
 @import "landingpage";
 
 @import "listings";
 
 @import "details";
-
-@import "addfoodform";
 
 @import "login";
 

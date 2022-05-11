@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
 
+h1 {
+  font-weight: 200;
+  font-size: 3vw;
+}
+
 .section {
   display:flex;
   flex-direction: column;
@@ -9,24 +14,16 @@
   max-width: 1920px;
 }
 
-.container {
-  position: relative;
-  text-align: center;
-  margin: 0 auto;
-  color: #444;
-  font-size: 14px;
-  font-weight: 300;
-  font-family: 'Noto Sans HK', sans-serif;
-  overflow: hidden;
+.section .container {
+  padding: 30px 0 50px 0;
 }
 
-.values-container {
-  margin: 5vh 10vw;
-  text-align: center;
-}
-
-.values-container h1 {
-  font-weight: 200;
+.welcome-banner {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 10px;
+  background-color: $honeydew;
 }
 
 .title-container {
@@ -38,92 +35,6 @@
   font-weight: 300;
   font-family: 'Noto Sans HK', sans-serif;  
   overflow: hidden;
-}
-
-.welcome-banner {
-  display:flex;
-  flex-direction: column;
-  padding: 50px;
-  width: 100%;
-  background-color: $honeydew;
-}
-
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: $mossGreen;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  max-width: 1920px;
-}
-
-.footer h1 {
-  font-size: 1.4rem;
-  margin-bottom: 0px;
-}
-
-.footer h2 {
-  font-size: 1rem;
-  margin-top: 0px;
-}
-
-.imgholder {
-  width: 25vw;
-}
-
-.imgholder img {
-  border-radius: 5px;
-  width: 100%;
-}
-
-.section .container {
-  padding: 30px 0 50px 0;
-}
-
-// .section .bg {
-//   background-color:$honeydew
-// }
-
-.col {
-  float: left;
-  padding: 0;
-  margin: 0;
-  position: relative;
-}
-
-
-.col.three {
-  width: 31.3%;
-  margin: 0 1%;
-}
-
-.col.two {
-  width: 40%;
-  margin: 0 2.5%;
-  padding: 0 2.5%;
-}
-
-.col .feature {
-  font-size: 1.8rem;
-}
-
-.col p,
-.col h1 {
-  padding: 0px 20px;
-  text-align: center;
-}
-
-h2 {
-  font-family: 'Noto Sans HK', sans-serif;
-  text-align: center;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.bottom-txt {
-  font-family: 'Noto Sans HK', sans-serif;
-    text-align: center;
 }
 
 .hometitle {
@@ -195,4 +106,91 @@ h2 {
 
 .button img {
   height: 5vh;
+}
+
+.values-section {
+  text-align: center;
+  padding-bottom: 10vh;
+}
+
+.values-container {
+  display: flex;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  color: #444;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Noto Sans HK', sans-serif;
+  overflow: hidden;
+}
+
+.col {
+  float: left;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.col.three {
+  width: 31.3%;
+  margin: 1%;
+}
+
+.col .feature {
+  font-size: 2vw;
+}
+
+.col p,
+.col h1 {
+  padding: 0px 20px;
+  text-align: center;
+  font-size: 1.2vw;
+}
+
+.imgholder {
+  width: 100%;
+}
+
+.imgholder img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: $mossGreen;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  max-width: 1920px;
+}
+
+.footer h1 {
+  font-size: 1.6vw;
+  margin-bottom: 0px;
+}
+
+.footer h2 {
+  font-size: 1vw;
+  margin-top: 0px;
+}
+
+h2 {
+  font-family: 'Noto Sans HK', sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.bottom-txt {
+  font-family: 'Noto Sans HK', sans-serif;
+    text-align: center;
+    margin-top: 2px;
 }

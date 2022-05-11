@@ -1,8 +1,11 @@
+/* eslint-disable no-unused-vars */
 const express = require('express')
+
 const db = require('../db/index')
 const router = express.Router()
 
 // GET routes
+
 router.get('/', async (req, res) => {
   try {
     const allComments = await db.getAllComments()
@@ -23,16 +26,18 @@ router.get('/:id', async (req, res) => {
 })
 
 // POST routes
+
 router.post('/', async (req, res) => {
   try {
     const newComment = req.body
-    console.log(newComment)
     const latestComment = await db.addComment(newComment)
     res.json(latestComment)
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
 })
+
+// PATCH routes
 
 router.patch('/', async (req, res) => {
   try {
@@ -43,6 +48,8 @@ router.patch('/', async (req, res) => {
     res.status(500).json({ error: error.message })
   }
 })
+
+// DELETE routes
 
 router.delete('/', async (req, res) => {
   try {
