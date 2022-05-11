@@ -1,6 +1,11 @@
 .addcom textarea {
   font-family: inherit;
-  width: 15rem;
+  width: 17rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin-right: 10px;
 }
 
 .addcom form {
@@ -9,19 +14,47 @@
 }
 
 .addcombtn {
+<<<<<<< HEAD
   margin-left: 20px;
   font-size: 1.5rem;
   padding: 5px 32px;
   border-radius: 5px;
   color: #fff;
   height: 5vh;
+=======
+  display: block;
+  margin-right: auto;
+  margin-left: 5 vw;
+  background-color: darken($olivine, 15%); 
+  border: none;
+  color: white;
+  padding: .5rem .5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1vw;
+>>>>>>> main
   letter-spacing: .1rem;
   transition: all .3s;
   position: relative;
+<<<<<<< HEAD
   overflow: hidden;
   z-index: 1;
+=======
+  top: 5%;
+  border-radius: 5px;
+  width: 10vw;
+  height: 55px;
+}
+
+.addcombtn:hover {
+  display: block;
+  margin-right: auto;
+  margin-left: 5 vw;
+  background-color: $olivine; 
+>>>>>>> main
   border: none;
   text-align: center;
+<<<<<<< HEAD
 
   &:after {
     content: '';
@@ -57,6 +90,15 @@
     }
   }
 
+=======
+  text-decoration: none;
+  font-size: 1vw;
+  letter-spacing: .1rem;
+  position: relative;
+  top: 5%;
+  border-radius: 5px;
+  width: 10vw;
+>>>>>>> main
 }
 
 .bubble-title {

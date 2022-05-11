@@ -38,7 +38,9 @@
   margin-top: 5vw;
   display: flex;
   background-color: $honeydew;
-  box-shadow: 0 3px 10px $mossGreen
+  box-shadow: 0 3px 10px $mossGreen;
+  border-radius: 10px;
+  
   
 }
 
@@ -98,6 +100,7 @@
 }
 
 .details-image {
+  border-radius: 10px;
   height: 25vw;
   margin-right: 20px;
   padding-left: 5px;

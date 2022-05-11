@@ -1,31 +1,32 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
+import { useParams, useNavigate, useLocation } from 'react-router-dom'
 import { thunkingAllComments } from '../actions/comments'
 import { deleteListing } from '../apis/deleteListing'
-
-
 
 import Comment from './Comment'
 import AddComment from './AddComment'
 
 function Details () {
- 
   const { id } = useParams()
   const { state } = useLocation()
   const food = state.food
+  const [button, setButton] = useState(false)
 
   const dispatch = useDispatch()
   const navigateTo = useNavigate()
 
-  const comments = useSelector(state => state.comments)
   const user = useSelector(state => state.auth.user)
+  const comments = useSelector(state => state.comments)
+  const reversedComments = [...comments].reverse()
 
   useEffect(() => {
     dispatch(thunkingAllComments(id))
   }, [])
 
-  const reversedComments = [...comments].reverse()
+  useEffect(() => {
+    (food?.userId === user?.id) ? setButton(true) : setButton(false)
+  }, [])
 
   const clickHandler = (e) => {
     e.preventDefault()
@@ -48,7 +49,6 @@ function Details () {
           </div>
         </div>
 
-      
         <div className='bubble-container'>
           <AddComment/>
           {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
