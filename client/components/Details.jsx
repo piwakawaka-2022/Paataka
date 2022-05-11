@@ -18,14 +18,13 @@ function Details () {
   const dispatch = useDispatch()
   const navigateTo = useNavigate()
 
-  const comments = useSelector(state => state.comments)
   const user = useSelector(state => state.auth.user)
+  const comments = useSelector(state => state.comments)
+  const reversedComments = [...comments].reverse()
 
   useEffect(() => {
     dispatch(thunkingAllComments(id))
   }, [])
-
-  const reversedComments = [...comments].reverse()
 
   const clickHandler = (e) => {
     e.preventDefault()
