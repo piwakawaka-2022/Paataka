@@ -150,6 +150,7 @@ h1 {
 }
 
 .button {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -612,6 +613,7 @@ h2 {
 }
 
 .addcombtn {
+  cursor: pointer;
   display: block;
   margin-right: auto;
   margin-left: 5 vw;
