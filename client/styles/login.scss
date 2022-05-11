@@ -13,34 +13,6 @@
   justify-content: center;
 }
 
-// .submit-button {
-//   padding: 5px 32px;
-//   background-color: $olivine; 
-//   border: none;
-//   color: white;
-//   text-align: center;
-//   text-decoration: none;
-//   display: inline-block;
-//   width: 90%;
-//   height: 5vh;
-//   margin-bottom: 6px;
-//   border-radius: 5px;
-//   transition: all .3s;
-  
-//   &:hover {
-//     // background-color: #b3b3b3; 
-//     background-color: darken($olivine, 15%);
-//     text-decoration: none;
-//     cursor: pointer;
-//   }
-  
-//   &:after {
-//     z-index: 9;
-//     content: ''
-//     transition: 
-//   }
-// }
-
 .submit-button {
   // display: flex;
   // flex-direction: row;
@@ -88,6 +60,7 @@
 
   &:hover {
     color: white;
+    cursor: pointer;
 
   &:before {
     width: 100%;

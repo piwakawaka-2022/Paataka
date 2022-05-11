@@ -29,7 +29,9 @@ function Listings () {
       </div>
       {
         auth.isAuthenticated
-          ? <Link className="add-food" to='/AddListing'>Add Kai</Link>
+          ? <Link to='/AddListing'>
+              <button className="add-food">Add Kai</button>
+            </Link>
           : <></>
       }
     </>

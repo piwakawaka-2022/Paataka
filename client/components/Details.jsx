@@ -54,12 +54,16 @@ function Details () {
           {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
         </div>
       </div>
-      {button
-        ? <div>
-          <button className="delete-button"onClick={clickHandler}>Delete Listing</button>
-        </div>
-        : <></>
-      }
+
+      {
+          food?.userId === user.id
+            ? <div className='del-but-cont' >
+              <button className="delete-button"onClick={clickHandler}>Delete Listing</button>
+            </div>
+            : <div className='go-back'>
+              
+            </div>
+        }
 
     </>
   )
