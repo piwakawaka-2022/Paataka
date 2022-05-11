@@ -76,11 +76,11 @@ function Login () {
           </div>
           
           <div className='submit-container single-container'>
-            <input
+            <button
               className="submit-button"
               value="Login"
               type="submit"
-            />
+            >Log in</button>
           </div>
 
         </div>

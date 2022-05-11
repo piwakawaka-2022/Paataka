@@ -163,7 +163,7 @@ function Register () {
         </label>
             </div>
         <div className='submit-container single-container'>
-        <input className="submit-button" value="Register" type="submit" />
+        <button className="submit-button" value="Register" type="submit">Register</button>
         </div>
         </div>
     </form>
