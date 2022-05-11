@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Water+Brush&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Water+Brush&display=swap);
-@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap);
 html {
   background-color: white;
   font-family: "Noto Sans HK", sans-serif;
@@ -15,6 +13,7 @@ body {
 
 .nav-container {
   display: flex;
+  top: 0px;
   flex-direction: row;
   background-color: #9D9C62;
   justify-content: center;
@@ -39,75 +38,50 @@ body {
   padding: 10px;
 }
 
-.clickies {
-  text-align: center;
+.nav-link {
+  font-family: "Noto Sans HK", sans-serif;
   font-size: 1.4rem;
-  padding: 7px;
+  text-transform: uppercase;
   text-decoration: none;
   color: inherit;
-  font-family: "Noto Sans HK", sans-serif;
-}
-
-.clickies:hover {
-  text-align: center;
-  color: white;
-}
-
-.section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1920px;
-}
-
-.container {
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
   position: relative;
-  text-align: center;
-  margin: 0 auto;
-  color: #444;
-  font-size: 14px;
-  font-weight: 300;
-  font-family: "Noto Sans HK", sans-serif;
-  overflow: hidden;
+  opacity: 0.75;
 }
 
-.values-container {
-  margin: 5vh 10vw;
-  text-align: center;
+.nav-link:hover {
+  opacity: 1;
 }
 
-.values-container h1 {
-  font-weight: 200;
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: #9AB973;
 }
 
-.title-container {
-  position: relative;
-  text-align: center;
-  margin: 0 auto;
-  color: #444;
-  font-size: 14px;
-  font-weight: 300;
-  font-family: "Noto Sans HK", sans-serif;
-  overflow: hidden;
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
 }
 
-.welcome-banner {
-  display: flex;
-  flex-direction: column;
-  padding: 50px;
+.nav-link-ltr:hover::before {
   width: 100%;
-  background-color: #F0F8EA;
 }
 
 .footer {
-  position: fixed;
+  display: flex;
   bottom: 0;
   width: 100%;
   background-color: #9D9C62;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   max-width: 1920px;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .footer h1 {
@@ -120,57 +94,44 @@ body {
   margin-top: 0px;
 }
 
-.imgholder {
-  width: 25vw;
+h1 {
+  font-weight: 200;
+  font-size: 3vw;
 }
 
-.imgholder img {
-  border-radius: 5px;
-  width: 100%;
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
 }
 
 .section .container {
   padding: 30px 0 50px 0;
 }
 
-.col {
-  float: left;
-  padding: 0;
-  margin: 0;
+.welcome-banner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 10px;
+  background-color: #F0F8EA;
+}
+
+.basket-img {
+  width: 20vw;
+}
+
+.title-container {
   position: relative;
-}
-
-.col.three {
-  width: 31.3%;
-  margin: 0 1%;
-}
-
-.col.two {
-  width: 40%;
-  margin: 0 2.5%;
-  padding: 0 2.5%;
-}
-
-.col .feature {
-  font-size: 1.8rem;
-}
-
-.col p,
-.col h1 {
-  padding: 0px 20px;
   text-align: center;
-}
-
-h2 {
+  margin: 0 auto;
+  color: #444;
+  font-size: 14px;
+  font-weight: 300;
   font-family: "Noto Sans HK", sans-serif;
-  text-align: center;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.bottom-txt {
-  font-family: "Noto Sans HK", sans-serif;
-  text-align: center;
+  overflow: hidden;
 }
 
 .hometitle {
@@ -240,7 +201,94 @@ h2 {
   height: 5vh;
 }
 
+.values-section {
+  text-align: center;
+  padding-bottom: 10vh;
+}
+
+.values-container {
+  display: flex;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  color: #444;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Noto Sans HK", sans-serif;
+  overflow: hidden;
+}
+
+.col {
+  float: left;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.col.three {
+  width: 31.3%;
+  margin: 1%;
+}
+
+.col .feature {
+  font-size: 2vw;
+}
+
+.col p,
+.col h1 {
+  padding: 0px 20px;
+  text-align: center;
+  font-size: 1.2vw;
+}
+
+.imgholder {
+  width: 100%;
+}
+
+.imgholder img {
+  border-radius: 5px;
+  width: 100%;
+}
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #9D9C62;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  max-width: 1920px;
+}
+
+.footer h1 {
+  font-size: 1.6vw;
+  margin-bottom: 0px;
+}
+
+.footer h2 {
+  font-size: 1vw;
+  margin-top: 0px;
+}
+
+h2 {
+  font-family: "Noto Sans HK", sans-serif;
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.bottom-txt {
+  font-family: "Noto Sans HK", sans-serif;
+  text-align: center;
+  margin-top: 2px;
+}
+
 .listings-title {
+  font-family: "Noto Sans HK", sans-serif;
+  color: #444;
   text-align: center;
 }
 
@@ -272,43 +320,70 @@ h2 {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #E4572E;
+  background-color: #9ab973;
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.7vw;
+  letter-spacing: 0.1rem;
   position: relative;
   top: 35%;
+  border-radius: 5px;
+  width: 15vw;
 }
 
 .details-button:hover {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #b3b3b3;
+  background-color: #555;
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  letter-spacing: 0.1rem;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7vw;
 }
 
 .add-food {
   display: block;
-  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #E4572E;
+  background-color: #444;
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7vw;
+  width: 15vw;
+}
+
+.add-food:hover {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #555;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7vw;
   width: 15vw;
 }
 
@@ -319,6 +394,8 @@ h2 {
 }
 
 .listing-title {
+  font-family: "Noto Sans HK", sans-serif;
+  color: #444;
   width: 40vw;
   height: 5vh;
 }
@@ -334,10 +411,10 @@ h2 {
 }
 
 .go-back {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 .go-back-button {
@@ -361,9 +438,47 @@ h2 {
 }
 
 .details-container {
+  position: relative;
+  margin-top: 5vw;
   display: flex;
   background-color: #F0F8EA;
   box-shadow: 0 3px 10px #9D9C62;
+}
+
+.delete-button {
+  margin-left: 60vw;
+  margin-bottom: 20vw;
+  display: block;
+  background-color: #444;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.7vw;
+  letter-spacing: 0.1rem;
+  position: relative;
+  top: 5%;
+  border-radius: 5px;
+  width: 15vw;
+}
+
+.delete-button:hover {
+  margin-left: 60vw;
+  margin-bottom: 20vw;
+  display: block;
+  background-color: #555;
+  border: none;
+  color: white;
+  padding: 0.5rem 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.7vw;
+  letter-spacing: 0.1rem;
+  position: relative;
+  top: 5%;
+  border-radius: 5px;
+  width: 15vw;
 }
 
 .details-image {
@@ -389,32 +504,6 @@ h2 {
   display: flex;
 }
 
-.add-form {
-  width: 50vw;
-  text-align: center;
-  background-color: #d77f64;
-  margin-top: 4vh;
-  border-radius: 5%;
-  box-shadow: 0 3px 10px #d77f64;
-}
-
-.add-form-container {
-  display: flex;
-  justify-content: center;
-}
-
-.text-fields {
-  width: 25vw;
-  height: 5vh;
-  font-size: 1.2rem;
-}
-
-.add-form-btn {
-  width: 17vw;
-  height: 7vh;
-  font-size: 2rem;
-}
-
 .login-register-container {
   justify-content: center;
 }
@@ -431,19 +520,48 @@ h2 {
 }
 
 .submit-button {
+  margin-bottom: 5px;
   padding: 5px 32px;
-  background-color: #E4572E;
+  border-radius: 5px;
+  color: #fff;
+  width: 90%;
+  height: 5vh;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
   border: none;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
 }
-
+.submit-button:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #9AB973;
+  border-radius: 5px;
+  z-index: -2;
+}
+.submit-button:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #74954b;
+  transition: all 0.3s;
+  border-radius: 5px;
+  z-index: -1;
+}
 .submit-button:hover {
-  background-color: #b3b3b3;
-  text-decoration: none;
-  cursor: pointer;
+  color: white;
+}
+.submit-button:hover:before {
+  width: 100%;
 }
 
 .login-title {
@@ -459,10 +577,16 @@ h2 {
   width: 31%;
 }
 
+.input {
+  font-size: 1.2rem;
+}
+
 .input-field {
   margin-top: 10px;
   padding: 4px;
-  width: 85%;
+  width: 90%;
+  height: 5vh;
+  font-size: 1.2rem;
 }
 
 .submit-container {
@@ -472,7 +596,7 @@ h2 {
 
 .addcom textarea {
   font-family: inherit;
-  width: 14rem;
+  width: 15rem;
 }
 
 .addcom form {
@@ -480,26 +604,39 @@ h2 {
 }
 
 .addcombtn {
+  display: block;
+  margin-right: auto;
+  margin-left: 5 vw;
   background-color: #9ab973;
   border: none;
   color: white;
-  padding: 25px 42px;
-  margin-left: 20px;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 1.7vw;
+  letter-spacing: 0.1rem;
+  position: relative;
+  top: 5%;
+  border-radius: 5px;
+  width: 15vw;
 }
 
 .addcombtn:hover {
-  background-color: #b3b3b3;
+  display: block;
+  margin-right: auto;
+  margin-left: 5 vw;
+  background-color: #444;
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
+  font-size: 1.7vw;
+  letter-spacing: 0.1rem;
+  position: relative;
+  top: 5%;
+  border-radius: 5px;
+  width: 15vw;
 }
 
 .bubble-title {

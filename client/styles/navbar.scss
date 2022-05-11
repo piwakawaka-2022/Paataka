@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
-
-
 .nav-container {
   display: flex;
+  top: 0px;
   flex-direction: row;
   background-color: $mossGreen;
   justify-content: center;
@@ -28,16 +25,36 @@
   padding: 10px;
 }
 
-.clickies {
-  text-align: center;
-  font-size: 1.4rem;
-  padding: 7px;
-  text-decoration: none;
-  color: inherit;
+.nav-link {
   font-family: 'Noto Sans HK', sans-serif;
+  font-size: 1.4rem;  
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;  
+  padding: 20px 0px;
+  margin: 0px 20px;
+  display: inline-block;
+  position: relative;
+  opacity: 0.75;
 }
 
-.clickies:hover {
-  text-align: center;
-  color: white;
+.nav-link:hover {
+  opacity: 1;
+}
+
+.nav-link::before {
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  position: absolute;
+  background-color: $olivine;
+}
+
+.nav-link-ltr::before {
+  width: 0%;
+  bottom: 10px;
+}
+
+.nav-link-ltr:hover::before {
+  width: 100%;
 }

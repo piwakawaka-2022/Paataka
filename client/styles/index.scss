@@ -4,6 +4,9 @@ $olivine: #9AB973;
 $flame: #d77f64;
 $laserLemon: #FFFF66;
 
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
+
 html {
   background-color: white;
   font-family: 'Noto Sans HK', sans-serif;
@@ -17,13 +20,13 @@ body {
 
 @import "navbar";
 
+@import "footer";
+
 @import "landingpage";
 
 @import "listings";
 
 @import "details";
-
-@import "addfoodform";
 
 @import "login";
 

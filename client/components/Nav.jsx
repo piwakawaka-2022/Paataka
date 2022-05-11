@@ -21,8 +21,8 @@ function Nav () {
             <div className='nav-items'>
               <Link to='/' className="pataka">Pātaka</Link>
               <div className='nav-menu-items'>
-                <Link className="clickies" to='listings'>Listings</Link>
-                <Link className="clickies" to='/' onClick={() => logout()}>Logout</Link>
+                <Link className="nav-link nav-link-ltr" to='listings'>Listings</Link>
+                <Link className="nav-link nav-link-ltr" to='/' onClick={() => logout()}>Logout</Link>
               </div>
             </div>
           </div>
@@ -32,10 +32,10 @@ function Nav () {
               <div className='nav-items'>
                 <Link to='/' className="pataka">Pātaka</Link>
                 <div className='nav-menu-items'>
-                  <Link className="clickies" to="login">
+                  <Link className="nav-link nav-link-ltr" to="login">
                 Login
                   </Link>
-                  <Link className="clickies" to="listings">
+                  <Link className="nav-link nav-link-ltr" to="listings">
                 Listings
                   </Link>
                 </div>

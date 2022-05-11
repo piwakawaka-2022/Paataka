@@ -1,0 +1,22 @@
+.footer {
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    background-color: $mossGreen;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    max-width: 1920px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.footer h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0px;
+}
+
+.footer h2 {
+    font-size: 1rem;
+    margin-top: 0px;
+}
+
