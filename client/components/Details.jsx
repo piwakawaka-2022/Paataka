@@ -21,8 +21,11 @@ function Details () {
   const reversedComments = [...comments].reverse()
 
   useEffect(() => {
-    (food?.userId === user?.id) ? setButton(true) : setButton(false)
     dispatch(thunkingAllComments(id))
+  }, [])
+
+  useEffect(() => {
+    (food?.userId === user?.id) ? setButton(true) : setButton(false)
   }, [])
 
   const clickHandler = (e) => {
