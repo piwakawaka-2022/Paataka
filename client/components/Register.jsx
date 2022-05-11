@@ -46,7 +46,7 @@ function Register () {
         <div className='single-container'>
           <label className="input">
               Username
-            <br />
+            <br/>
             <input
               required
               className="input-field"
@@ -62,7 +62,7 @@ function Register () {
         <div className='single-container'>
           <label className="input">
             Name
-            <br />
+            <br/>
             <input
               required
               className="input-field"
@@ -80,7 +80,7 @@ function Register () {
         <div className='single-container'>
           <label className="input">
           Email
-            <br />
+            <br/>
             <input
               required
               className="input-field"
@@ -95,7 +95,7 @@ function Register () {
         <div className='single-container'>
           <label className="input">
           Phone
-            <br />
+            <br/>
             <input
               required
               className="input-field"
@@ -113,7 +113,7 @@ function Register () {
         <div className='single-container'>
           <label className="input">
           Password
-            <br />
+            <br/>
             <input
               required
               className="input-field"
@@ -129,7 +129,7 @@ function Register () {
         <div className='single-container'>
           <label className="input">
           Confirm Password
-            <br />
+            <br/>
             <input
               required
               className="input-field"
@@ -143,7 +143,7 @@ function Register () {
           </label>
         </div>
         <div className='submit-container single-container'>
-          <input className="submit-button" value="Register" type="submit" />
+          <button className="submit-button" value="Register" type="submit">Register</button>
         </div>
       </div>
     </form>
