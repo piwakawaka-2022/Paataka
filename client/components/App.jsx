@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
+import { checkAuth } from '../actions/auth'
 
-import Login from './Login'
-import Register from './Register'
 import Nav from './Nav'
 import LandingPage from './LandingPage'
+import Login from './Login'
+import Register from './Register'
 import AddListing from './AddListing'
-import Details from './Details'
-
-import { checkAuth } from '../actions/auth'
 import Listings from './Listings'
+import Details from './Details'
 
 function App () {
   const auth = useSelector(reduxState => reduxState.auth)
@@ -24,7 +23,7 @@ function App () {
   return (
     <div>
       <Nav />
-      <div className=''>
+      <div>
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/login" element={<Login />}/>
@@ -34,7 +33,6 @@ function App () {
           <Route path="/listings/:id" element={<Details />} />
         </Routes>
       </div>
-
     </div>
   )
 }

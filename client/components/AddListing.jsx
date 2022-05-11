@@ -1,16 +1,12 @@
 import React, { useState } from 'react'
 import { addListing } from '../apis/food'
-// import { addNewListing } from '../actions/listings'
 import { useNavigate } from 'react-router'
-const { useSelector } = require('react-redux')
-// import action here
 
-// Where users go to post food items the have
+import { useSelector } from 'react-redux'
 
 function CreateListing () {
   const navigateTo = useNavigate()
   const user = useSelector(state => state.auth.user)
-
   const [newItem, setNewItem] = useState({
     title: '',
     category: '',
@@ -21,23 +17,16 @@ function CreateListing () {
     users_id: user.id
   })
 
-  // const dispatch = useDispatch()
-
-  // need to add changeHandler functionality
   function changeHandler (evt) {
     setNewItem({
       ...newItem,
-      [evt.target.id]: evt.target.value // double check these targets
+      [evt.target.id]: evt.target.value
     })
-    // console.log(newItem)
   }
 
-  // add submit functionality what to dispatch etc.
   function submitHandler (evt) {
     evt.preventDefault()
-
-    addListing(newItem) // api to write to db
-    // dispatch(addNewListing(newItem)) // we add the action here? --> redux - thunk so that it displays fast.
+    addListing(newItem)
     setNewItem({
       title: '',
       category: '',
@@ -54,10 +43,7 @@ function CreateListing () {
       <form className='form' onSubmit={submitHandler}>
         <h1>What would you like to contribute?</h1>
         <hr />
-
-
         <div className='input-container'> 
-        
           <div className='single-container'>
             <label className='input'>
               Food
@@ -65,7 +51,6 @@ function CreateListing () {
               <input required className='input-field' type='text' id='title' name='title' value={newItem.title} onChange={changeHandler} placeholder='Food name' />
             </label>
           </div>
-
           <div className='single-container'>
             <label className='input'>
               Category
@@ -73,21 +58,16 @@ function CreateListing () {
               <input className='input-field' type='text' id='category' name='category' value={newItem.category} onChange={changeHandler} placeholder='Fruit, Meat, Veges...' />
             </label>
           </div>
-        
         </div>
-
         <br />
-
         <div className='input-container'>
-
           <div className='single-container'>
             <label className='input'>
               Image
-                <br />
-                <input className='input-field' type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Add a link to a jpg, jpeg or png.' />
+              <br />
+              <input className='input-field' type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Add a link to a jpg, jpeg or png.' />
             </label>
           </div>
-
           <div className='single-container'>
             <label className='input'>
               Expiry Date
@@ -96,19 +76,15 @@ function CreateListing () {
             </label>
           </div>
         </div>
-
         <br />
-
         <div className='input-container'>
-          
           <div className='single-container'>
             <label className='input'>
               Location
               <br />
-                <input className='input-field' type='text' id='location' name='location' value={newItem.location} onChange={changeHandler} placeholder='Wellington, Auckland...' />
+              <input className='input-field' type='text' id='location' name='location' value={newItem.location} onChange={changeHandler} placeholder='Wellington, Auckland...' />
             </label>
           </div>
-
           <div className='single-container'>
             <label className='input'>
               Description
@@ -120,9 +96,6 @@ function CreateListing () {
               <button className='submit-button' type="submit" value='Share!'>Share</button>
           </div>
         </div>
-
-        
-     
       </form>
   )
 }

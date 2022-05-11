@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router'
-import Register from './Register'
 import { loginUser } from '../actions/auth'
+
+import Register from './Register'
 
 function Login () {
   const navigateTo = useNavigate()
@@ -34,14 +35,12 @@ function Login () {
     <div className='login-register-container'>
       <form className="form" onSubmit={handleSubmit}>
         <h1 className="login-title">Login</h1>
-        <hr />
-
         {auth.errorMessage && (
-          <span className="">{auth.errorMessage}</span>
+          <span>{auth.errorMessage}</span>
         )}
 
         <div className='input-container'>
-          <div className='username-container single-container'>
+          <div className= 'single-container'>
             <label className="input">
             Username
               <br />
@@ -57,8 +56,7 @@ function Login () {
               />
             </label>
           </div>
-
-          <div className='password-container single-container'>
+          <div className='single-container'>
             <label className="input">
             Password
               <br />
@@ -74,7 +72,6 @@ function Login () {
               />
             </label>
           </div>
-          
           <div className='submit-container single-container'>
             <button
               className="submit-button"
@@ -82,9 +79,7 @@ function Login () {
               type="submit"
             >Log in</button>
           </div>
-
         </div>
-
       </form>
       {!auth.isAuthenticated && <Register />}
     </div>

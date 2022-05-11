@@ -15,33 +15,33 @@ function Nav () {
 
   return (
     <>
-      {auth.isAuthenticated
-        ? (
+      {
+        auth.isAuthenticated ? (
           <div className="nav-container">
             <div className='nav-items'>
               <Link to='/' className="pataka">Pātaka</Link>
               <div className='nav-menu-items'>
-                <Link className="clickies" to='listings'>Listings</Link>
-                <Link className="clickies" to='/' onClick={() => logout()}>Logout</Link>
+                <Link className="nav-link nav-link-ltr" to='listings'>Listings</Link>
+                <Link className="nav-link nav-link-ltr" to='/' onClick={() => logout()}>Logout</Link>
               </div>
             </div>
           </div>
         )
-        : (
-          <div className="nav-container">
-            <div className='nav-items'>
-              <Link to='/' className="pataka">Pātaka</Link>
-              <div className='nav-menu-items'>
-                <Link className="clickies" to="login">
+          : (
+            <div className="nav-container">
+              <div className='nav-items'>
+                <Link to='/' className="pataka">Pātaka</Link>
+                <div className='nav-menu-items'>
+                  <Link className="nav-link nav-link-ltr" to="login">
                 Login
-                </Link>
-                <Link className="clickies" to="listings">
+                  </Link>
+                  <Link className="nav-link nav-link-ltr" to="listings">
                 Listings
-                </Link>
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        )
+          )
       }
     </>
   )
