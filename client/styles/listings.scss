@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
+
 .listings-title {
+  font-family: 'Noto Sans HK', sans-serif;
+  color: #444;
   text-align: center;
 }
 
@@ -30,15 +34,18 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #E4572E; 
+  background-color: #9ab973; 
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: .5rem .5rem;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.7vw;
+  letter-spacing: .1rem;
   position: relative;
   top: 35%;
+  border-radius: 5px;
+  width: 15vw;
 }
 
 
@@ -46,28 +53,52 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #b3b3b3; 
+  background-color: #555; 
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: .5rem .5rem;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  letter-spacing: .1rem;
   cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7vw;
 }
 
 .add-food {
   display: block;
-  margin-top: 20px;
   margin-right: auto;
   margin-left: auto;
-  background-color: #E4572E; 
+  background-color: #444; 
   border: none;
   color: white;
-  padding: 25px 42px;
+  padding: .5rem .5rem;
   text-align: center;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 16px;
+  letter-spacing: .1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7vw;
+  width: 15vw;
+}
+
+.add-food:hover {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #555; 
+  border: none;
+  color: white;
+  padding: .5rem .5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: .1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7vw;
   width: 15vw;
 }
 
@@ -78,6 +109,8 @@
 }
 
 .listing-title {
+  font-family: 'Noto Sans HK', sans-serif;
+  color: #444;
   width: 40vw;
   height: 5vh;
 }
