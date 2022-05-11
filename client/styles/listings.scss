@@ -30,11 +30,13 @@
   max-width: 100%;
 }
 
+
+
 .details-button {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #9ab973; 
+  background-color: darken($olivine, 15%);
   border: none;
   color: white;
   padding: .5rem .5rem;
@@ -53,7 +55,7 @@
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #555; 
+ background-color: $olivine;
   border: none;
   color: white;
   padding: .5rem .5rem;

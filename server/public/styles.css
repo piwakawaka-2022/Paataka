@@ -333,7 +333,7 @@ h2 {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #9ab973;
+  background-color: #74954b;
   border: none;
   color: white;
   padding: 0.5rem 0.5rem;
@@ -351,7 +351,7 @@ h2 {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  background-color: #555;
+  background-color: #9AB973;
   border: none;
   color: white;
   padding: 0.5rem 0.5rem;
@@ -456,6 +456,7 @@ h2 {
   display: flex;
   background-color: #F0F8EA;
   box-shadow: 0 3px 10px #9D9C62;
+  border-radius: 10px;
 }
 
 .delete-button {
@@ -495,6 +496,7 @@ h2 {
 }
 
 .details-image {
+  border-radius: 10px;
   height: 25vw;
   margin-right: 20px;
   padding-left: 5px;
@@ -609,6 +611,7 @@ h2 {
 
 .addcom textarea {
   font-family: inherit;
+<<<<<<< HEAD
   width: 35vw;
   margin-right: 10px;
 }
@@ -618,6 +621,16 @@ h2 {
   justify-content: center;
   align-items: center;
   margin-top: 3vh;
+||||||| 7a0cc02
+  width: 15rem;
+=======
+  width: 17rem;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  margin-right: 10px;
+>>>>>>> f44af95bcca2202b7fbff8a18e37456bc35edfa3
 }
 
 .addcom form {
@@ -628,36 +641,37 @@ h2 {
   display: block;
   margin-right: auto;
   margin-left: 5 vw;
-  background-color: #9ab973;
+  background-color: #74954b;
   border: none;
   color: white;
   padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
-  font-size: 1.7vw;
+  font-size: 1vw;
   letter-spacing: 0.1rem;
   position: relative;
   top: 5%;
   border-radius: 5px;
-  width: 15vw;
+  width: 10vw;
+  height: 55px;
 }
 
 .addcombtn:hover {
   display: block;
   margin-right: auto;
   margin-left: 5 vw;
-  background-color: #444;
+  background-color: #9AB973;
   border: none;
   color: white;
   padding: 0.5rem 0.5rem;
   text-align: center;
   text-decoration: none;
-  font-size: 1.7vw;
+  font-size: 1vw;
   letter-spacing: 0.1rem;
   position: relative;
   top: 5%;
   border-radius: 5px;
-  width: 15vw;
+  width: 10vw;
 }
 
 .bubble-title {
