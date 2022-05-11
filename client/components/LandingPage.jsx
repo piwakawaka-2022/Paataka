@@ -11,6 +11,7 @@ function LandingPage () {
       <div className="section">
         <div className='welcome-banner'>
           <div className="title-container">
+            <img className='basket-img' src='images/basket-food-3278455.png' alt='Paataka Kai' />
             <h1 className="hometitle">Nau mai haere mai, ki te Pātaka kai!</h1>
             <h2 className="hero">Welcome to Pātaka, your local food pantry, connecting those who need with those who have.</h2>
           </div>

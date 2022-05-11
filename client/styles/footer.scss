@@ -2,13 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
 
 .footer {
-    position: fixed;
+    display: flex;
     bottom: 0;
     width: 100%;
     background-color: $mossGreen;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     max-width: 1920px;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .footer h1 {
