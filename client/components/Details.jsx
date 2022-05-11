@@ -4,10 +4,13 @@ import { useParams, Link, useNavigate, useLocation } from 'react-router-dom'
 import { thunkingAllComments } from '../actions/comments'
 import { deleteListing } from '../apis/deleteListing'
 
+
+
 import Comment from './Comment'
 import AddComment from './AddComment'
 
 function Details () {
+ 
   const { id } = useParams()
   const { state } = useLocation()
   const food = state.food
