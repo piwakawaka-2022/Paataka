@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Footer from './Footer'
 
 function LandingPage () {
   const auth = useSelector(redux => redux.auth)
@@ -56,11 +57,7 @@ function LandingPage () {
             </div>
           </div>
         </div>
-
-        <div className='footer'>
-          <h1 className="bottom-txt">Naku te rourou nau te rourou ka ora ai te iwi</h1>
-          <h2>With your basket and my basket the people will live</h2>
-        </div>
+        <Footer />
       </div>
     </>
   )

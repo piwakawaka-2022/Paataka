@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $mossGreen;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    max-width: 1920px;
+}
+
+.footer h1 {
+    font-size: 1.4rem;
+    margin-bottom: 0px;
+}
+
+.footer h2 {
+    font-size: 1rem;
+    margin-top: 0px;
+}
+
