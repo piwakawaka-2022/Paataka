@@ -54,23 +54,6 @@ function Details () {
 
       <div className='details-main'>
 
-        {/* redirect back to listings */}
-
-        {
-          food?.userId === user.id
-            ? <div className='go-back'>
-              <Link to="/listings">
-                <button className='go-back-button'>Back to Listings</button>
-              </Link>
-              <button onClick={clickHandler}>Delete</button>
-            </div>
-            : <div className='go-back'>
-              <Link to="/listings">
-                <button className='go-back-button'>Back to Listings</button>
-              </Link>
-            </div>
-        }
-
         <div className='details-container'>
           <div>
             <img className="details-image" src={food?.image}/>
@@ -85,12 +68,24 @@ function Details () {
           </div>
         </div>
 
+      
         <div className='bubble-container'>
           <AddComment/>
           {reversedComments.map((comment, index) => <Comment {...comment} key={index}/>)}
         </div>
-
       </div>
+
+      {
+          food?.userId === user.id
+            ? <div>
+              <button className="delete-button"onClick={clickHandler}>Delete Listing</button>
+            </div>
+            : <div className='go-back'>
+              <Link to="/listings">
+                <button className='go-back-button'>Back to Listings</button>
+              </Link>
+            </div>
+        }
 
     </>
   )

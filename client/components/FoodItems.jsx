@@ -25,7 +25,7 @@ function FoodItems (props) {
         <img className='food-image' src={props.image ? props.image : 'images/placeholder.jpeg'} />
       </div>
       <div className='details-btn-container'>
-        <button className='details-button' onClick={handleClick}>DETAILS</button>
+        <button className='details-button' onClick={handleClick}>Details</button>
       </div>
       {/* <p>{props.description}</p> */}
       {/* <p>{props.location}</p> */}
