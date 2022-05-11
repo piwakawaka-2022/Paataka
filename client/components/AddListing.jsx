@@ -80,7 +80,7 @@ function CreateListing () {
           </label>
         </div>
         <br/>
-        <input className='add-form-btn' type="submit" value='Share!' />
+        <input className='add-form-btn' type="submit" value='Share!'/>
         <br/>
       </form>
     </div>
