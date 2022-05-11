@@ -40,50 +40,63 @@ function CreateListing () {
   }
 
   return (
-    <div className='add-form-container'>
-      <form className='add-form' onSubmit={submitHandler}>
+      <form className='form' onSubmit={submitHandler}>
         <h1>What would you like to contribute?</h1>
-        <div>
-          <h2>Food</h2>
-          <label>
-            <input className='text-fields' type='text' id='title' name='title' value={newItem.title} onChange={changeHandler} placeholder='Food name'></input>
-          </label>
+        <hr />
+        <div className='input-container'> 
+          <div className='single-container'>
+            <label className='input'>
+              Food
+              <br/>
+              <input required className='input-field' type='text' id='title' name='title' value={newItem.title} onChange={changeHandler} placeholder='Food name' />
+            </label>
+          </div>
+          <div className='single-container'>
+            <label className='input'>
+              Category
+              <br/>
+              <input className='input-field' type='text' id='category' name='category' value={newItem.category} onChange={changeHandler} placeholder='Fruit, Meat, Veges...' />
+            </label>
+          </div>
         </div>
-        <div>
-          <h2>Category</h2>
-          <label>
-            <input className='text-fields' type='text' id='category' name='category' value={newItem.category} onChange={changeHandler} placeholder='Fruit, Meat, Veges...'></input>
-          </label>
+        <br />
+        <div className='input-container'>
+          <div className='single-container'>
+            <label className='input'>
+              Image
+              <br />
+              <input className='input-field' type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Add a link to a jpg, jpeg or png.' />
+            </label>
+          </div>
+          <div className='single-container'>
+            <label className='input'>
+              Expiry Date
+              <br />
+              <input className='input-field' type='text' id='expiry_date' name='expiry_date' value={newItem.expiry_date} onChange={changeHandler} placeholder='dd/mm/yyyy' />
+            </label>
+          </div>
         </div>
-        <div>
-          <h2>Images</h2>
-          <label>
-            <input className='text-fields' type='text' id='image' name='image' value={newItem.image} onChange={changeHandler} placeholder='Add a link to a jpg, jpeg or png.'></input>
-          </label>
+        <br />
+        <div className='input-container'>
+          <div className='single-container'>
+            <label className='input'>
+              Location
+              <br />
+              <input className='input-field' type='text' id='location' name='location' value={newItem.location} onChange={changeHandler} placeholder='Wellington, Auckland...' />
+            </label>
+          </div>
+          <div className='single-container'>
+            <label className='input'>
+              Description
+              <br />
+                <input className='input-field' type='text' id='description' name='description' value={newItem.description} onChange={changeHandler} placeholder="Amount, type and/or availability times" />
+            </label>
+              </div>
+            <div className='submit-container single-container'>
+              <button className='submit-button' type="submit" value='Share!'>Share</button>
+          </div>
         </div>
-        <div>
-          <h2>Expiry Date</h2>
-          <label>
-            <input className='text-fields' type='text' id='expiry_date' name='expiry_date' value={newItem.expiry_date} onChange={changeHandler} placeholder='dd/mm/yyyy'></input>
-          </label>
-        </div>
-        <div>
-          <h2>Location</h2>
-          <label>
-            <input className='text-fields' type='text' id='location' name='location' value={newItem.location} onChange={changeHandler} placeholder='Wellington, Auckland...'></input>
-          </label>
-        </div>
-        <div>
-          <h2>Description</h2>
-          <label>
-            <input className='text-fields' type='text' id='description' name='description' value={newItem.description} onChange={changeHandler} placeholder="Amount, type and/or availability times"></input>
-          </label>
-        </div>
-        <br/>
-        <input className='add-form-btn' type="submit" value='Share!'/>
-        <br/>
       </form>
-    </div>
   )
 }
 
