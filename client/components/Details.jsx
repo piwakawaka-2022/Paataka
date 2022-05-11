@@ -57,7 +57,7 @@ function Details () {
 
       {
           food?.userId === user.id
-            ? <div>
+            ? <div className='del-but-cont' >
               <button className="delete-button"onClick={clickHandler}>Delete Listing</button>
             </div>
             : <div className='go-back'>

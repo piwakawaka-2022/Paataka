@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300&display=swap');
 
-* {
-  // text-decoration: none;
-}
-
 .listings-title {
   font-family: 'Noto Sans HK', sans-serif;
   color: #444;
@@ -148,42 +144,6 @@
 a {
   text-decoration: none;
 }
-
-// .add-food {
-//   display: block;
-//   margin-right: auto;
-//   margin-left: auto;
-//   background-color: #444; 
-//   border: none;
-//   color: white;
-//   padding: .5rem .5rem;
-//   text-align: center;
-//   text-decoration: none;
-//   font-size: 16px;
-//   letter-spacing: .1rem;
-//   cursor: pointer;
-//   border-radius: 5px;
-//   font-size: 1.7vw;
-//   width: 15vw;
-// }
-
-// .add-food:hover {
-//   display: block;
-//   margin-right: auto;
-//   margin-left: auto;
-//   background-color: #555; 
-//   border: none;
-//   color: white;
-//   padding: .5rem .5rem;
-//   text-align: center;
-//   text-decoration: none;
-//   font-size: 16px;
-//   letter-spacing: .1rem;
-//   cursor: pointer;
-//   border-radius: 5px;
-//   font-size: 1.7vw;
-//   width: 15vw;
-// }
 
 .details-btn-container {
   justify-content: center;
