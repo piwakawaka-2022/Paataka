@@ -85,7 +85,7 @@ function Register () {
               required
               className="input-field"
               placeholder="john_smith@email.com..."
-              type="text"
+              type="email"
               name="email"
               onChange={handleChange}
               value={formData.email}
