@@ -58,9 +58,7 @@ function Details () {
               <button className="delete-button"onClick={clickHandler}>Delete Listing</button>
             </div>
             : <div className='go-back'>
-              <Link to="/listings">
-                <button className='go-back-button'>Back to Listings</button>
-              </Link>
+              
             </div>
         }
 
