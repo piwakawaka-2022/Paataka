@@ -1,0 +1,1 @@
+const key = process.env.MAPS_KEY
