@@ -8,8 +8,6 @@ import Comment from './Comment'
 import AddComment from './AddComment'
 import  Map from './Map'
 
-//map
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
 
 
 function Details () {
@@ -45,6 +43,7 @@ function Details () {
         <div className='details-container'>
           <div>
             <img className="details-image" src={food?.image}/>
+            <Map/>
           </div>
           <div className='details-content'>
             <h1 className='details-title'>{food?.title}</h1>
@@ -52,7 +51,7 @@ function Details () {
             <p className='details-expiry'>{food?.expiry_date}</p>
             <p className='details-phone'>{food?.phone}</p>
           </div>
-         <Map/>
+         
         </div>
 
         <div className='bubble-container'>
