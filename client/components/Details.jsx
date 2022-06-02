@@ -6,6 +6,11 @@ import { deleteListing } from '../apis/deleteListing'
 
 import Comment from './Comment'
 import AddComment from './AddComment'
+import  Map from './Map'
+
+//map
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
+
 
 function Details () {
   const { id } = useParams()
@@ -47,6 +52,7 @@ function Details () {
             <p className='details-expiry'>{food?.expiry_date}</p>
             <p className='details-phone'>{food?.phone}</p>
           </div>
+         <Map/>
         </div>
 
         <div className='bubble-container'>
