@@ -1,5 +1,6 @@
 /* eslint-disable comma-dangle */
 const path = require('path')
+// const Dotenv = require('dotenv-webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
@@ -15,6 +16,9 @@ module.exports = {
       chunkFilename: '[id].css',
       ignoreOrder: false, // Enable to remove warnings about conflicting order
     }),
+    // new Dotenv({
+    //   path: path.join(__dirname, '../server/.env')
+    // })
   ],
   module: {
     rules: [
